@@ -1,0 +1,35 @@
+{
+  "name": "practice-theme",
+  "version": "1.0.0",
+  "description": "Custom WordPress theme with ACF blocks and CPTs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "acf",
+    "blocks"
+  ],
+  "author": "Ofri Gross",
+  "license": "MIT",
+  "devDependencies": {
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.3.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "jquery": "^3.7.0"
+  }
+  
+}
