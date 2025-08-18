@@ -1,0 +1,223 @@
+.site-footer {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.footer-main {
+    color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+    display: flex;
+    margin-top: 200px;
+}
+
+.subscribe {
+    width: 399px;
+    height: 68px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.follow-news {
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 46px;
+    font-style: normal;
+    font-weight: var(--sds-typography-weight-bold);
+    line-height: normal;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 50%;
+    margin-left: 187px;
+    margin-right: 300px;
+
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-right h2 {
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-right p {
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.newsletter-form {
+    padding: 26px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.email-input {
+    display: flex;
+    width: 422px;
+    height: 54px;
+    padding: 13px 12px;
+    align-items: center;
+    border-radius: 2px;
+    border: 1px solid #FFF;
+    background: #FFF;
+}
+
+.sub {
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.subscribe-btn {
+    border-radius: 2px;
+    border: 2px solid #FFF;
+    background: transparent;
+    display: inline-flex;
+    padding: 12px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.linkedin-link {
+    background: #0077b5;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.element {
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+
+
+.footer-credit {
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer-logos {
+    background: linear-gradient(93deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%);
+    padding: 20px 0;
+    width: 100%;
+}
+
+.logos-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.rakia-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rakia-powered {
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.rakia-links {
+    display: flex;
+    gap: 20px;
+}
+
+.rakia-links a {
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.rakia-links a:hover {
+    opacity: 1;
+}
+
+.logos-grid-desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+}
+
+.logo-item {
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.9;
+}
