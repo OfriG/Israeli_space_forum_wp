@@ -1,0 +1,333 @@
+/* .navbar-mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  &.active {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .overlay-left {
+    width: 50%;
+    height: 100vh;
+    background-color: #666666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Logo styling in mobile overlay
+    .navbar-logo {
+      .site-logo {
+        width: 60px !important;
+        height: 45px !important;
+        max-height: 45px;
+        object-fit: contain;
+      }
+
+    }
+  }
+
+// Desktop Navbar Styles
+.navbar-menu,
+.navbar-screen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  height: 70px !important;
+  background-color: #000000 !important;
+  background: #000000 !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 80px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  min-width: 100% !important;
+
+    // Logo styling - left side  
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.2;
+
+      .site-logo {
+        height: 40px;
+        width: auto;
+        margin-right: 0;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    // Main navigation menu - right side
+    ul.navbar-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 48px;
+      background: transparent !important;
+
+      .navbar-menu-item {
+        a {
+          color: white;
+          text-decoration: none;
+          font-family: "Space Grotesk", sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #11B6BC;
+          }
+        }
+
+        // JOIN US button styling
+        &.cta {
+          a {
+            background: linear-gradient(95deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .arrow-icon::before {
+              content: '>';
+              font-weight: bold;
+              background: linear-gradient(95deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+
+    // Mobile toggle button
+    .navbar-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #666666;
+      font-size: 24px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    // Responsive
+    @media (max-width: 1024px) {
+      padding: 20px 40px;
+
+      .navbar-menu {
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 20px;
+
+      .navbar-menu {
+        display: none;
+      }
+
+      .navbar-toggle {
+        display: block;
+      }
+    }
+  }
+
+// Add body padding for fixed navbar
+body {
+  padding-top: 70px !important;
+}
+
+// Override WordPress admin bar
+html {
+  margin-top: 0 !important;
+}
+
+body.admin-bar .navbar-screen {
+  top: 32px !important;
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .navbar-screen {
+    top: 46px !important;
+  }
+}
+
+  .overlay-right {
+    width: 50%; // בדיוק 50% מהמסך  
+    height: 100vh; // גובה מלא
+    background-color: #000; // שחור כמו בתמונה שלך
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // ממרכז את התפריט אנכית
+    align-items: flex-start;
+    padding: 40px 32px; // padding מותאם
+    position: relative;
+    box-sizing: border-box;
+
+    // Close button positioned at top right
+    .mobile-close-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: #11B6BC;
+      font-size: 28px;
+      cursor: pointer;
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    // Menu items container
+    .navbar-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 32px; // מרווח בין פריטי התפריט
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      .navbar-menu-item {
+        width: 100%;
+
+        a {
+          color: #FFF;
+          font-family: "Space Grotesk", sans-serif;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1.2;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          display: block;
+          padding: 8px 0;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        // Special styling for JOIN US button in mobile
+        &.cta a {
+          font-family: "Space Grotesk", sans-serif;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.2;
+          text-transform: uppercase;
+          background: linear-gradient(95deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          &:after {
+            content: " >";
+            margin-left: 8px;
+            background: linear-gradient(95deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile navbar styles
+@media (max-width: 768px) {
+  .navbar {
+    &.mobile-menu-open {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .navbar-mobile-overlay {
+      .overlay-left {
+        .navbar-logo {
+          .site-logo {
+            width: 50px !important;
+            height: 38px !important;
+          }
+
+          h1 {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .overlay-right {
+        padding: 32px 24px;
+
+        .mobile-close-btn {
+          top: 20px;
+          right: 20px;
+          font-size: 24px;
+          width: 32px;
+          height: 32px;
+        }
+
+        .navbar-menu {
+          gap: 24px;
+
+          .navbar-menu-item a {
+            font-size: 20px;
+          }
+
+          .navbar-menu-item.cta a {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+} */

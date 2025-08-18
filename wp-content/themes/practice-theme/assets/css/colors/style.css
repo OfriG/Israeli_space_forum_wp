@@ -1,0 +1,105 @@
+/* Color Variables from Figma Design - SCSS Version */
+
+// SCSS Variables (using $ instead of --)
+$color-background-primary: rgba(0, 0, 0, 0.67);
+$color-background-black: #000000;
+$color-background-white: #FFFFFF;
+
+// Selection Colors
+$color-selection-gradient: linear-gradient(135deg, #00CED1, #98FB98); // Teal to Light Green
+$color-selection-white: #FFFFFF;
+$color-selection-black: #000000;
+
+// Layout Dimensions
+$layout-width: 375px;
+$layout-height: 700px;
+
+// Box Model
+$box-sizing: border-box;
+
+// Margins/Offsets (from the red labels)
+$margin-top: 563px;
+$margin-left: 388px;
+$margin-right: 2397px;
+$margin-bottom: 356px;
+
+// Mixins for reusable styles
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-style($bg-color: $color-background-primary) {
+  background: $bg-color;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// Utility Classes for Colors
+.bg-primary {
+  background: $color-background-primary;
+}
+
+.bg-black {
+  background: $color-background-black;
+}
+
+.bg-white {
+  background: $color-background-white;
+}
+
+.bg-selection-gradient {
+  background: $color-selection-gradient;
+}
+
+.text-white {
+  color: $color-selection-white;
+}
+
+.text-black {
+  color: $color-selection-black;
+}
+
+// Layout Utility Classes
+.layout-container {
+  width: $layout-width;
+  height: $layout-height;
+  box-sizing: $box-sizing;
+  flex-shrink: 0;
+}
+
+// Example of nested SCSS
+.button {
+  @include button-style();
+  
+  &.primary {
+    @include button-style($color-background-primary);
+  }
+  
+  &.gradient {
+    @include button-style($color-selection-gradient);
+  }
+  
+  // Nested hover effect
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Example of SCSS functions
+@function calculate-width($multiplier: 1) {
+  @return $layout-width * $multiplier;
+}
+
+.responsive-container {
+  width: calculate-width(1.5); // 562.5px
+  max-width: calculate-width(2); // 750px
+}
