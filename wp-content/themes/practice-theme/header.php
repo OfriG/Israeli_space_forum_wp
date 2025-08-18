@@ -14,12 +14,10 @@
 
     <!-- Desktop Navbar -->
     <nav class="navbar-menu">
-        <a href="<?php echo home_url(); ?>" class="navbar-menu-item navbar-logo">
-            <?php
-            // Display site logo
-            // This will check: 1) ACF Options Page, 2) ACF Logo Settings Page, 3) WordPress Customizer
-            display_site_logo();
-            ?>
+        <a class="navbar-menu-item navbar-logo" href="<?php echo home_url(); ?>">
+            <div class="desktop-logo-container">
+                <?php display_site_logo(); ?>
+            </div>
         </a>
 
         <!-- Main Menu -->
@@ -45,6 +43,9 @@
         <button class="navbar-toggle" aria-label="Toggle mobile menu">
             <span class="hamburger-line"></span>
         </button>
+        <div class="mobile-logo-left">
+            <?php display_site_logo(); ?>
+        </div>
     </nav>
 
     <!-- Mobile Menu Overlay - Fixed to match image design -->
@@ -52,7 +53,9 @@
         <!-- Left side with logo on gray background -->
         <div class="overlay-left">
             <div class="left-logo">
-                <?php display_site_logo(); ?>
+                <div class="mobile-logo-container">
+                    <?php display_site_logo(); ?>
+                </div>
             </div>
         </div>
 
@@ -80,8 +83,6 @@
             </ul>
         </div>
     </div>
-
-
 
     <?php wp_footer(); ?>
 </body>
