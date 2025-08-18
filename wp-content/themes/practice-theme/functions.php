@@ -23,6 +23,7 @@ function theme_enqueue_assets()
 
     // JavaScript
     wp_enqueue_script('theme-js', get_template_directory_uri() . '/dist/js/app.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('header-js', get_template_directory_uri() . '/dist/js/header.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_assets');
 
@@ -46,18 +47,7 @@ function create_logo_post_type()
 }
 add_action('init', 'create_logo_post_type');
 
-// Add ACF Options page for theme settings
-add_action('init', function () {
-    if (function_exists('acf_add_options_page')) {
-        acf_add_options_page(array(
-            'page_title' => 'Theme Settings',
-            'menu_title' => 'Theme Settings',
-            'menu_slug' => 'theme-settings',
-            'capability' => 'edit_posts',
-            'icon_url' => 'dashicons-admin-customizer',
-        ));
-    }
-});
+
 
 // Get site logo
 function get_site_logo()
