@@ -25,7 +25,9 @@
                     <input type="email" placeholder="Email" class="email-input">
                     <button class="subscribe-btn sub">Subscribe</button>
                     <a href="#" class="linkedin-link">
-                        <span class="linkedin-icon">in</span>
+                        <span class="linkedin-icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/LinkedIn.svg" alt="LinkedIn">
+                        </span>
                     </a>
                 </div>
             </div>
