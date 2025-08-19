@@ -1,9 +1,0 @@
-/*
-!wp-content/
-!wp-content/themes/
-!wp-content/themes/practice-theme/
-!wp-content/themes/practice-theme/**
-
-# Ignore build output and node_modules inside the theme
-wp-content/themes/practice-theme/dist/
-wp-content/themes/practice-theme/node_modules/

@@ -13,8 +13,10 @@ const fs = require('fs');
  */
 
 mix.js('resources/js/app.js', 'dist/js')
-.sass('resources/scss/style.scss', 'dist/css')
-.sass('resources/scss/homepage/hero.scss', 'dist/css')
+    .js('resources/js/header.js', 'dist/js')
+    .sass('resources/scss/_main-styles.scss', 'dist/scss')
+    .sass('resources/scss/_navbar-components.scss', 'dist/scss')
+    .sass('resources/scss/_footer.scss', 'dist/scss')
 
 // Disable mix-manifest.json generation
 mix.disableNotifications();
