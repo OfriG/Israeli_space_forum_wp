@@ -2,18 +2,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     const toggle = document.querySelector('.navbar-toggle');
     const overlay = document.querySelector('.navbar-mobile-overlay');
-    const navbar = document.querySelector('.navbar');
-    const closeBtn = document.querySelector('.mobile-close-btn');
+    const navbar = document.querySelector('.navbar-menu'); 
+        const closeBtn = document.querySelector('.mobile-close-btn');
+    
+    // Add arrow icon to join link
+    const joinLink = document.querySelector('.navbar-all a[href*="join"]');
+    if (joinLink) {
+        joinLink.innerHTML += '<span class="arrow-icon"></span>';
+    }
 
     // Open mobile menu
     if (toggle && overlay) {
         toggle.addEventListener('click', () => {
             overlay.classList.add('active');
-            toggle.classList.add('active'); // Hamburger animation
+            toggle.classList.add('active');
             if (navbar) {
                 navbar.classList.add('mobile-menu-open');
             }
-            // Prevent body scrolling when menu is open
             document.body.style.overflow = 'hidden';
         });
     }
@@ -21,11 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu function
     function closeMenu() {
         overlay.classList.remove('active');
-        toggle.classList.remove('active'); // Hamburger animation
+        toggle.classList.remove('active');
         if (navbar) {
             navbar.classList.remove('mobile-menu-open');
         }
-        // Restore body scrolling
         document.body.style.overflow = '';
     }
 
