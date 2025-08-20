@@ -14,7 +14,7 @@ get_header(); ?>
 
         <div class="hero-content">
             <h2>IAC 2024</h2>
-            <p>הכנס הבינלאומי לאסטרונאוטיקה יתקיים השנה בישראל</p>
+            <p>ddd</p>
             <a href="/iac-2024" class="button primary">למידע נוסף</a>
         </div>
     </div>
