@@ -50,7 +50,7 @@
                             <input type="email" placeholder="Email" class="email-input">
                             <button class="subscribe-btn">
 
-                                <div class="sub">Subscribe</div>
+                                <div class="sub">Subscribe test</div>
                             </button>
                             <a href="#" class="linkedin-link">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/LinkedIn.svg" alt="LinkedIn" class="linkedin-icon">
@@ -60,28 +60,36 @@
 
                 </div>
         </div>
+    </div>
+    <div>
+        <p class="footer-text">
+            Designed and developed by </p>
+        <img src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/Moveo.png')); ?>" />
+        <p class="footer-text">
+            *All space images were taken by Eytan Stibbe during Rakia AX1 Mission.
+        </p>
+    </div>
 
 
+    <div class="footer-logos">
 
-        <div class="footer-logos">
-
-            <div class="logos-grid">
-                <div class="footer-icons">
-                    <img
-                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/startup-nation-central.png')); ?>" />
-                    <img
-                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/israeli-high-teck.png')); ?>" />
-                    <img
-                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/israel-export.png')); ?>" />
-                    <img
-                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/ISA.png')); ?>" />
-                    <img
-                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/ministry.png')); ?>" />
-                    <img
-                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/innovation.png')); ?>" />
-                </div>
+        <div class="logos-grid">
+            <div class="footer-icons">
+                <img
+                    src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/startup-nation-central.png')); ?>" />
+                <img
+                    src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/israeli-high-teck.png')); ?>" />
+                <img
+                    src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/israel-export.png')); ?>" />
+                <img
+                    src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/ISA.png')); ?>" />
+                <img
+                    src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/ministry.png')); ?>" />
+                <img
+                    src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/innovation.png')); ?>" />
             </div>
-
         </div>
+
+    </div>
 </footer>
 <?php wp_footer(); ?>
