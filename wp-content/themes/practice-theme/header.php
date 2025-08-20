@@ -21,7 +21,7 @@
     <nav class="navbar-menu">
         <a class="navbar-logo" href="<?php echo home_url(); ?>">
             <div class="desktop-logo-container">
-                ק׳ןען׳/
+                ק׳ןען׳/d
                 <?php display_site_logo(); ?>
             </div>
         </a>
