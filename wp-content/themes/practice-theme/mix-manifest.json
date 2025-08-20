@@ -1,8 +1,9 @@
 {
-    "/dist/js/app.js": "/dist/js/app.js?id=3bc4bd32a15894ce05631f9adc953cee",
-    "/dist/js/header.js": "/dist/js/header.js?id=727eb28068074f2411f4886e1c4d97f3",
-    "/dist/css/hero.css": "/dist/css/hero.css?id=9cf2d1cde8358ab8beadd0e529df9a36",
-    "/dist/css/_footer.css": "/dist/css/_footer.css?id=da684e6c30332d58a69756251f5181ad",
-    "/dist/css/_navbar-components.css": "/dist/css/_navbar-components.css?id=a80413ebc7261188056d2f3d6d117e31",
-    "/dist/css/_main-styles.css": "/dist/css/_main-styles.css?id=2ac5eec68acf196fb967283cc72523be"
+    "/dist/js/app.js": "/dist/js/app.js?id=94ee82f8688b367c24b7c5f82dcf7023",
+    "/dist/css/_variables.css": "/dist/css/_variables.css?id=68b329da9893e34099c7d8ad5cb9c940",
+    "/dist/css/_colors.css": "/dist/css/_colors.css?id=68b329da9893e34099c7d8ad5cb9c940",
+    "/dist/css/_footer.css": "/dist/css/_footer.css?id=012619e0d3c90c016fb82859997c228f",
+    "/dist/css/_navbar-components.css": "/dist/css/_navbar-components.css?id=239b27ab42c02184849b92101338dbb1",
+    "/dist/css/_main-styles.css": "/dist/css/_main-styles.css?id=f9b63398c5408b36cc399dc8cfe22a20",
+    "/dist/js/header.js": "/dist/js/header.js?id=2d96fd895ceb84fd0f342a31d350a199"
 }

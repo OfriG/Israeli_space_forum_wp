@@ -35,26 +35,19 @@
     </div>
 
     <div class="footer-logos">
-        <div class="container">
-            <div class="logos-desktop">
-                <div class="rakia-section">
-                    <div class="rakia-powered">Powered by Rakia</div>
-                    <div class="rakia-links">
-                        <a href="/privacy">Privacy Policy</a>
-                        <a href="/accessibility">Accessibility</a>
-                        <a href="/terms">Terms of Use</a>
-                    </div>
-                </div>
-                <div class="logos-grid-desktop">
-                    <div class="logo-item">STARTUP NATION CENTRAL</div>
-                    <div class="logo-item">Israel High-Tech Association</div>
-                    <div class="logo-item">ISRAEL EXPORT INSTITUTE</div>
-                    <div class="logo-item">ISA</div>
-                    <div class="logo-item">Ministry of Innovation, Science & Technology</div>
-                    <div class="logo-item">Israel Innovation Authority</div>
-                </div>
-            </div>
+
+        <div class="logos-grid">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'footer-menu',
+                'menu_class'     => 'main-navigation',
+                'container'      => 'nav',
+                'container_class' => 'navbar'
+            ));
+            ?>
+
         </div>
+
     </div>
 </footer>
 <?php wp_footer(); ?>
