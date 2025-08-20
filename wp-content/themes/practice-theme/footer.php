@@ -24,7 +24,7 @@
                             <a href="<?php echo site_url('/contact-us') ?>" class="element">Contact Us</a>
                             <div class="footer-credit">
                                 Designed and developed by<br>
-                                *All space images were taken by Eytan Stibbe during Rakia AX1 Mission.
+                                *All spghhace images were taken by Eytan Stibbe during Rakia AX1 Mission.
                             </div>
                         </div>
 
