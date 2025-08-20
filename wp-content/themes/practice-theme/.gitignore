@@ -13,3 +13,7 @@ wp-content/themes/practice-theme/node_modules/**
 
 wp-content/themes/practice-theme/dist/
 wp-content/themes/practice-theme/dist/**
+# Allow GitHub workflows
+!.github/
+!.github/workflows/
+!.github/workflows/**
