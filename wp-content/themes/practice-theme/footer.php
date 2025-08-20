@@ -23,7 +23,7 @@
                             <a href="<?php echo site_url('/iac') ?>" class="element">IAC 2024</a>
                             <a href="<?php echo site_url('/contact-us') ?>" class="element">Contact Us</a>
                             <div class="footer-credit">
-                                Designed and developed by<br>
+                                Designed and developed by ofri<br>
                                 *All spghhace images were taken by Eytan Stibbe during Rakia AX1 Mission.
                             </div>
                         </div>
@@ -66,14 +66,17 @@
         <div class="footer-logos">
 
             <div class="logos-grid">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'footer-menu',
-                    'menu_class'     => 'main-navigation',
-                    'container'      => 'nav',
-                    'container_class' => 'navbar'
-                ));
-                ?>
+                <ul>
+                    <li class="footer-pic"></li>
+                    <li class="footer-pic"></li>
+                    <li class="footer-pic"></li>
+                    <li class="footer-pic"></li>
+                    <li class="footer-pic"></li>
+                    <li class="footer-pic"></li>
+                    <li class="footer-pic"></li>
+
+                </ul>
+
 
             </div>
 
