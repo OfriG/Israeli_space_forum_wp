@@ -66,18 +66,20 @@
         <div class="footer-logos">
 
             <div class="logos-grid">
-                <ul>
-                    <li class="footer-pic"></li>
-                    <li class="footer-pic"></li>
-                    <li class="footer-pic"></li>
-                    <li class="footer-pic"></li>
-                    <li class="footer-pic"></li>
-                    <li class="footer-pic"></li>
-                    <li class="footer-pic"></li>
-
-                </ul>
-
-
+                <div class="footer-icons">
+                    <img
+                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/startup-nation-central.png')); ?>" />
+                    <img
+                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/israeli-high-teck.png')); ?>" />
+                    <img
+                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/israel-export.png')); ?>" />
+                    <img
+                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/ISA.png')); ?>" />
+                    <img
+                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/ministry.png')); ?>" />
+                    <img
+                        src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/innovation.png')); ?>" />
+                </div>
             </div>
 
         </div>
