@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="footer-right">
-                            <h2 class="follow-news">FOLLOW OUR NEWSLETTER</h2>
+                            <h2 class="follow-news">FOLLOW OUR NEWSLETTER please</h2>
                             <p class="subscribe">Subscribe to the ISF newsletter to receive the latest announcements, opportunities, event invitations and more.</p>
                             <div class="newsletter-form">
                                 <input type="email" placeholder="Email" class="email-input">
