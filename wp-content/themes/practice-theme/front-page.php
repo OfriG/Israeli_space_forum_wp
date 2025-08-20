@@ -10,7 +10,7 @@ get_header(); ?>
 <main id="main" class="site-main">
     <div class="container">
         <h1>ברוכים הבאים ל-ISRAEL SPACE FORUM</h1>
-        <p>הפורום הישראלי לחלל - מקדמים את עתיד החלל בישראל</p>
+        <p>הפורום הישראלי לחלל - מקדמים את עתיד dהחלל בישראל</p>
 
         <div class="hero-content">
             <h2>IAC 2024</h2>
