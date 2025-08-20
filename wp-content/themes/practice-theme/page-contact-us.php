@@ -5,7 +5,6 @@ get_header();
 
 <main id="main" class="site-main">
     <div class="container">
-        404
     </div>
 </main>
 

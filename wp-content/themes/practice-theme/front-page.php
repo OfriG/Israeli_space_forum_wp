@@ -8,9 +8,22 @@
 get_header(); ?>
 
 <main id="main" class="site-main">
+<<<<<<< HEAD
     <div class="container">
         wow
     </div>
+=======
+    <!-- <div class="container">
+        <h1>ברוכים הבאים ל-ISRAEL SPACE FORUM</h1>
+        <p>הפורום הישראלי לחלל - מקדמים את עתיד החלל בישראל</p>
+        
+        <div class="hero-content">
+            <h2>IAC 2024</h2>
+            <p>הכנס הבינלאומי לאסטרונאוטיקה יתקיים השנה בישראל</p>
+            <a href="/iac-2024" class="button primary">למידע נוסף</a>
+        </div>
+    </div> -->
+>>>>>>> dev/footer
 </main>
 
 <?php get_footer(); ?>
