@@ -1,0 +1,27 @@
+@import 'colors';
+
+// Typography
+$font-family: "Space Grotesk";
+
+// Dimensions
+$navbar-height-desktop: 124px;
+$navbar-height-mobile: 72px;
+$navbar-z-index: 1000;
+
+// Screen Dimensions
+$desktop-width: 1920px;
+$desktop-height: 1080px;
+$mobile-width: 375px;
+$mobile-height: 572px;
+
+// Spacing
+$gap-large: 79px;
+$gap-medium: 30px;
+$gap-small: 20px;
+
+// Breakpoints
+$mobile: 768px;
+$mobile-small: 375px;
+$mobile-medium: 385px;
+$mobile-extra-small: 320px;
+$desktop: 1920px;

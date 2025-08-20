@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-
-=======
 # Ignore everything by default
 *
 
@@ -10,7 +6,6 @@
 !wp-content/themes/
 !wp-content/themes/practice-theme/
 !wp-content/themes/practice-theme/**
->>>>>>> dev/footer
 
 # Except for the following directories inside the theme
 wp-content/themes/practice-theme/node_modules/
