@@ -221,25 +221,3 @@
     text-align: center;
     opacity: 0.9;
 }
-
-footer-icons {
-    z-index: 1000;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: $gradient-sunny-day;
-    color: $color-white;
-    text-align: center;
-
-    &-powered {
-        display: none;
-
-        @media (min-width: $breakpoint-header-footer-desktop) {
-            display: flex;
-            align-items: center;
-            margin-bottom: $spacing-40;
-
-
-        }
-    }
-}
