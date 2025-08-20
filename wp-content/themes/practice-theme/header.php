@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en">
-=======
 <html lang="en" dir="ltr">
->>>>>>> dev/footer
 
 <head>
     <meta charset="UTF-8">
@@ -18,12 +14,6 @@
     </style>
     <?php wp_head(); ?>
 </head>
-<<<<<<< HEAD
-
-<body>
-
-    <h2>header</h2>
-=======
 
 <body <?php body_class(); ?>>
 
@@ -86,4 +76,3 @@
 </body>
 
 </html>
->>>>>>> dev/footer
