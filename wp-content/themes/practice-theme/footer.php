@@ -23,7 +23,7 @@
                             <a href="<?php echo site_url('/iac') ?>" class="element">IAC 2024</a>
                             <a href="<?php echo site_url('/contact-us') ?>" class="element">Contact Us</a>
                             <div class="footer-credit">
-                                Designed and developed by ofri<br>
+                                Designed and developed by ofrix<br>
                                 *All spghhace images were taken by Eytan Stibbe during Rakia AX1 Mission.
                             </div>
                         </div>
