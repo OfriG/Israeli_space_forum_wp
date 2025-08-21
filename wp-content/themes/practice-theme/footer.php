@@ -50,7 +50,7 @@
                             <input type="email" placeholder="Email" class="email-input">
                             <button class="subscribe-btn">
 
-                                <div class="sub">Subscribe</div>
+                                <div class="sub">Subscribeג</div>
                             </button>
                             <a href="#" class="linkedin-link">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/LinkedIn.svg" alt="LinkedIn" class="linkedin-icon">
