@@ -12,7 +12,7 @@ function theme_setup()
     // Menus
     register_nav_menus(array(
         'main-menu' => esc_html__('Main Menu', 'practice-theme'),
+        'secondary' => esc_html__('Footer Menu', 'practice-theme')
     ));
-
 }
 add_action('after_setup_theme', 'theme_setup');
