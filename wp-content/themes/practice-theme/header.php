@@ -16,7 +16,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <h1>it workss</h1>
 
     <!-- Desktop Navbar -->
     <nav class="navbar-menu">
