@@ -22,7 +22,7 @@
     <nav class="navbar-menu">
         <a class="navbar-logo" href="<?php echo home_url(); ?>">
             <div class="desktop-logo-container">
-                <?php display_site_logo(); ?>c
+                <?php display_site_logo(); ?>
             </div>
         </a>
 
