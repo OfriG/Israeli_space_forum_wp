@@ -13,7 +13,7 @@ h1 {
   background: $black;
   backdrop-filter: blur(2px);
   width: 100vw;
-  height: $navbar-height-desktop;
+  height: $navbar-height-mobile;
   flex-shrink: 0;
   z-index: $navbar-z-index;
   display: flex;
@@ -29,7 +29,7 @@ h1 {
     justify-content: space-between;
   }
 
-  @media (max-width: $mobile-small) {
+  @media (max-width: $mobile) {
     height: clamp(60px, 15vw, 72px);
     padding: 0 5vw;
   }
@@ -131,18 +131,13 @@ ul.navbar-menu {
     background-color: $gray;
     display: flex;
     padding-top: 15.66px;
-    padding-left: 24.14;
+    padding-left: 24.14px;
     padding-bottom: 643px;
 
 
-    @media (max-width: $mobile-small) {
+    @media (max-width: $mobile) {
       width: 35%;
       padding: 2vw 1vw;
-    }
-
-    @media (max-width: $mobile-extra-small) {
-      width: 30%;
-      padding: 1vw;
     }
   }
 
@@ -158,14 +153,9 @@ ul.navbar-menu {
     position: relative;
     overflow-y: auto;
 
-    @media (max-width: $mobile-small) {
+    @media (max-width: $mobile) {
       width: 65%;
       padding: 6vw 5vw;
-    }
-
-    @media (max-width: $mobile-extra-small) {
-      width: 70%;
-      padding: 4vw 3vw;
     }
   }
 }
@@ -505,13 +495,13 @@ a {
     }
   }
 
-  @media (max-width: $mobile-small) {
+  @media (max-width: $mobile) {
     width: 35%;
   }
+}
 
-  @media (max-width: $mobile-extra-small) {
-    width: 30%;
-  }
+#main {
+  display: flex;
 }
 
 #menu-main-menu-1 {
@@ -528,23 +518,13 @@ a {
   background: $black;
 
 
-  @media (max-width: $mobile-small) {
+  @media (max-width: $mobile) {
     width: 65%;
-    // padding: 6vw 5vw;
-  }
-
-  @media (max-width: $mobile-medium) {
-    width: 65%;
-  }
-
-  @media (max-width: $mobile-extra-small) {
-    width: 70%;
-    // padding: 4vw 3vw;
   }
 }
 
 // Additional responsive utilities
-@media (max-width: $mobile-extra-small) {
+@media (max-width: $mobile) {
   .navbar-menu {
     min-height: 60px;
   }
