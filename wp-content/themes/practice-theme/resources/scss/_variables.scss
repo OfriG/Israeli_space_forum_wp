@@ -4,15 +4,12 @@
 $font-family: "Space Grotesk";
 
 // Dimensions (rem units)
-$navbar-height-desktop: 7.75rem; // 124px
 $navbar-height-mobile: 4.5rem; // 72px
 $navbar-z-index: 1000;
 
 // Screen Dimensions (rem units)
-$desktop-width: 120rem; // 1920px
-$desktop-height: 67.5rem; // 1080px
-$mobile-width: 23.4375rem; // 375px
-$mobile-height: 35.75rem; // 572px
+
+
 
 // Spacing (rem units)
 $gap-large: 4.9375rem; // 79px
@@ -23,14 +20,9 @@ $gap-tiny: 0.625rem; // 10px
 
 // Footer specific spacing
 $footer-padding-mobile: 1.25rem; // 20px
-$footer-padding-desktop: 3.75rem; // 60px
+
 $footer-margin-top-mobile: 3.125rem; // 50px
-$footer-margin-top-desktop: 12.5rem; // 200px
 $footer-max-width: 75rem; // 1200px
 
 // Breakpoints (still in px as required for media queries)
 $mobile: 768px;
-$mobile-small: 375px;
-$mobile-medium: 385px;
-$mobile-extra-small: 320px;
-$desktop: 1920px;
