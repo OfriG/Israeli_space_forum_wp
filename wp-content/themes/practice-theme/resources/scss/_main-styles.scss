@@ -1,12 +1,13 @@
 // Main styles
 @import 'navbar-components';
 @import 'footer';
+@import 'footer/upper-footer';
+@import 'footer/bottom-footer';
+@import 'footer/desktop-footer';
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
+
 }
 
 #main {
@@ -15,5 +16,6 @@ body {
 }
 
 html {
-  display: flex;
+  box-sizing: border-box;
 }
+
