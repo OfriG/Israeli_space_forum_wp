@@ -1,0 +1,209 @@
+.desktop-upper-section.desktop-upper-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    padding: pxToRem(70) pxToRem(104) pxToRem(10) pxToRem(104);    box-sizing: border-box;
+
+    .left-section {
+        display: flex;
+        flex-direction: column;
+
+        flex-shrink: 0;
+        box-sizing: border-box;
+        margin-bottom: pxToRem(2);
+
+        > img {
+            width: pxToRem(139.469);
+            height: pxToRem(106.075);
+            margin-bottom: pxToRem(30);
+            object-fit: contain;
+        }
+
+        .footer-lower-nav {
+            margin-top: pxToRem(50);
+            margin-bottom: pxToRem(40);
+            
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: pxToRem(7);
+                list-style: none; 
+            }
+            
+            li {
+                margin: 0;
+                padding: 0;
+                
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    font-size: pxToRem(18);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+                
+                &:last-child a {
+                    text-decoration: underline;
+                    text-underline-offset: auto;
+                }
+            }
+        }
+
+        p {
+            margin: pxToRem(5) 0;
+            color: $white;
+            font-size: pxToRem(15.009);
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+
+            &.credits-line {
+                margin-top: pxToRem(20);
+                display: flex;
+                align-items: center;
+                
+                img {
+                    height: pxToRem(20);
+                    width: auto;
+                    vertical-align: middle;
+                    margin-left: pxToRem(5);
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .right-section {
+  
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        justify-content: center; 
+        flex-shrink: 0;
+       
+        box-sizing: border-box;
+        direction: ltr; 
+       
+
+        h2 {
+            color: $white;
+            font-size: pxToRem(46);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: pxToRem(20);
+            text-align: left; 
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            color: $white;
+            font-size: pxToRem(15);
+            font-weight: 300;
+            text-align: left; 
+            max-width: pxToRem(350);
+            margin-bottom: pxToRem(30);
+            line-height: 1.4;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+            gap: pxToRem(15);
+            width: 100%;
+            max-width: pxToRem(350);
+            
+            .email-input {
+                display: flex;
+                // width: pxToRem(422);
+                // height: pxToRem(54);
+                padding: pxToRem(12) pxToRem(15);
+                border-radius: 2px;
+                border: pxToRem(1) solid $white;
+                background: $white;
+                font-size: pxToRem(14);
+                outline: none;
+                
+               
+            }
+            
+            .newsletter-actions {
+                display: flex;
+                align-items: center;
+                gap: pxToRem(15);
+                width: pxToRem(650);
+                // justify-content: flex-start; 
+                
+                .subscribe-btn {
+                //     width: pxToRem(589);
+                // height: pxToRem(54);
+                    background-color: transparent;
+                    color: $white;
+                    border-radius: pxToRem(2);
+                    border: pxToRem(2) solid $white;               padding: pxToRem(12) pxToRem(25);
+                   
+                    cursor: pointer;
+                    font-weight: 500;
+                    font-size: pxToRem(14);
+                    transition: all 0.3s ease;
+                    
+                   
+                }
+                
+                .linkedin-link {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: pxToRem(40);
+                    height: pxToRem(40);
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border-radius: pxToRem(4);
+                    transition: background-color 0.3s ease;
+                    
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
+                    
+                    .linkedin-icon {
+                        img {
+                            width: pxToRem(24);
+                            height: pxToRem(24);
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.logos-desktop {
+    display: flex;
+    gap: pxToRem(9);
+    padding: pxToRem(38) pxToRem(152);
+    justify-content: center;
+    align-items: center;
+    background: $beautyGreen; 
+
+    p {
+        color: $white;
+        font-size: pxToRem(15.009);
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+}

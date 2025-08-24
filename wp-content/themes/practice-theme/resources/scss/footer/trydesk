@@ -1,0 +1,172 @@
+/* .desktop-upper-section{
+    display: block;
+        .left-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: pxToRem(70);
+        margin-left: pxToRem(104);
+// Main logo styling
+> img {
+    width: pxToRem(139.469);
+    height: pxToRem(106.075);
+    margin-bottom: pxToRem(10);
+    object-fit: contain;
+}
+       .footer-lower-nav{
+        ul {
+            margin: 0;
+            padding: 0;display: flex;
+            flex-direction: column;
+            gap: pxToRem(7);
+
+            list-style: none; 
+          }
+        
+          li {
+            margin: 0;
+            padding: 0;
+          }
+          li a {
+            text-decoration: none; 
+          }
+        a{
+            
+            color: $white;
+font-size: pxToRem(18);
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+
+        }
+        li:last-child a {
+            text-decoration: underline;
+            text-underline-offset: auto;
+          }
+       }
+       p{  margin: pxToRem(5);
+        color: $white;
+        font-size: pxToRem(15.009);
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+
+&:first-of-type {
+    margin-top: pxToRem(50);
+  }
+
+  // Images inside paragraphs (like Moveo logo)
+  img {
+    height: pxToRem(20);
+    width: auto;
+    vertical-align: middle;
+    margin-left: pxToRem(5);
+    object-fit: contain;
+  }
+       }
+      
+    }
+    
+.desktop-bottom-section{
+    display: block;
+    
+.right-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: pxToRem(75);
+    margin-right: pxToRem(104);
+    
+    h2{
+        color: $white;
+        font-size: pxToRem(46);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: pxToRem(10);
+        text-align: right;
+    }
+    
+    p {
+        color: $white;
+        font-size: pxToRem(15);
+        font-weight: 300;
+        text-align: right;
+        max-width: pxToRem(300);
+        margin-bottom: pxToRem(20);
+    }
+    
+    .email-input {
+        padding: pxToRem(10);
+        margin-bottom: pxToRem(15);
+        border: none;
+        border-radius: pxToRem(4);
+        min-width: pxToRem(250);
+    }
+    
+    .newsletter-actions {
+        display: flex;
+        align-items: center;
+        gap: pxToRem(15);
+        
+        .subscribe-btn {
+            background-color: $white;
+            color: #000;
+            border: none;
+            padding: pxToRem(10) pxToRem(20);
+            border-radius: pxToRem(4);
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .linkedin-link {
+            .linkedin-icon img {
+                width: pxToRem(24);
+                height: pxToRem(24);
+                object-fit: contain;
+            }
+        }
+    }
+}}}
+
+
+<!-- Desktop upper footer -->
+<div class="desktop-upper-section">
+    <div class="left-section">
+    <?php display_site_logo(); ?>
+    <div class="footer-lower-nav">
+        <nav aria-label="<?php echo esc_attr__('Footer menu', 'practice-theme'); ?>">
+            <?php
+            wp_nav_menu([
+                'theme_location' => 'secondary',
+                'container'      => false,
+                'menu_class'     => 'menu-lfooter-lower',
+                'depth'          => 1,
+            ]);
+            ?>
+        </nav>
+    </div>
+        <p class="credits-line">
+        Designed and developed by
+        <img src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/Moveo.png')); ?>" alt="Moveo" />
+    </p>
+    <p>*All space images were taken by Eytan Stibbe during Rakia AX1 Mission.</p>
+</div>
+<!-- Desktop bottom footer -->
+<div class="desktop-bottom-section">
+<div class="right-section">
+<h2 class="follow-news">FOLLOW OUR<br>NEWSLETTER</h2>
+<p class="subscribe">Subscribe to the ISF newsletter to receive the latest announcements, opportunities, event invitations and more.</p>
+       
+
+<input type="email" placeholder="Email" class="email-input"/>
+
+<div class="newsletter-actions">
+    <button class="subscribe-btn">Subscribe</button>
+    <a href="#" class="linkedin-link">
+        <span class="linkedin-icon">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/LinkedIn.svg" alt="LinkedIn" />
+        </span>
+    </a></div>
+</div>
+</div> */
