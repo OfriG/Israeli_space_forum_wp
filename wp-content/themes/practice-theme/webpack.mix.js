@@ -12,11 +12,11 @@ const fs = require('fs');
  |
  */
 
-mix.js('resources/js/app.js', 'dist/js')
-    .js('resources/js/header.js', 'dist/js')
-    .sass('resources/scss/_main-styles.scss', 'dist/css')
+mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('resources/scss/_navbar-components.scss', 'dist/css')
     .sass('resources/scss/_footer.scss', 'dist/css')
+    .sass('resources/scss/footer/_upper-footer.scss', 'dist/css/footer')
+    .sass('resources/scss/footer/_bottom-footer.scss', 'dist/css/footer')
     .sass('resources/scss/_colors.scss', 'dist/css')
     .sass('resources/scss/_variables.scss', 'dist/css')
 
