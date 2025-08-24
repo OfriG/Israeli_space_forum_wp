@@ -1,0 +1,76 @@
+// Import variables and colors
+@import '../variables';
+@import '../colors';
+@function pxToRem($px) {
+    @return ($px / 16) * 1rem;
+}
+// Mobile Newsletter
+.mobile-bottom-section {
+    display: block;
+    
+    @media (min-width: $mobile) {
+        display: none;
+    }}
+.menus{
+    display: flex;
+    gap: pxToRem(160);
+    margin-bottom: pxToRem(45.66);
+    .footer-lower-nav{
+        a{
+        color: $white;
+        text-align: center;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: "Space Grotesk";
+        font-size: pxToRem(12);
+        font-style: normal;
+        gap: pxToRem(8.5);
+        font-weight: 600;
+        line-height: pxToRem(18); /* 150% */}
+    }
+    .footer-terms{
+        color: #FFF;
+        text-align: center;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: "Space Grotesk";
+        font-size: pxToRem(12);
+        font-style: normal;
+        font-weight: 400;
+        gap: pxToRem(8.5);
+
+        line-height: pxToRem(18); /* 150% */
+    }
+}
+.footer-thanks{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: pxToRem(25);
+    margin-right: pxToRem(25);
+    margin-bottom: pxToRem(15);
+    p{
+        color: $white;
+        white-space: nowrap;
+
+font-family: "Space Grotesk";
+font-size: 10px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;        margin: 0;
+
+    }
+    .credits-line {
+
+        img {
+            vertical-align: middle; 
+            max-height: pxToRem(16); 
+        }}
+
+}
+.logos{
+    display: flex;
+    gap: pxToRem(9);
+    padding: pxToRem(12.007) pxToRem(28.937) pxToRem(17.764) pxToRem(28.937);
+justify-content: center;
+align-items: center;
+
+background: $beautyGreen;}
