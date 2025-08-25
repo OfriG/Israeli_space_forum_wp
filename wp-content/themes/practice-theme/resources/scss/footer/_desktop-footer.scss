@@ -1,7 +1,8 @@
 @import '../colors';
 @import '../variables';
+@import '../../../Functions/scssFunctions.scss';
 
-.desktop-upper-section.desktop-upper-section {
+.desktop-upper-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,7 +15,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-
         flex-shrink: 0;
         box-sizing: border-box;
         margin-bottom: pxToRem(2);
@@ -25,8 +25,7 @@
         }
 
         .footer-lower-nav {
-            margin-top: pxToRem(50);
-            margin-bottom: pxToRem(40);
+            margin: pxToRem(50) 0 pxToRem(40) 0;
 
 
             ul {
@@ -86,27 +85,16 @@
         }
     }
 
-    @media (max-width: 1250px) {
-        .right-section {
-            flex: 1;
-            min-width: 0;
-        }
-    }
+
 
     .right-section {
-
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         flex-shrink: 0;
 
-        box-sizing: border-box;
-        direction: ltr;
-
-
         h2 {
-
             color: $white;
             font-size: pxToRem(46);
             font-style: normal;
@@ -139,16 +127,12 @@
             max-width: pxToRem(350);
 
             .email-input {
-                display: flex;
-                ;
                 padding: pxToRem(12) pxToRem(15);
                 border-radius: pxToRem(2);
                 border: pxToRem(1) solid $white;
                 background: $white;
                 font-size: pxToRem(14);
                 outline: none;
-
-
             }
 
             .newsletter-actions {
@@ -169,8 +153,6 @@
                     font-weight: 500;
                     font-size: pxToRem(14);
                     transition: all 0.3s ease;
-
-
                 }
 
                 .linkedin-link {
@@ -197,7 +179,7 @@
     }
 }
 
-.logos-desktop {
+.desktop-lower-section {
     display: flex;
     gap: pxToRem(9);
     padding: pxToRem(38) pxToRem(152);
