@@ -17,8 +17,12 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('resources/scss/_footer.scss', 'dist/css')
     .sass('resources/scss/footer/_upper-footer.scss', 'dist/css/footer')
     .sass('resources/scss/footer/_bottom-footer.scss', 'dist/css/footer')
+    .sass('resources/scss/footer/_desktop-footer.scss', 'dist/css/footer')
+    .sass('resources/scss/footer/_newsletter.scss', 'dist/css/footer')
     .sass('resources/scss/_colors.scss', 'dist/css')
     .sass('resources/scss/_variables.scss', 'dist/css')
+    .js('resources/js/newsLetter.js', 'dist/js')
+
 
 
 

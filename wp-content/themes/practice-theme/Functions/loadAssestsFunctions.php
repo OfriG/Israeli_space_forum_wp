@@ -14,6 +14,7 @@ function theme_enqueue_assets()
     wp_enqueue_style('footer-styles', get_template_directory_uri() . '/dist/css/_footer.css', array(), '1.0.0');
     wp_enqueue_style('upper-footer-styles', get_template_directory_uri() . '/dist/css/footer/_upper-footer.css', array(), '1.0.0');
     wp_enqueue_style('bottom-footer-styles', get_template_directory_uri() . '/dist/css/footer/_bottom-footer.css', array(), '1.0.1');
+    wp_enqueue_style('newsletter-styles', get_template_directory_uri() . '/dist/css/footer/_newsletter.css', array(), '1.0.0');
 
     // JavaScript
     wp_enqueue_script('theme-js', get_template_directory_uri() . '/dist/js/app.js', array('jquery'), '1.0.0', true);
