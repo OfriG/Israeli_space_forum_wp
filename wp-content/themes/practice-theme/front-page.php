@@ -13,8 +13,7 @@ get_header(); ?>
         <p>הפורום הישראלי לחלל - מקדמים את עתיד dהחלל בישראל</p>
 
         <div class="hero-content">
-            <h2>IAC 2024</h2>
-            <p>ddd</p>
+
             <a href="/iac-2024" class="button primary">למידע נוסף</a>
         </div>
     </div>

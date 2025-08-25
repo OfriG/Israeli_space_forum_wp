@@ -1,7 +1,20 @@
 // Main styles
 @import 'navbar-components';
 @import 'footer';
+@import 'footer/desktop-footer';
+@import 'footer/newsletter';
+
+
 body {
-    font-family: "Space Grotesk", sans-serif;
-  }
-  
+  font-family: "Space Grotesk", sans-serif;
+
+}
+
+#main {
+  display: flex;
+
+}
+
+html {
+  box-sizing: border-box;
+}
