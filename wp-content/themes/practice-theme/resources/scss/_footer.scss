@@ -1,26 +1,180 @@
 @import 'variables';
+@import 'colors';
+@import '../../Functions/scssFunctions.scss';
+
 
 .footer {
-    background-size: cover;        
-    background-repeat: no-repeat;  
-    background-position: center;   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
 
     // Mobile footer - visible by default, hidden on desktop
     .mobile-footer {
         display: block;
-        
+
         @media (min-width: $mobile) {
             display: none;
         }
     }
-    
+
     // Desktop footer - hidden by default, visible on desktop
     .desktop-footer {
         display: none;
-        
+
         @media (min-width: $mobile) {
             display: block;
         }
     }
+}
+
+// Upper Footer Styles
+.mobile-bottom-section {
+    // Show only on mobile
+    display: block;
+
+    @media (min-width: $mobile) {
+        display: none; // Hide on desktop
+    }
+
+    .logo-powered {
+        display: flex;
+        align-items: center;
+        gap: pxToRem(80);
+
+
+
+
+        .powered-by {
+            display: flex;
+            align-items: center;
+
+            p {
+                white-space: nowrap;
+                color: $white;
+                font-size: pxToRem(12);
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                margin: 0;
+            }
+
+            img {
+                margin: pxToRem(25) pxToRem(25) pxToRem(26) pxToRem(5);
+
+            }
+        }
+    }
+
+
+    .line {
+        width: calc(100% - #{pxToRem(60)});
+        border-top: pxToRem(0.2) solid $white;
+        margin: pxToRem(26) pxToRem(25) pxToRem(13) pxToRem(25);
+        flex-shrink: 0;
+    }
+}
+
+// Bottom Footer Styles
+
+.menus {
+    display: flex;
+    gap: pxToRem(160);
+    margin-bottom: pxToRem(45.66);
+
+
+
+
+
+    .footer-lower-nav,
+    .footer-terms {
+        height: pxToRem(58);
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-lower-nav {
+        a {
+
+
+            color: $white;
+            text-align: center;
+            font-size: pxToRem(12);
+            font-style: normal;
+            gap: pxToRem(8.5);
+            font-weight: 600;
+
+
+        }
+
+        .menu-footer-lower {
+            li:last-child a {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    .footer-terms {
+        position: absolute;
+        right: pxToRem(27);
+
+        .menu-footer-lower {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+
+                a {
+                    color: $white;
+                    text-align: center;
+                    display: block;
+                    font-size: pxToRem(12);
+                    font-style: normal;
+                    font-weight: 400;
+                    gap: pxToRem(8.5);
+                    line-height: pxToRem(18)
+                }
+            }
+        }
+    }
+}
+
+.footer-thanks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 pxToRem(25) pxToRem(15) pxToRem(25);
+    color: $white;
+    font-size: pxToRem(10);
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    p {
+        margin: 0;
+    }
+
+    .credits-line {
+        img {
+            vertical-align: middle;
+            max-height: pxToRem(16);
+        }
+    }
+
+}
+
+.logos {
+    display: flex;
+    gap: pxToRem(9);
+    padding: pxToRem(12.007) pxToRem(28.937) pxToRem(17.764) pxToRem(28.937);
+    justify-content: center;
+    align-items: center;
+
+    background: $beautyGreen;
 }

@@ -30,11 +30,10 @@
         <h2 class="follow-news">
             <?php
             $title = get_field('newsletter_title', 17);
-
             if ($title) {
-                echo $title;
+                echo wp_kses_post($title);
             } else {
-                echo 'Follow our newsletter';
+                echo 'fsgvr';
             }
             ?>
         </h2>
@@ -75,7 +74,7 @@
 </div>
 </form>
 
-<div class="logos-desktop">
+<div class="desktop-lower-section">
     <p>Powered by</p>
     <img src="<?php echo esc_url(get_theme_file_uri('images/footer-icons/RAKIA.png')); ?>" />
     <div class="desktop-terms">
@@ -83,10 +82,8 @@
         wp_nav_menu([
             'theme_location' => 'footer_terms',
             'container' => false,
-            'menu_class' => 'desktop-terms-menu',
-            'fallback_cb' => function () {
-                echo '<p>Privacy Policy</p><p>Terms of use</p><p>Accessibility</p>';
-            }
+            'menu_class' => 'desktop-terms-menu'
+
         ]);
         ?>
     </div>

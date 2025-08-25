@@ -2,15 +2,15 @@
     <!-- Mobile Footer (hidden on desktop) -->
     <div class="mobile-footer">
         <?php
-            get_template_part('part-code/Footer/upFooter');
-            get_template_part('part-code/Footer/bottomFooter');
+        get_template_part('template-parts/footer/upFooter');
+        get_template_part('template-parts/footer/bottomFooter');
         ?>
     </div>
-    
+
     <!-- Desktop Footer (hidden on mobile) -->
     <div class="desktop-footer">
         <?php
-            get_template_part('part-code/footer/desktop');
+        get_template_part('template-parts/footer/desktopFooter');
         ?>
     </div>
 </footer>
