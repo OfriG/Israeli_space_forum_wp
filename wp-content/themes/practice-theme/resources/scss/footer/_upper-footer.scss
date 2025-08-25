@@ -1,125 +1,148 @@
 // Import variables and colors
 @import '../variables';
 @import '../colors';
+
 @function pxToRem($px) {
     @return ($px / 16) * 1rem;
 }
+
 .mobile-section {
     // Show only on mobile
     display: block;
-    
-    @media (min-width: $mobile) {
-        display: none;  // Hide on desktop
-    }
-.logo-powered {
-    display: flex;
-    align-items: center;
-    gap: pxToRem(160);
-    margin: pxToRem(19) pxToRem(25) pxToRem(26) pxToRem(25);
 
-    .powered-by {
+    @media (min-width: $mobile) {
+        display: none; // Hide on desktop
+    }
+
+    .logo-powered {
         display: flex;
-align-items: center;
-        p {
-            white-space: nowrap;
+        align-items: center;
+        gap: pxToRem(80);
+
+
+        //for smoll phones
+        @media (max-width: 379px) {
+            gap: pxToRem(18);
+            justify-content: flex-start;
+        }
+
+        .powered-by {
+            display: flex;
+            align-items: center;
+
+            @media (min-width: 391px) {
+                justify-content: space-between;
+                padding: 0 pxToRem(25);
+            }
+
+
+
+            p {
+                white-space: nowrap;
+                color: $white;
+                font-size: pxToRem(12);
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                margin: 0;
+            }
+
+            img {
+                margin: pxToRem(25) pxToRem(25) pxToRem(26) pxToRem(5);
+
+            }
+        }
+    }
+
+    .newsletter-container {
+        margin-top: pxToRem(26.14);
+        margin-bottom: pxToRem(48.66);
+        margin-left: pxToRem(25);
+        margin-right: pxToRem(25);
+        display: flex;
+        flex-direction: column;
+
+        .follow-news {
             color: $white;
+            font-weight: 500;
+            font-size: pxToRem(24);
+            font-style: normal;
+            line-height: normal;
+            margin-bottom: pxToRem(0.01);
+            margin-top: pxToRem(0.01);
+        }
+
+        .subscribe {
+
+            color: $white;
+            flex-shrink: 0;
             font-size: pxToRem(12);
             font-style: normal;
-            font-weight: 500;
+            font-weight: 300;
             line-height: normal;
-            margin: 0;
+        }
+
+        .email-input {
+            border-radius: pxToRem(4);
+            border: pxToRem(0.5) solid $black;
+            background: $white;
+
+            flex-shrink: 0;
+            color: $smokedWhite;
+            padding-top: pxToRem(11);
+            padding-bottom: pxToRem(11);
+            padding-left: pxToRem(10.42);
+            padding-right: pxToRem(24);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(18);
+
+
+
+        }
+
+        .subscribe-btn {
+            display: inline-flex;
+            padding: pxToRem(6.03) pxToRem(20.1);
+            justify-content: center;
+            align-items: center;
+            gap: pxToRem(5.025);
+            border-radius: pxToRem(1.005);
+            border: pxToRem(1.005) solid $white;
+            background: transparent;
+            color: $white;
+            font-size: pxToRem(12.06);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .newsletter-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: pxToRem(11);
+            align-items: center;
+            gap: pxToRem(10);
+            width: 100%;
+            max-width: 100%;
         }
 
         img {
-            margin: pxToRem(25) pxToRem(25) pxToRem(26) pxToRem(5);
-      
+            width: pxToRem(23.769);
+            height: pxToRem(23.769);
         }
-    }
-}
 
-.newsletter-container{
-    margin-top: pxToRem(26.14);
-    margin-bottom: pxToRem(48.66);
-    margin-left: pxToRem(25);
-    margin-right: pxToRem(25);
-display: flex;
-flex-direction: column;
-
-    .follow-news{
-        color: $white;
-        font-weight:500;
-        font-size: pxToRem(24);
-font-style: normal;
-line-height: normal;
-margin-bottom: pxToRem(0.01);
-margin-top: pxToRem(0.01);
     }
-    .subscribe{
-        color: $white;
+
+    .line {
+        width: calc(100% - #{pxToRem(60)});
+        border-top: pxToRem(0.2) solid $white;
+        margin-left: pxToRem(25);
+        margin-right: pxToRem(25);
+        margin-top: pxToRem(26);
+        margin-bottom: pxToRem(13);
         flex-shrink: 0;
-        font-size: pxToRem(12);
-font-style: normal;
-font-weight: 300;
-line-height: normal;
     }
-    .email-input{
-        border-radius: 2px;
-border: 0.5px solid $black;
-background:$white;
-// width: pxToRem(321);
-// height: pxToRem(40);
-flex-shrink: 0;
-color: #DFDFDF;
-padding-top: pxToRem(11);
-padding-bottom: pxToRem(11);
-padding-left: pxToRem(10.42);
-padding-right: pxToRem(24);
-font-feature-settings: 'liga' off, 'clig' off;
-font-size: pxToRem(15);
-font-style: normal;
-font-weight: 400;
-line-height: pxToRem(18); /* 120% */
-
-
-
-    }
- 
-    .subscribe-btn{
-        display: inline-flex;
-padding: 6.03px 20.1px;
-justify-content: center;
-align-items: center;
-gap: 5.025px;
-border-radius: 1.005px;
-border: 1.005px solid $white;
-background: transparent;
-color: $white;
-font-size: pxToRem(12.06);
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-    }
-
-    .newsletter-actions {
-        display: flex;
-        justify-content: space-between;
-        margin-top: pxToRem(11);
-        align-items: center;
-        gap: pxToRem(196); 
-    }
-    img{
-        width: pxToRem(23.769);
-height: pxToRem(23.769);
-    }
-    
 }
-.line {
-width: calc(100% - #{pxToRem(60)});
-    border-top: pxToRem(0.2) solid $white;
-    margin-left: pxToRem(25);
-    margin-right: pxToRem(25);
-    margin-top: pxToRem(26);
-    margin-bottom: pxToRem(13);
-    flex-shrink: 0;
-}}
-

@@ -1,8 +1,9 @@
 {
-    "/dist/css/_variables.css": "/dist/css/_variables.css?id=68b329da9893e34099c7d8ad5cb9c940",
     "/dist/css/_colors.css": "/dist/css/_colors.css?id=68b329da9893e34099c7d8ad5cb9c940",
-    "/dist/css/footer/_bottom-footer.css": "/dist/css/footer/_bottom-footer.css?id=2ef3ac46bfd98f5e9c27e09db0691c43",
-    "/dist/css/footer/_upper-footer.css": "/dist/css/footer/_upper-footer.css?id=a01b929b7e92f5bf8ca2f8ec0761190f",
+    "/dist/css/footer/_bottom-footer.css": "/dist/css/footer/_bottom-footer.css?id=d39a359e2390ef9d14c32ba935d3481f",
+    "/dist/css/footer/_upper-footer.css": "/dist/css/footer/_upper-footer.css?id=5a45f7efcc34d105ca4ff4d43b6fa9ae",
+    "/dist/css/_footer.css": "/dist/css/_footer.css?id=3a526fa7458c1689cd6db0fcaebc72d0",
     "/dist/css/_navbar-components.css": "/dist/css/_navbar-components.css?id=ff045cbe21f64525584f874fb9db58dc",
-    "/dist/css/_main-styles.css": "/dist/css/_main-styles.css?id=5187c156991a8cd05c21215ebdc1c3be"
+    "/dist/css/_main-styles.css": "/dist/css/_main-styles.css?id=253a76aa29b43b55ee1550aa87a7eef6",
+    "/dist/css/_variables.css": "/dist/css/_variables.css?id=68b329da9893e34099c7d8ad5cb9c940"
 }

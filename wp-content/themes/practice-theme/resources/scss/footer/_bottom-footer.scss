@@ -1,34 +1,70 @@
 // Import variables and colors
 @import '../variables';
 @import '../colors';
+
 @function pxToRem($px) {
     @return ($px / 16) * 1rem;
 }
+
 // Mobile Newsletter
 .mobile-bottom-section {
     display: block;
-    
+
     @media (min-width: $mobile) {
         display: none;
-    }}
-.menus{
+    }
+}
+
+.menus {
     display: flex;
     gap: pxToRem(160);
     margin-bottom: pxToRem(45.66);
-    .footer-lower-nav{
-        a{
-        color: $white;
-        text-align: center;
-        font-feature-settings: 'liga' off, 'clig' off;
-        font-family: "Space Grotesk";
-        font-size: pxToRem(12);
-        font-style: normal;
-        gap: pxToRem(8.5);
-        font-weight: 600;
-        line-height: pxToRem(18); /* 150% */}
+
+    @media (min-width: 391px) {
+        justify-content: space-between;
+        padding: 0 pxToRem(15);
     }
-    .footer-terms{
-        color: #FFF;
+
+
+    @media (max-width: 389px) {
+        gap: pxToRem(80);
+    }
+
+    .footer-lower-nav,
+    .footer-terms {
+        height: pxToRem(58);
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-lower-nav {
+        a {
+
+
+            color: $white;
+            text-align: center;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-family: "Space Grotesk";
+            font-size: pxToRem(12);
+            font-style: normal;
+            gap: pxToRem(8.5);
+            font-weight: 600;
+
+            // line-height: pxToRem(18);
+            /* 150% */
+
+        }
+
+        .menu-footer-lower {
+            li:last-child a {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    .footer-terms {
+        color: $white;
         text-align: center;
         font-feature-settings: 'liga' off, 'clig' off;
         font-family: "Space Grotesk";
@@ -36,41 +72,74 @@
         font-style: normal;
         font-weight: 400;
         gap: pxToRem(8.5);
+        line-height: pxToRem(18);
 
-        line-height: pxToRem(18); /* 150% */
+        //because it become menu- additional style
+
+        .menu-footer-lower {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                a {
+                    display: block;
+                    color: inherit;
+                    text-decoration: none;
+                    font-size: inherit;
+                    font-family: inherit;
+                    font-weight: inherit;
+                    line-height: inherit;
+                    text-align: inherit;
+                    font-feature-settings: inherit;
+                    font-style: inherit;
+                }
+            }
+        }
     }
 }
-.footer-thanks{
+
+.footer-thanks {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: pxToRem(25);
     margin-right: pxToRem(25);
     margin-bottom: pxToRem(15);
-    p{
+
+    p {
         color: $white;
         white-space: nowrap;
 
-font-family: "Space Grotesk";
-font-size: 10px;
-font-style: normal;
-font-weight: 300;
-line-height: normal;        margin: 0;
+        font-family: "Space Grotesk";
+        font-size: pxToRem(10);
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin: 0;
 
     }
+
     .credits-line {
 
         img {
-            vertical-align: middle; 
-            max-height: pxToRem(16); 
-        }}
+            vertical-align: middle;
+            max-height: pxToRem(16);
+        }
+    }
 
 }
-.logos{
+
+.logos {
     display: flex;
     gap: pxToRem(9);
     padding: pxToRem(12.007) pxToRem(28.937) pxToRem(17.764) pxToRem(28.937);
-justify-content: center;
-align-items: center;
+    justify-content: center;
+    align-items: center;
 
-background: $beautyGreen;}
+    background: $beautyGreen;
+}
