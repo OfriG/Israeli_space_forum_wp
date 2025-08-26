@@ -2,11 +2,13 @@
 $white: #FFF;
 $black: #000;
 $gray: #666666;
-
+$lightGray: #F5F5F5;
+$smokedWhite: #DFDFDF;
 // Brand Colors
 $gradient-green: #64E275;
 $gradient-blue: #11B6BC;
 $gradient-dark-blue: #1776B1;
 
 // Gradients
+$beautyGreen: linear-gradient(93deg, #64E275 -19.22%, #11B6BC 48.12%, #1776B1 115.47%);
 $cta-gradient: linear-gradient(95deg, $gradient-green -30.35%, $gradient-blue 27.45%, $gradient-dark-blue 146.5%);
