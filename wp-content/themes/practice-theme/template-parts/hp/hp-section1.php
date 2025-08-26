@@ -1,5 +1,4 @@
-//partcode 1
-<div class="shape-future-section">
+<div class="section1" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/footerMobileBackground.png');">
     <div class="shape-future-content">
         <h1>shaping the future of space.</h1>
         <h1>together</h1>
@@ -9,20 +8,3 @@
         <div class="joinud-btn">JOIN US</div>
     </div>
 </div>
-
-//partcode 2
-<div class="number-section">
-    <div class=item1>
-        <h1>63M$</h1>
-        <p>
-            Raised in 2024 by Israeli space-related startups
-        </p>
-    </div>
-    <div class=item2>
-        <h1>60</h1>
-        <p>
-            space companies and startups
-        </p>
-
-
-    </div>

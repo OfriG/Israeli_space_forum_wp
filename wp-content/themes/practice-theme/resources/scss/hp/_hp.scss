@@ -1,0 +1,67 @@
+@import '../colors';
+@import '../variables';
+@import '../../../Functions/scssFunctions.scss';
+
+.section1 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex: 1 1 100%;
+    // white-space: nowrap;
+
+    .shape-future-content {
+        flex: 1 1 325vw;
+        display: flex;
+        flex-direction: column;
+        margin: pxToRem(86.68) pxToRem(21.86) pxToRem(136.68) pxToRem(28.14);
+
+        h1 {
+            text-align: left;
+            margin: pxToRem(0) pxToRem(0) pxToRem(0) pxToRem(0);
+            font-family: "Wallnutt Corps";
+            font-size: pxToRem(50);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(49);
+
+            background: var(--button, linear-gradient(93deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            &::first-line {
+                color: $white;
+                -webkit-text-fill-color: $white;
+            }
+        }
+
+        p {
+            margin: pxToRem(16) pxToRem(27.59) pxToRem(24) pxToRem(0);
+            color: var(--Main_2, $white);
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(22);
+        }
+
+        .joinud-btn {
+            display: flex;
+            box-sizing: border-box;
+            padding: pxToRem(8.824) pxToRem(29.412);
+            justify-content: center;
+            align-items: center;
+            gap: pxToRem(7.353);
+            border-radius: pxToRem(1.471);
+            border: pxToRem(1.471) solid var(--button, $gradient-green);
+            color: $white;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-right: pxToRem(209.18);
+        }
+    }
+
+}
