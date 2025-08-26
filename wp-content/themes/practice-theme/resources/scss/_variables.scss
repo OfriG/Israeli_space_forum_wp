@@ -3,25 +3,26 @@
 // Typography
 $font-family: "Space Grotesk";
 
-// Dimensions
-$navbar-height-desktop: 124px;
-$navbar-height-mobile: 72px;
+// Dimensions (rem units)
+$navbar-height-mobile: 4.5rem; // 72px
 $navbar-z-index: 1000;
 
-// Screen Dimensions
-$desktop-width: 1920px;
-$desktop-height: 1080px;
-$mobile-width: 375px;
-$mobile-height: 572px;
+// Screen Dimensions (rem units)
 
-// Spacing
-$gap-large: 79px;
-$gap-medium: 30px;
-$gap-small: 20px;
 
-// Breakpoints
+
+// Spacing (rem units)
+$gap-large: 4.9375rem; // 79px
+$gap-medium: 1.875rem; // 30px
+$gap-small: 1.25rem; // 20px
+$gap-extra-small: 0.9375rem; // 15px
+$gap-tiny: 0.625rem; // 10px
+
+// Footer specific spacing
+$footer-padding-mobile: 1.25rem; // 20px
+
+$footer-margin-top-mobile: 3.125rem; // 50px
+$footer-max-width: 75rem; // 1200px
+
+// Breakpoints (still in px as required for media queries)
 $mobile: 768px;
-$mobile-small: 375px;
-$mobile-medium: 385px;
-$mobile-extra-small: 320px;
-$desktop: 1920px;
