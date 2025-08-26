@@ -5,9 +5,8 @@
 .desktop-upper-section {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 100%;
+    justify-content: space-around;
+
     padding: pxToRem(70) pxToRem(104) pxToRem(10) pxToRem(104);
     box-sizing: border-box;
 
@@ -20,7 +19,6 @@
         margin-bottom: pxToRem(2);
 
         .site-logo-desktop {
-            // background-color: white;
             margin-left: pxToRem(-30);
         }
 
@@ -62,6 +60,7 @@
         }
 
         p {
+
             margin: pxToRem(5) 0;
             color: $white;
             font-size: pxToRem(15.009);
@@ -90,11 +89,13 @@
     .right-section {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         justify-content: center;
-        flex-shrink: 0;
+        white-space: nowrap;
+        ;
 
         h2 {
+            white-space: nowrap;
+            ;
             color: $white;
             font-size: pxToRem(46);
             font-style: normal;
@@ -139,7 +140,8 @@
                 display: flex;
                 align-items: center;
                 gap: pxToRem(15);
-                width: pxToRem(650);
+                width: 100%;
+                flex-wrap: wrap;
 
                 .subscribe-btn {
 
@@ -173,6 +175,123 @@
                             object-fit: contain;
                         }
                     }
+                }
+            }
+        }
+
+        .desktop-newsletter-wrapper {
+
+
+
+            .follow-news {
+                h2 {
+                    white-space: nowrap;
+                }
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: max-content;
+                color: $white;
+                font-size: pxToRem(46);
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.2;
+                margin-bottom: pxToRem(20);
+                text-align: left;
+                padding: 0;
+                margin: 0;
+            }
+
+            .subscribe {
+                padding: 0;
+                margin: 0;
+                color: $white;
+                font-size: pxToRem(15);
+                font-weight: 300;
+                text-align: left;
+                max-width: pxToRem(350);
+                margin-bottom: pxToRem(30);
+                line-height: 1.4;
+            }
+
+            .newsletter-form {
+                display: flex;
+                // padding: pxToRem(0) pxToRem(50) pxToRem(0) pxToRem(50);
+                flex-direction: column;
+
+
+
+                .email-input {
+                    padding: pxToRem(13)pxToRem(365) pxToRem(17.91)pxToRem(12.014);
+                    align-items: center;
+                    padding: pxToRem(12) pxToRem(15);
+                    border-radius: pxToRem(2);
+                    border: pxToRem(1) solid $white;
+                    background: $white;
+                    font-size: pxToRem(14);
+                    outline: none;
+                    box-sizing: border-box;
+
+                    &::placeholder {
+                        color: $black;
+                    }
+                }
+
+                .newsletter-actions {
+                    display: contents;
+
+                    .subscribe-btn {
+                        background-color: transparent;
+                        color: $white;
+                        border-radius: pxToRem(2);
+                        border: pxToRem(2) solid $white;
+                        padding: pxToRem(12) pxToRem(25);
+                        cursor: pointer;
+                        font-weight: 500;
+                        font-size: pxToRem(14);
+                        transition: all 0.3s ease;
+                    }
+
+                    .linkedin-link {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: pxToRem(40);
+                        height: pxToRem(40);
+                        border-radius: pxToRem(4);
+                        transition: background-color 0.3s ease;
+                        align-self: flex-start;
+
+                        .linkedin-icon {
+                            img {
+                                width: pxToRem(24);
+                                height: pxToRem(24);
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+
+                // Override the template structure with CSS grid
+                display: grid;
+                grid-template-areas: "email subscribe"
+                "linkedin .";
+                grid-template-columns: pxToRem(200) auto;
+                gap: pxToRem(15) pxToRem(15);
+                align-items: start;
+
+                .email-input {
+                    grid-area: email;
+                }
+
+                .newsletter-actions .subscribe-btn {
+                    grid-area: subscribe;
+                }
+
+                .newsletter-actions .linkedin-link {
+                    grid-area: linkedin;
+                    margin-left: pxToRem(-8);
                 }
             }
         }
