@@ -16,24 +16,23 @@
         flex-direction: column;
         margin: pxToRem(86.68) pxToRem(21.86) pxToRem(136.68) pxToRem(28.14);
 
+
         h1 {
+            color: $white;
             text-align: left;
-            margin: pxToRem(0) pxToRem(0) pxToRem(0) pxToRem(0);
             font-family: "Wallnutt Corps";
             font-size: pxToRem(50);
             font-style: normal;
             font-weight: 400;
             line-height: pxToRem(49);
 
-            background: var(--button, linear-gradient(93deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%));
+        }
+
+        h1 .gradient-text {
+            background: $beautyGreen;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-
-            &::first-line {
-                color: $white;
-                -webkit-text-fill-color: $white;
-            }
         }
 
         p {
@@ -60,8 +59,100 @@
             font-weight: 700;
             line-height: normal;
             text-transform: uppercase;
-            margin-right: pxToRem(209.18);
+            margin-right: pxToRem(200.18);
         }
     }
 
+}
+
+//section2
+.section2 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    background: $backgroundGreen;
+    flex-direction: column;
+
+    .items {
+        display: inline-flex;
+        padding: pxToRem(93) pxToRem(91.861) pxToRem(81.629) pxToRem(92.139);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            color: $white;
+            font-size: pxToRem(55);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: $white;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+        }
+
+        .item4 {
+            color: $white;
+            text-align: center;
+            font-size: pxToRem(12);
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            margin: pxToRem(74.37) pxToRem(0) pxToRem(81.63) pxToRem(0);
+
+
+        }
+
+        img {
+            stroke-width: pxToRem(2);
+            stroke: $white;
+            width: pxToRem(61.632);
+            display: block;
+            margin: pxToRem(29) pxToRem(63) pxToRem(29) pxToRem(63);
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+//section3
+.section3 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    h1 {
+        color: var(--Main_2, #FEFEFE);
+        font-family: "Wallnutt Corps";
+        font-size: pxToRem(45);
+        font-style: normal;
+        font-weight: 400;
+        line-height: pxToRem(49);
+
+    }
+}
+
+//section 4
+.section4 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
