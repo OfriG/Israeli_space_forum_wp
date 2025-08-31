@@ -5,7 +5,7 @@
             <p>
                 Raised in 2024 by Israeli space-related startups
             </p>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/hp/icons/Line 15.svg" alt="Line 15" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/home-page/icons/Line 15.svg" alt="Line 15" />
 
         </div>
         <div class=item2>
@@ -13,7 +13,7 @@
             <p>
                 space companies and startups
             </p>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/hp/icons/Line 15.svg" alt="Line 15" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/home-page/icons/Line 15.svg" alt="Line 15" />
 
         </div>
         <div class=item3>
