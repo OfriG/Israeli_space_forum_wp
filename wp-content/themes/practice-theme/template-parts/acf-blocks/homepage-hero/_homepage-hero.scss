@@ -1,5 +1,5 @@
-@import '../colors';
-@import '../variables';
+@import '../../../resources/scss/colors';
+@import '../../../resources/scss/variables';
 @import '../../../Functions/scssFunctions.scss';
 
 .hero {
@@ -26,13 +26,12 @@
             font-weight: 400;
             line-height: pxToRem(49);
 
-        }
-
-        h1 .gradient-text {
-            background: $beautyGreen;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            .gradient-text {
+                background: $beautyGreen;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
         }
 
         p {
@@ -93,11 +92,15 @@
                 white-space: normal;
             }
 
-            h1 .gradient-text {
-                background: $beautyGreen;
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+            h1 {
+                .gradient-text {
+                    background: $beautyGreen;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    color: transparent;
+                    display: inline-block;
+                }
             }
 
             p {
