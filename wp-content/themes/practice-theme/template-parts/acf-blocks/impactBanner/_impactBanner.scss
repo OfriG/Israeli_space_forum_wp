@@ -4,10 +4,11 @@
 @import '../../../Functions/scssFunctions.scss';
 
 .impactBanner {
+   
+    display: flex;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    display: flex;
     background: $backgroundGreen;
     flex-direction: column;
 
@@ -39,7 +40,6 @@
             font-weight: 400;
             line-height: normal;
             text-align: center;
-          
         }
 
         .item4 {
@@ -80,97 +80,89 @@
 
 
 
-
-
-
-
-@media (min-width: calc(#{$mobile} + 1px)) {
-    .impactBanner {
-        display: flex;
-        background: $backgroundGreen;
-        
-        // Show desktop-only elements and hide mobile-only elements
-        .desktop-only {
-            display: block;
-        }
-        
-        .mobile-only {
-            display: none;
-        }
-        
-        .items {
-            gap: pxToRem(44.39);
-   
-            flex-direction: row;
-            margin: pxToRem(29) pxToRem(178) pxToRem(75) pxToRem(208);
-            align-items: flex-start;
-            display: flex;
-            .item1, .item2, .item3 {
-                display: flex;
-                flex-direction: column;
+    
+    // Desktop styles
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        .impactBanner {
+            padding: pxToRem(40) pxToRem(20);
+            
+            .items {
+                flex-direction: row;
                 gap: pxToRem(44.39);
-
-                .headline-content {
-                    gap: pxToRem(44.39);
-                    display: flex;
-                    flex-direction: row;
-                    align-items: flex-start;
+                align-items: flex-start;
+                text-align: left;
+                
+                // Show desktop-only elements and hide mobile-only elements
+                .desktop-only {
+                    display: block;
                 }
                 
-                .text-content {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: flex-start;
-                    gap: pxToRem(35);
+                .mobile-only {
+                    display: none;
                 }
-            }
-            
-            .item1 {
-                .item4.desktop-only {
-                    margin: pxToRem(20) 0 pxToRem(20) 0;
+                
+                .item1, .item2, .item3 {
+                    flex: 1;
+                    min-width: 0;
+                    align-items: flex-start;
+                    gap: pxToRem(44.39);
+    
+                    .headline-content {
+                        gap: pxToRem(44.39);
+                        flex-direction: row;
+                        align-items: flex-start;
+                    }
                     
-                    p {
-                        color: $white;
-                        font-size: pxToRem(18);
-                        font-style: normal;
-                        font-weight: 300;
-                        line-height: normal;
-                        text-align: left;
-                        margin: 0;
+                    .text-content {
+                        flex-direction: row;
+                        align-items: flex-start;
+                        flex-wrap: wrap;
+                    }
+                    h1{  
+                        padding-right: pxToRem(40);
                     }
                 }
-            }
-            
-            h1 {
-                color: $white;
-                font-size: pxToRem(88);
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-            }
-            
-            p {   
-                text-align: left; 
-                color: $white;
-                font-size: pxToRem(24);
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-               
-            }
-            
-            .mobile-line {
-                display: none;
-            }
-            
-            .desktop-line {
-                display: block;
-                transform: rotate(90deg);
-                width: pxToRem(61.632);
-                height: pxToRem(3);
-                margin: 0 pxToRem(20);
-                align-self: center;
+                
+                .item1 {
+                    .item4.desktop-only {
+                        
+                        p {
+                            color: $white;
+                            font-size: pxToRem(18);
+                            font-style: normal;
+                            font-weight: 300;
+                            line-height: normal;
+                            text-align: left;
+                            margin: 0;
+                        }
+                    }
+                }
+                
+                h1 {
+                    font-size: pxToRem(88);
+                    white-space: nowrap;
+                    text-align: left;
+                }
+                
+                p {   
+                    text-align: left; 
+                    font-size: pxToRem(18);
+                    flex: 1;
+                }
+                
+                .mobile-line {
+                    display: none;
+                }
+                
+                .desktop-line {
+                    display: block;
+                    transform: rotate(90deg);
+                    width: pxToRem(61.632);
+                    height: pxToRem(3);
+                    margin: 0 pxToRem(20);
+                    align-self: center;
+                    flex-shrink: 0; // Prevent the line from shrinking
+                }
             }
         }
     }
-}
