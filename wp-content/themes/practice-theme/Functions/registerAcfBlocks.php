@@ -25,8 +25,8 @@ function practice_theme_register_acf_blocks()
     'icon' => 'dashicons-welcome-learn-more',
         'keywords' => array('impact', 'banner'),
         'mode' => 'preview',
-        'render_template' => get_template_directory() . '/template-parts/acf-blocks/impactBanner/impactBanner.php',
-        'enqueue_style' => get_template_directory_uri() . '/dist/css/_impactBanner.css',
+        'render_template' => get_template_directory() . '/acf-blocks/impactBanner/impactBanner.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/impactBanner.css',
 
        
     ));

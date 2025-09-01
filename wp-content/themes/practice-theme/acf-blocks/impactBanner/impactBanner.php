@@ -22,16 +22,18 @@ $description_four  = get_field('description_four');
                     <p>
                         <?php if ($description_one) echo esc_html($description_one); ?>
                     </p>
-                    <img class="desktop-line" src="<?php echo get_template_directory_uri(); ?>/images/home-page/icons/Line 15.svg" alt="Line 15" />
 
                 </div>
+
             </div>
+            <img class="desktop-line" src="<?php echo get_template_directory_uri(); ?>/images/home-page/icons/Line 15.svg" alt="Line 15" />
+
+            <img class="mobile-line" src="<?php echo get_template_directory_uri(); ?>/images/home-page/icons/Line 15.svg" alt="Line 15" />
             <div class="item4 desktop-only">
                 <p><?php if ($description_four) echo esc_html($description_four); ?></p>
             </div>
-            <img class="mobile-line" src="<?php echo get_template_directory_uri(); ?>/images/home-page/icons/Line 15.svg" alt="Line 15" />
-
         </div>
+
         <div class="item2">
             <div class="headline-content">
                 <div class="text-content">

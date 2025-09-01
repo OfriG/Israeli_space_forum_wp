@@ -1,7 +1,7 @@
 
-@import '../../../resources/scss/colors';
-@import '../../../resources/scss/variables';
-@import '../../../Functions/scssFunctions.scss';
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
 
 .impactBanner {
    
@@ -85,7 +85,8 @@
     @media (min-width: calc(#{$mobile} + 1px)) {
         .impactBanner {
             padding: pxToRem(40) pxToRem(20);
-            
+            width: 100vw;
+            height: 228px;
             .items {
                 flex-direction: row;
                 gap: pxToRem(44.39);
