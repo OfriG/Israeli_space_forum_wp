@@ -16,6 +16,7 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('resources/scss/_navbar-components.scss', 'dist/css')
     .sass('resources/scss/_footer.scss', 'dist/css')
     .sass('template-parts/acf-blocks/homepage-hero/_homepage-hero.scss', 'dist/css')
+    .sass('template-parts/acf-blocks/impactBanner/_impactBanner.scss', 'dist/css')
 
 
     .sass('resources/scss/footer/_desktop-footer.scss', 'dist/css/footer')

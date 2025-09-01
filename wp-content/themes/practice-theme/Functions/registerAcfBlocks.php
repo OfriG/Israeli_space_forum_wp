@@ -16,6 +16,20 @@ function practice_theme_register_acf_blocks()
         'enqueue_style' => get_template_directory_uri() . '/dist/css/_homepage-hero.css',
 
     ));
+    acf_register_block_type(array(
+        'name' => 'impactBanner',
+        'title' => 'Impact Banner',
+
+        'description' => ('A custom impact banner block with information about the impact of the startup.'),
+        'category' => 'theme',
+    'icon' => 'dashicons-welcome-learn-more',
+        'keywords' => array('impact', 'banner'),
+        'mode' => 'preview',
+        'render_template' => get_template_directory() . '/template-parts/acf-blocks/impactBanner/impactBanner.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/_impactBanner.css',
+
+       
+    ));
 
 }
 

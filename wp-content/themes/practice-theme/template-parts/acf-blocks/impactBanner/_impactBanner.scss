@@ -1,0 +1,176 @@
+
+@import '../../../resources/scss/colors';
+@import '../../../resources/scss/variables';
+@import '../../../Functions/scssFunctions.scss';
+
+.impactBanner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    background: $backgroundGreen;
+    flex-direction: column;
+
+    // Hide desktop-only elements on mobile
+    .desktop-only {
+        display: none;
+    }
+
+    .items {
+        display: inline-flex;
+        padding: pxToRem(93) pxToRem(91.861) pxToRem(81.629) pxToRem(92.139);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            color: $white;
+            font-size: pxToRem(55);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: $white;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+          
+        }
+
+        .item4 {
+            color: $white;
+            text-align: center;
+            font-size: pxToRem(12);
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            margin: pxToRem(74.37) pxToRem(0) pxToRem(81.63) pxToRem(0);
+
+            p {
+                color: $white;
+                font-size: pxToRem(12);
+                font-weight: 300;
+                margin: 0;
+            }
+        }
+
+        .mobile-line {
+            stroke-width: pxToRem(2);
+            stroke: $white;
+            width: pxToRem(61.632);
+            display: block;
+            margin: pxToRem(29) pxToRem(63) pxToRem(29) pxToRem(63);
+        }
+        
+        .desktop-line {
+            display: none;
+        }
+        
+        .text-content {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+
+
+
+
+
+
+@media (min-width: calc(#{$mobile} + 1px)) {
+    .impactBanner {
+        display: flex;
+        background: $backgroundGreen;
+        
+        // Show desktop-only elements and hide mobile-only elements
+        .desktop-only {
+            display: block;
+        }
+        
+        .mobile-only {
+            display: none;
+        }
+        
+        .items {
+            gap: pxToRem(44.39);
+   
+            flex-direction: row;
+            margin: pxToRem(29) pxToRem(178) pxToRem(75) pxToRem(208);
+            align-items: flex-start;
+            display: flex;
+            .item1, .item2, .item3 {
+                display: flex;
+                flex-direction: column;
+                gap: pxToRem(44.39);
+
+                .headline-content {
+                    gap: pxToRem(44.39);
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                }
+                
+                .text-content {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    gap: pxToRem(35);
+                }
+            }
+            
+            .item1 {
+                .item4.desktop-only {
+                    margin: pxToRem(20) 0 pxToRem(20) 0;
+                    
+                    p {
+                        color: $white;
+                        font-size: pxToRem(18);
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: normal;
+                        text-align: left;
+                        margin: 0;
+                    }
+                }
+            }
+            
+            h1 {
+                color: $white;
+                font-size: pxToRem(88);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            
+            p {   
+                text-align: left; 
+                color: $white;
+                font-size: pxToRem(24);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+               
+            }
+            
+            .mobile-line {
+                display: none;
+            }
+            
+            .desktop-line {
+                display: block;
+                transform: rotate(90deg);
+                width: pxToRem(61.632);
+                height: pxToRem(3);
+                margin: 0 pxToRem(20);
+                align-self: center;
+            }
+        }
+    }
+}
