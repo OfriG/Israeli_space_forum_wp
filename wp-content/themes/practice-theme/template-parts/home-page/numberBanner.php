@@ -1,28 +1,43 @@
+<?php
+$id = 'numberBanner-' . $block['id'];
+if (!empty($block['anchor'])) {
+    $id = $block['anchor'];
+}
+
+$headline_one = get_field('headline_one');
+$headline_two = get_field('headline_two');
+$headline_three = get_field('headline_three');
+$description_one  = get_field('description_one');
+$description_two  = get_field('description_two');
+$description_three  = get_field('description_three');
+$description_four  = get_field('description_four');
+
+
+?>
 <div class="section2">
     <div class="items">
         <div class=item1>
-            <h1>63M$</h1>
+            <h1><?php if ($headline_one) echo esc_html($headline_one); ?></h1>
             <p>
-                Raised in 2024 by Israeli space-related startups
+                <?php if ($description_one) echo esc_html($description_one); ?>
             </p>
             <img src="<?php echo get_template_directory_uri(); ?>/images/home-page/icons/Line 15.svg" alt="Line 15" />
 
         </div>
         <div class=item2>
-            <h1>60</h1>
+            <h1><?php if ($headline_two) echo esc_html($headline_two); ?></h1>
             <p>
-                space companies and startups
-            </p>
+                <?php if ($description_two) echo esc_html($description_two); ?> </p>
             <img src="<?php echo get_template_directory_uri(); ?>/images/home-page/icons/Line 15.svg" alt="Line 15" />
 
         </div>
         <div class=item3>
-            <h1>8th</h1>
-            <p>
-                nation to send a satellite into orbit </p>
+            <h1> <?php if ($headline_three) echo esc_html($headline_three); ?></h1>
+            <p><?php if ($description_three) echo esc_html($description_three); ?>
+            </p>
         </div>
         <div class="item4">
-            <p class="item4"> * Data provided by Startup Nation Central</p>
+            <p class="item4"><?php if ($description_four) echo esc_html($description_four); ?></p>
         </div>
     </div>
 </div>
