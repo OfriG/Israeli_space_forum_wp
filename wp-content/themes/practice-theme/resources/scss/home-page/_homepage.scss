@@ -8,7 +8,7 @@
     background-position: center;
     display: flex;
     flex: 1 1 100%;
-    // white-space: nowrap;
+
 
     .shape-future-content {
         flex: 1 1 325vw;
@@ -52,7 +52,7 @@
             align-items: center;
             gap: pxToRem(7.353);
             border-radius: pxToRem(1.471);
-            border: pxToRem(1.471) solid var(--button, $gradient-green);
+            border: pxToRem(1.471) solid $gradient-green;
             color: $white;
             font-size: pxToRem(15);
             font-style: normal;
