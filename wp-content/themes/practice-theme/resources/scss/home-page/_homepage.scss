@@ -73,11 +73,13 @@
         background-repeat: no-repeat;
         background-position: center;
         display: flex;
+
         .shape-future-content {
             display: flex;
             flex: 1 1 100%;
             flex-direction: column;
-             margin: pxToRem(73.23) pxToRem(515) pxToRem(123) pxToRem(201);
+            margin: pxToRem(73.23) pxToRem(515) pxToRem(123) pxToRem(201);
+
             h1 {
                 color: $white;
                 text-align: left;
@@ -90,24 +92,25 @@
                 overflow-wrap: break-word;
                 white-space: normal;
             }
-    
+
             h1 .gradient-text {
                 background: $beautyGreen;
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
+
             p {
                 margin-top: pxToRem(42);
                 width: pxToRem(780.93);
                 height: pxToRem(120.386);
-                color:  $white;
+                color: $white;
                 font-size: pxToRem(24);
                 font-style: normal;
                 font-weight: 400;
-                line-height:normal;
+                line-height: normal;
             }
-    
+
             .joinud-btn {
                 display: flex;
                 box-sizing: border-box;
@@ -118,7 +121,7 @@
                 align-items: center;
                 gap: pxToRem(7.353);
                 border-radius: pxToRem(1.471);
-                border: pxToRem(1.471) solid  $gradient-green;
+                border: pxToRem(1.471) solid $gradient-green;
                 color: $white;
                 font-size: pxToRem(15);
                 font-style: normal;
@@ -126,99 +129,7 @@
                 line-height: normal;
                 text-transform: uppercase;
             }
-    
+
         }
     }
-}
-
-//section2
-.section2 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    background: $backgroundGreen;
-    flex-direction: column;
-
-    .items {
-        display: inline-flex;
-        padding: pxToRem(93) pxToRem(91.861) pxToRem(81.629) pxToRem(92.139);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        h1 {
-            color: $white;
-            font-size: pxToRem(55);
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            text-transform: uppercase;
-        }
-
-        p {
-            color: $white;
-            font-size: pxToRem(15);
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            text-align: center;
-        }
-
-        .item4 {
-            color: $white;
-            text-align: center;
-            font-size: pxToRem(12);
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-            margin: pxToRem(74.37) pxToRem(0) pxToRem(81.63) pxToRem(0);
-
-
-        }
-
-        img {
-            stroke-width: pxToRem(2);
-            stroke: $white;
-            width: pxToRem(61.632);
-            display: block;
-            margin: pxToRem(29) pxToRem(63) pxToRem(29) pxToRem(63);
-        }
-
-
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-//section3
-.section3 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    h1 {
-        color: var(--Main_2, #FEFEFE);
-        font-family: "Wallnutt Corps";
-        font-size: pxToRem(45);
-        font-style: normal;
-        font-weight: 400;
-        line-height: pxToRem(49);
-
-    }
-}
-
-//section 4
-.section4 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
