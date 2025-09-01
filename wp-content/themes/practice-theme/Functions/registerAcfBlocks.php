@@ -12,8 +12,8 @@ function practice_theme_register_acf_blocks()
         'icon' => 'superhero-alt',
         'keywords' => array('hero', 'header', 'banner'),
         'mode' => 'preview',
-        'render_template' => get_template_directory() . '/template-parts/acf-blocks/homepage-hero/hero.php',
-        'enqueue_style' => get_template_directory_uri() . '/dist/css/_homepage-hero.css',
+        'render_template' => get_template_directory() . '/acf-blocks/homepage-hero/homepage-hero.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/homepage-hero.css',
 
     ));
 

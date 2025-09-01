@@ -1,16 +1,28 @@
-@import '../../resources/scss/colors';
-@import '../../resources/scss/variables';
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
 
-.hero {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.homepage-hero-block {
+    position: relative;
     display: flex;
     flex: 1 1 100%;
 
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1;
+    }
 
-    .shape-future-content {
+
+    .content-wrapper{
+        position: relative;
+        z-index: 2;
         flex: 1 1 325vw;
         display: flex;
         flex-direction: column;
@@ -62,8 +74,6 @@
         }
     }
 
-}
-
 // Desktop styles for hero
 @media (min-width: calc(#{$mobile} + 1px)) {
     .hero {
@@ -73,16 +83,14 @@
         background-position: center;
         display: flex;
 
-        .shape-future-content {
+        .content-wrapper {
             display: flex;
             flex: 1 1 100%;
             flex-direction: column;
             margin: pxToRem(73.23) pxToRem(515) pxToRem(123) pxToRem(201);
 
             h1 {
-                color: $white;
-                text-align: left;
-                font-family: "Wallnutt Corps";
+              
                 font-size: pxToRem(120);
                 font-style: normal;
                 font-weight: 400;
@@ -135,4 +143,6 @@
 
         }
     }
+}
+
 }
