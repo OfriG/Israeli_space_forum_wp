@@ -1,0 +1,148 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.homepage-hero-block {
+    position: relative;
+    display: flex;
+    flex: 1 1 100%;
+
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1;
+    }
+
+
+    .content-wrapper{
+        position: relative;
+        z-index: 2;
+        flex: 1 1 325vw;
+        display: flex;
+        flex-direction: column;
+        margin: pxToRem(86.68) pxToRem(21.86) pxToRem(136.68) pxToRem(28.14);
+
+
+        h1 {
+            color: $white;
+            text-align: left;
+            font-family: "Wallnutt Corps";
+            font-size: pxToRem(50);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(49);
+
+            .gradient-text {
+                background: $beautyGreen;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        p {
+            margin: pxToRem(16) pxToRem(27.59) pxToRem(24) pxToRem(0);
+            color: var(--Main_2, $white);
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(22);
+        }
+
+        .joinud-btn {
+            display: flex;
+            box-sizing: border-box;
+            padding: pxToRem(8.824) pxToRem(29.412);
+            justify-content: center;
+            align-items: center;
+            gap: pxToRem(7.353);
+            border-radius: pxToRem(1.471);
+            border: pxToRem(1.471) solid $gradient-green;
+            color: $white;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-right: pxToRem(200.18);
+        }
+    }
+
+// Desktop styles for hero
+@media (min-width: calc(#{$mobile} + 1px)) {
+    .hero {
+        flex: 1 1 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+
+        .content-wrapper {
+            display: flex;
+            flex: 1 1 100%;
+            flex-direction: column;
+            margin: pxToRem(73.23) pxToRem(515) pxToRem(123) pxToRem(201);
+
+            h1 {
+              
+                font-size: pxToRem(120);
+                font-style: normal;
+                font-weight: 400;
+                line-height: pxToRem(120);
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: normal;
+            }
+
+            h1 {
+                .gradient-text {
+                    background: $beautyGreen;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    color: transparent;
+                    display: inline-block;
+                }
+            }
+
+            p {
+                margin-top: pxToRem(42);
+                width: pxToRem(780.93);
+                height: pxToRem(120.386);
+                color: $white;
+                font-size: pxToRem(24);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            .joinud-btn {
+                display: flex;
+                box-sizing: border-box;
+                width: pxToRem(170.93);
+                padding: pxToRem(10) pxToRem(20);
+                height: pxToRem(35);
+                justify-content: center;
+                align-items: center;
+                gap: pxToRem(7.353);
+                border-radius: pxToRem(1.471);
+                border: pxToRem(1.471) solid $gradient-green;
+                color: $white;
+                font-size: pxToRem(15);
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+
+        }
+    }
+}
+
+}
