@@ -15,7 +15,8 @@ const fs = require('fs');
 mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('resources/scss/_navbar-components.scss', 'dist/css')
     .sass('resources/scss/_footer.scss', 'dist/css')
-    .sass('resources/scss/home-page/_homepage.scss', 'dist/css')
+    .sass('template-parts/acf-blocks/homepage-hero/_homepage-hero.scss', 'dist/css')
+
 
     .sass('resources/scss/footer/_desktop-footer.scss', 'dist/css/footer')
     .sass('resources/scss/footer/_newsletter.scss', 'dist/css/footer')

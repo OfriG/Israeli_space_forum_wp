@@ -3,10 +3,8 @@ add_action('acf/init', 'practice_theme_register_acf_blocks');
 
 function practice_theme_register_acf_blocks()
 {
-    error_log(' practice_theme_register_acf_blocks RAN');
-
     acf_register_block_type(array(
-        'name' => 'hero',
+        'name' => 'Homepage Hero Block',
         'title' => 'Hero',
 
         'description' => ('A custom hero block with a headline, description, and a button.'),
@@ -14,10 +12,10 @@ function practice_theme_register_acf_blocks()
         'icon' => 'superhero-alt',
         'keywords' => array('hero', 'header', 'banner'),
         'mode' => 'preview',
-        'render_template' => get_template_directory() . '/template-parts/home-page/hero.php',
-        'supports' => array(
-            'align' => false,
-            'anchor' => true
-        )
+        'render_template' => get_template_directory() . '/template-parts/acf-blocks/homepage-hero/hero.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/_homepage-hero.css',
+
     ));
+
 }
+
