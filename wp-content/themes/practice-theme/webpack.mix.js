@@ -15,9 +15,13 @@ const fs = require('fs');
 mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('resources/scss/_navbar-components.scss', 'dist/css')
     .sass('resources/scss/_footer.scss', 'dist/css')
+<<<<<<< HEAD
     .sass('template-parts/acf-blocks/homepage-hero/_homepage-hero.scss', 'dist/css')
     .sass('template-parts/acf-blocks/impactBanner/_impactBanner.scss', 'dist/css')
+=======
+>>>>>>> 9360bf9fe44560b5ae09361b355d2c8c2aec2c4f
 
+    .sass('acf-blocks/homepage-hero/homepage-hero.scss', 'dist/css/homepage-hero.css')
 
     .sass('resources/scss/footer/_desktop-footer.scss', 'dist/css/footer')
     .sass('resources/scss/footer/_newsletter.scss', 'dist/css/footer')
