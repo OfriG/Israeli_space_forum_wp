@@ -16,6 +16,7 @@ function practice_theme_register_acf_blocks()
         'enqueue_style' => get_template_directory_uri() . '/dist/css/homepage-hero.css',
 
     ));
+<<<<<<< HEAD
     acf_register_block_type(array(
         'name' => 'impactBanner',
         'title' => 'Impact Banner',
@@ -30,6 +31,8 @@ function practice_theme_register_acf_blocks()
 
        
     ));
+=======
+>>>>>>> b40dea448ff100bced5723f80f8cec740001827e
 
 }
 
