@@ -13,7 +13,7 @@ function theme_enqueue_assets()
     wp_enqueue_style('main-styles', get_template_directory_uri() . '/dist/css/_main-styles.css', array(), '1.0.0');
     wp_enqueue_style('footer-styles', get_template_directory_uri() . '/dist/css/_footer.css', array(), '1.0.0');
     wp_enqueue_style('newsletter-styles', get_template_directory_uri() . '/dist/css/footer/_newsletter.css', array(), '1.0.0');
-    wp_enqueue_style('homepage-hero-styles', get_template_directory_uri() . '/dist/css/homepage-hero.css', array(), '1.0.0');
+    // Homepage hero styles are loaded via ACF block registration
 
 
     // JavaScript
