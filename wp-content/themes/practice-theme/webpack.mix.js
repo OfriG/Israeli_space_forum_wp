@@ -15,11 +15,14 @@ const fs = require('fs');
 mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('resources/scss/_navbar-components.scss', 'dist/css')
     .sass('resources/scss/_footer.scss', 'dist/css')
-
+    .sass('acf-blocks/homepage-hero/homepage-hero.scss', 'dist/css/homepage-hero.css')
+    .sass('acf-blocks/iac-block/iac-block.scss', 'dist/css/iac-block.css')
     .sass('resources/scss/footer/_desktop-footer.scss', 'dist/css/footer')
     .sass('resources/scss/footer/_newsletter.scss', 'dist/css/footer')
     .sass('resources/scss/_colors.scss', 'dist/css')
     .sass('resources/scss/_variables.scss', 'dist/css')
+
+    .sass('acf-blocks/bannerBlock/bannerBlock.scss', 'dist/css/bannerBlock.css')
     .js('resources/js/newsLetter.js', 'dist/js')
 
 
