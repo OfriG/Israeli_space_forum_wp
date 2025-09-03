@@ -74,9 +74,8 @@
         }
     }
 
-// Desktop styles for hero
-@media (min-width: calc(#{$mobile} + 1px)) {
-    .hero {
+    // Desktop styles for hero
+    @media (min-width: calc(#{$mobile} + 1px)) {
         flex: 1 1 100%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -90,7 +89,6 @@
             margin: pxToRem(73.23) pxToRem(515) pxToRem(123) pxToRem(201);
 
             h1 {
-              
                 font-size: pxToRem(120);
                 font-style: normal;
                 font-weight: 400;
@@ -98,9 +96,7 @@
                 word-wrap: break-word;
                 overflow-wrap: break-word;
                 white-space: normal;
-            }
 
-            h1 {
                 .gradient-text {
                     background: $beautyGreen;
                     background-clip: text;
@@ -140,9 +136,7 @@
                 line-height: normal;
                 text-transform: uppercase;
             }
-
         }
     }
 }
 
-}

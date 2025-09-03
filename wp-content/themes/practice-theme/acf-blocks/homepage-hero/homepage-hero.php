@@ -2,6 +2,9 @@
 
 
 
+// Create id attribute for block
+$id = 'homepage-hero-' . $block['id'];
+
 // Create class attribute allowing for custom "className"
 $className = 'homepage-hero';
 if (!empty($block['className'])) {
