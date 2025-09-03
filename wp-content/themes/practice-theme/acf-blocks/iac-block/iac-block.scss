@@ -1,0 +1,273 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+.iac-block {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    
+    // Show mobile version only up to 768px
+    @media (max-width: $mobile) {
+        display: block;
+    }
+    
+    // Hide mobile version on desktop
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        display: none;
+    }
+    
+    .background-text {
+        position: absolute;
+        top: pxToRem(85); left: pxToRem(131); bottom: pxToRem(117);
+        flex-shrink: 0;
+        font-size: pxToRem(215.117);
+        font-style: normal;
+        font-weight: 400;
+        line-height: pxToRem(172.093);
+        background: $iac-text-gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: 1;
+        white-space: nowrap;
+    }
+    .iac-block-content {
+    
+        position: relative;
+        z-index: 2;
+        .joinud-btn {
+            display: inline-flex;
+            box-sizing: border-box;
+            padding: pxToRem(8.82) pxToRem(29.4);
+            justify-content: center;
+            align-items: center;
+            border-radius: pxToRem(1.47);
+            border: pxToRem(1.47) solid $white;
+            background: transparent;
+            color: $white;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(22);
+            text-decoration: none;
+            margin-top: pxToRem(52);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: auto;
+            min-width: pxToRem(91);
+            border-radius: pxToRem(1.471);
+            border: pxToRem(1.471) solid $iac-button-green;
+            
+          
+        }    
+        padding: pxToRem(36.68) pxToRem(23) pxToRem(117.56) pxToRem(28.14);
+ .icon img{
+     width: pxToRem(102.941);
+     height: pxToRem(39.653);
+     flex-shrink: 0;
+     margin-bottom: pxToRem(64.86);
+ }
+
+ .icon-space {
+     display: flex;
+     align-items: center;
+     margin-bottom: pxToRem(13.2);
+     
+     img {
+         flex-shrink: 0;
+         
+         &:nth-child(2) {
+             margin-left: pxToRem(-22); 
+            }
+     }
+ }
+    h1 {
+        color: $white;
+        text-align: left;
+        font-size: pxToRem(45);
+        font-style: normal;
+        font-weight: 400;
+        line-height: pxToRem(49);
+        margin-bottom: pxToRem(16);
+
+    }
+    .section-content {
+        span.first-part-description{
+            color: $white;
+            margin-bottom: pxToRem(0);
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 700;
+            line-height: pxToRem(22);
+        }
+        
+        #second-part-description {
+            color: $white;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(22);
+        }
+        
+    
+        }
+    }
+}
+
+// DESKTOP VERSION 
+.iac-block-desktop-container {
+    @media (max-width: $mobile) {
+        display: none;
+    }
+    
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        height: pxToRem(907);
+        padding: pxToRem(60) pxToRem(80);
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .iac-background-text {
+        position: absolute;
+        top: 35%;
+        left: 49%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        font-size: pxToRem(341);
+        font-weight: 400;
+        line-height: pxToRem(341);
+        background: $iac-text-gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        pointer-events: none;
+        white-space: nowrap;
+    }
+    
+    .iac-main-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: table;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .iac-three-column-layout {
+        display:flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: pxToRem(200);
+    }
+    
+    .iac-header-section {
+        float: left;
+        width: 33.33%;
+        padding-right: pxToRem(20);
+        margin-left: pxToRem(207);
+        .iac-decorative-icons {
+            display: flex;
+            align-items: center;
+            margin-bottom: pxToRem(32);
+            
+            img {
+                &:first-child {
+                    width: pxToRem(40);
+                    height: auto;
+                }
+                
+                &:nth-child(2) {
+                    margin-left: pxToRem(-22);
+                    width: pxToRem(60);
+                    height: auto;
+                }
+            }
+        }
+        
+        h1 {
+            color: $white;
+            font-size: pxToRem(90);
+            font-weight: 400;
+            line-height: pxToRem(88);
+            margin: 0;
+            text-align: left;
+            font-style: normal;
+        }
+    }
+    
+    .iac-logo-section {
+        float: left;
+        width: 33.33%;
+        text-align: center;
+        padding-top: pxToRem(80);
+        
+        .iac-logo-wrapper img {
+            width: pxToRem(161.25);
+            height: auto;
+        }
+    }
+    
+    .iac-content-section {
+        width: 33.33%;
+        text-align: right;
+        margin-right: pxToRem(129.55);
+      
+        
+        .iac-text-content {
+            max-width: pxToRem(644.199);
+            margin-left: auto;
+            padding-top: pxToRem(80);
+            text-align: left;
+            
+            p {
+                margin: 0 0 pxToRem(16) 0;
+                
+                &:last-of-type {
+                    margin-bottom: pxToRem(32);
+                }
+            }
+            
+            .iac-description-primary {
+                color: $white;
+                font-size: pxToRem(16);
+                font-weight: 600;
+                line-height: pxToRem(24);
+            }
+            
+            .iac-description-secondary {
+                color: $white;
+                font-size: pxToRem(16);
+                font-weight: 400;
+                line-height: pxToRem(24);
+            }
+            
+            .iac-cta-button {
+                display: inline-block;
+                padding: pxToRem(12) pxToRem(32);
+                border: pxToRem(2) solid $iac-button-green;
+                background: transparent;
+                color: $white;
+                font-size: pxToRem(14);
+                font-weight: 400;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: pxToRem(1);
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background: $iac-button-green;
+                    color: $black;
+                }
+            }
+        }
+    }
+    
+   
+}
