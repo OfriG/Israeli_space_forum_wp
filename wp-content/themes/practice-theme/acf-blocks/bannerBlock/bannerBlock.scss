@@ -1,0 +1,190 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.bannerBlock {
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: $backgroundGreen;
+    flex-direction: column;
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        padding: pxToRem(29) pxToRem(33);
+    }
+
+
+    .desktop-only {
+        display: none;
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            display: block;
+        }
+    }
+
+
+    .mobile-only {
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            display: none;
+        }
+    }
+
+    .items {
+        display: flex;
+        padding: pxToRem(93) pxToRem(91.861) pxToRem(81.629) pxToRem(92.139);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            padding: pxToRem(20) pxToRem(40);
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: pxToRem(44);
+            position: relative;
+        }
+
+        h1 {
+            font-size: pxToRem(55);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: uppercase;
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                font-size: pxToRem(88);
+                text-align: left;
+                margin: 0;
+                white-space: nowrap;
+            }
+        }
+
+        .line-mobile {
+            display: block;
+            width: pxToRem(61.632);
+            margin: pxToRem(29) auto;
+
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                display: none;
+            }
+        }
+
+        p {
+            color: $white;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                text-align: left;
+                font-size: pxToRem(18);
+                margin: 0;
+                line-height: 1.2;
+                flex: 1;
+                margin-right: pxToRem(44);
+            }
+        }
+
+        .item4 {
+            color: $white;
+            text-align: center;
+            font-size: pxToRem(12);
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            margin: pxToRem(74.37) pxToRem(0) pxToRem(81.63) pxToRem(0);
+
+            p {
+                color: $white;
+                font-size: pxToRem(12);
+                font-weight: 300;
+                margin: 0;
+
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    text-align: left;
+                }
+            }
+        }
+
+        .desktop-line {
+            display: none;
+
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                display: block;
+                width: pxToRem(61.632);
+                height: pxToRem(3);
+                transform: rotate(90deg);
+                position: absolute;
+                right: pxToRem(-50);
+                top: 40%;
+                transform-origin: center;
+                transform: rotate(90deg) translateY(-50%);
+            }
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                gap: pxToRem(20);
+            }
+        }
+
+        .item1, .item2, .item3 {
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                position: relative;
+
+                .headline-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    text-align: left;
+                    width: 100%;
+                    position: relative;
+                }
+
+                .text-content {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    text-align: left;
+                    gap: pxToRem(20);
+                }
+            }
+        }
+
+        .item1 {
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                .item4.desktop-only {
+                    margin-top: pxToRem(30);
+
+                    p {
+                        font-size: pxToRem(12);
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: normal;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        .item3 {
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                .desktop-line {
+                    display: none;
+                }
+            }
+        }
+    }
+}
