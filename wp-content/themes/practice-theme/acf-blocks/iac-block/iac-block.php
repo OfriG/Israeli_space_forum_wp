@@ -7,20 +7,25 @@ $button_iac   = get_field('button_iac');
 $logo_iac = get_field('logo_iac');
 $backgroundTextMobile= get_field('background_text_mobile');
 $backgroundTextDesktop= get_field('background_text_desktop');
+?>
+<!-- mobile -->
+<?php
 if (!empty($background_iac)) {
     $background_iac = is_array($background_iac) ? $background_iac['url'] : $background_iac;
 }
-if (!empty($logo_iac)) {
-    $logo_iac = is_array($logo_iac) ? $logo_iac['url'] : $logo_iac;
-}
 ?>
-<!-- mobile -->
 <div class="iac-block" style="background-image: url('<?php echo esc_url($background_iac); ?>');">
     <div class="iac-block-content">
     <div class="background-text"><?php echo nl2br(esc_html($backgroundTextMobile)); ?></div>
 
         <div class="icon">
-            <img src="<?php echo esc_url($logo_iac); ?>" alt="Logo" />
+            <?php
+            if (!empty($logo_iac)) {
+                $logo_iac = is_array($logo_iac) ? $logo_iac['url'] : $logo_iac;
+            }
+            if (!empty($logo_iac)) : ?>
+                <img src="<?php echo esc_url($logo_iac); ?>" alt="Logo" />
+            <?php endif; ?>
         </div>
         
         <div class="icon-space">
@@ -33,12 +38,15 @@ if (!empty($logo_iac)) {
             <span class="first-part-description"><?php echo esc_html($firstPart_description_iac); ?></span>
             <span id="second-part-description"><?php echo esc_html($secondpart_description_iac); ?></span>   
         </div>
-        <?php if (!empty($button_iac)) : ?>
-            <?php if (is_array($button_iac)) : ?>
-                <a class="joinud-btn" href="<?php echo esc_url($button_iac['url']); ?>" target="<?php echo esc_attr($button_iac['target'] ?: '_self'); ?>"><?php echo esc_html($button_iac['title']); ?></a>
-            <?php else : ?>
-                <a class="joinud-btn" href="#"><?php echo esc_html($button_iac); ?></a>
-            <?php endif; ?>
+        <?php 
+        if ($button_iac && $button_iac['url']):
+            $link_url = $button_iac['url'];
+            $link_title = $button_iac['title'] ?? '';
+            $link_target = $button_iac['target'] ? $button_iac['target'] : '_self';
+        ?>
+        <a class="joinud-btn" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+            <?php echo esc_html($link_title); ?>
+        </a>
         <?php endif; ?>
     
     </div>
@@ -60,7 +68,16 @@ if (!empty($logo_iac)) {
             
             <div class="iac-logo-section">
                 <div class="iac-logo-wrapper">
-                    <img src="<?php echo esc_url($logo_iac); ?>" alt="Logo" />
+                    <?php
+                    // Check and extract logo image URL for desktop
+                    $desktop_logo = $logo_iac; // Use original field value
+                    if (!empty($desktop_logo)) {
+                        $desktop_logo = is_array($desktop_logo) ? $desktop_logo['url'] : $desktop_logo;
+                    }
+                    // Only show logo if URL exists
+                    if (!empty($desktop_logo)) : ?>
+                        <img src="<?php echo esc_url($desktop_logo); ?>" alt="Logo" />
+                    <?php endif; ?>
                 </div>
             </div>
             
@@ -68,12 +85,15 @@ if (!empty($logo_iac)) {
                 <div class="iac-text-content">
                     <p><span class="iac-description-primary"><?php echo esc_html($firstPart_description_iac); ?></span><span class="iac-description-secondary"><?php echo esc_html($secondpart_description_iac); ?></span></p>
                     
-                    <?php if (!empty($button_iac)) : ?>
-                        <?php if (is_array($button_iac)) : ?>
-                            <a class="iac-cta-button" href="<?php echo esc_url($button_iac['url']); ?>" target="<?php echo esc_attr($button_iac['target'] ?: '_self'); ?>"><?php echo esc_html($button_iac['title']); ?></a>
-                        <?php else : ?>
-                            <a class="iac-cta-button" href="#"><?php echo esc_html($button_iac); ?></a>
-                        <?php endif; ?>
+                    <?php 
+                    if ($button_iac && $button_iac['url']):
+                        $link_url = $button_iac['url'];
+                        $link_title = $button_iac['title'] ?? '';
+                        $link_target = $button_iac['target'] ? $button_iac['target'] : '_self';
+                    ?>
+                    <a class="iac-cta-button" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+                        <?php echo esc_html($link_title); ?>
+                    </a>
                     <?php endif; ?>
                 </div>
             </div>
