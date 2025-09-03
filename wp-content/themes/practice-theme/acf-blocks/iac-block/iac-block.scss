@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
+    overflow: hidden;
     
     // Show mobile version only up to 768px
     @media (max-width: $mobile) {
@@ -31,7 +32,6 @@
         -webkit-text-fill-color: transparent;
         z-index: 1;
         white-space: nowrap;
-        overflow: visible;
     }
     .iac-block-content {
     
@@ -93,7 +93,7 @@
         margin-bottom: pxToRem(16);
 
     }
-    .section3-content {
+    .section-content {
         span.first-part-description{
             color: $white;
             margin-bottom: pxToRem(0);
@@ -117,7 +117,7 @@
 }
 
 // DESKTOP VERSION 
-.iac-block-desktop {
+.iac-block-desktop-container {
     @media (max-width: $mobile) {
         display: none;
     }
@@ -131,9 +131,10 @@
         height: pxToRem(907);
         padding: pxToRem(60) pxToRem(80);
         box-sizing: border-box;
+        overflow: hidden;
     }
     
-    .background-text-desktop {
+    .iac-background-text {
         position: absolute;
         top: 35%;
         left: 49%;
@@ -150,7 +151,7 @@
         white-space: nowrap;
     }
     
-    .iac-block-content-desktop {
+    .iac-main-content {
         position: relative;
         z-index: 2;
         height: 100%;
@@ -159,19 +160,19 @@
         margin: 0 auto;
     }
     
-    .desktop-layout {
+    .iac-three-column-layout {
         display:flex;
         flex-direction: row;
         width: 100%;
         margin-top: pxToRem(200);
     }
     
-    .left-section {
+    .iac-header-section {
         float: left;
         width: 33.33%;
         padding-right: pxToRem(20);
         margin-left: pxToRem(207);
-        .icon-space {
+        .iac-decorative-icons {
             display: flex;
             align-items: center;
             margin-bottom: pxToRem(32);
@@ -202,25 +203,26 @@
         }
     }
     
-    .center-section {
+    .iac-logo-section {
         float: left;
         width: 33.33%;
         text-align: center;
         padding-top: pxToRem(80);
         
-        .logo-container img {
+        .iac-logo-wrapper img {
             width: pxToRem(161.25);
             height: auto;
         }
     }
     
-    .right-section {
-        float: right;
+    .iac-content-section {
+        // float: right;
         width: 33.33%;
         text-align: right;
         margin-right: pxToRem(129.55);
+      
         
-        .description-content {
+        .iac-text-content {
             max-width: pxToRem(644.199);
             margin-left: auto;
             padding-top: pxToRem(80);
@@ -234,21 +236,21 @@
                 }
             }
             
-            .first-part-description-desktop {
+            .iac-description-primary {
                 color: $white;
                 font-size: pxToRem(16);
                 font-weight: 600;
                 line-height: pxToRem(24);
             }
             
-            .second-part-description-desktop {
+            .iac-description-secondary {
                 color: $white;
                 font-size: pxToRem(16);
                 font-weight: 400;
                 line-height: pxToRem(24);
             }
             
-            .joinud-btn-desktop {
+            .iac-cta-button {
                 display: inline-block;
                 padding: pxToRem(12) pxToRem(32);
                 border: pxToRem(2) solid $iac-button-green;

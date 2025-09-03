@@ -28,12 +28,10 @@ if (!empty($logo_iac)) {
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/home-page/icons/Layer_1.svg'); ?>" alt="Layer 1" />
         </div>
 
-        <div class="section3-content">
+        <div class="section-content">
             <h1><?php echo esc_html($headline_iac); ?></h1>
             <span class="first-part-description"><?php echo esc_html($firstPart_description_iac); ?></span>
-            <span id="second-part-description"><?php echo esc_html($secondpart_description_iac); ?></span>
-    
-          
+            <span id="second-part-description"><?php echo esc_html($secondpart_description_iac); ?></span>   
         </div>
         <?php if (!empty($button_iac)) : ?>
             <?php if (is_array($button_iac)) : ?>
@@ -48,34 +46,33 @@ if (!empty($logo_iac)) {
 
 
 <!-- desktop -->
-<div class="iac-block-desktop" style="background-image: url('<?php echo esc_url($background_iac); ?>');">
-    <div class="background-text-desktop"><?php echo nl2br(esc_html($backgroundTextDesktop)); ?></div>
-    <div class="iac-block-content-desktop">
-        <div class="desktop-layout">
-            <div class="left-section">
-                <div class="icon-space">
+<div class="iac-block-desktop-container" style="background-image: url('<?php echo esc_url($background_iac); ?>');">
+    <div class="iac-background-text"><?php echo nl2br(esc_html($backgroundTextDesktop)); ?></div>
+    <div class="iac-main-content">
+        <div class="iac-three-column-layout">
+            <div class="iac-header-section">
+                <div class="iac-decorative-icons">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/images/home-page/icons/Line 9.svg'); ?>" alt="Line 9" />
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/images/home-page/icons/Layer_1.svg'); ?>" alt="Layer 1" />
                 </div>
                 <h1><?php echo esc_html($headline_iac); ?></h1>
             </div>
             
-            <div class="center-section">
-                <div class="logo-container">
+            <div class="iac-logo-section">
+                <div class="iac-logo-wrapper">
                     <img src="<?php echo esc_url($logo_iac); ?>" alt="Logo" />
                 </div>
             </div>
             
-            <div class="right-section">
-                <div class="description-content">
-                    <p class="first-part-description-desktop"><?php echo esc_html($firstPart_description_iac); ?></p>
-                    <p class="second-part-description-desktop"><?php echo esc_html($secondpart_description_iac); ?></p>
+            <div class="iac-content-section">
+                <div class="iac-text-content">
+                    <p><span class="iac-description-primary"><?php echo esc_html($firstPart_description_iac); ?></span><span class="iac-description-secondary"><?php echo esc_html($secondpart_description_iac); ?></span></p>
                     
                     <?php if (!empty($button_iac)) : ?>
                         <?php if (is_array($button_iac)) : ?>
-                            <a class="joinud-btn-desktop" href="<?php echo esc_url($button_iac['url']); ?>" target="<?php echo esc_attr($button_iac['target'] ?: '_self'); ?>"><?php echo esc_html($button_iac['title']); ?></a>
+                            <a class="iac-cta-button" href="<?php echo esc_url($button_iac['url']); ?>" target="<?php echo esc_attr($button_iac['target'] ?: '_self'); ?>"><?php echo esc_html($button_iac['title']); ?></a>
                         <?php else : ?>
-                            <a class="joinud-btn-desktop" href="#"><?php echo esc_html($button_iac); ?></a>
+                            <a class="iac-cta-button" href="#"><?php echo esc_html($button_iac); ?></a>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
