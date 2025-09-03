@@ -13,8 +13,20 @@ function practice_theme_register_acf_blocks()
         'keywords' => array('hero', 'header', 'banner'),
         'mode' => 'preview',
         'render_template' => get_template_directory() . '/acf-blocks/homepage-hero/homepage-hero.php',
-        'enqueue_style' => get_template_directory_uri() . '/dist/css/homepage-hero.css?v=' . filemtime(get_template_directory() . '/dist/css/homepage-hero.css'),
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/homepage-hero.css?v=' . (file_exists(get_template_directory() . '/dist/css/homepage-hero.css') ? filemtime(get_template_directory() . '/dist/css/homepage-hero.css') : '1.0'),
 
+    ));
+
+    acf_register_block_type(array(
+        'name' => 'iac-block',
+        'title' => 'IAC',
+        'description' => ('A custom iac block with a headline, description, and a button.'),
+        'category' => 'theme',
+        'icon' => 'superhero-alt',
+        'keywords' => array('iac', 'block'),
+        'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/iac-block/iac-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/iac-block.css?v=' . (file_exists(get_template_directory() . '/dist/css/iac-block.css') ? filemtime(get_template_directory() . '/dist/css/iac-block.css') : '1.0'),
     ));
 
 
