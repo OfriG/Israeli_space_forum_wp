@@ -19,25 +19,19 @@
     
     .background-text {
         position: absolute;
-        top: pxToRem(85);
-        left: pxToRem(131);
-        bottom: pxToRem(117);
+        top: pxToRem(85); left: pxToRem(131); bottom: pxToRem(117);
         flex-shrink: 0;
         font-size: pxToRem(215.117);
         font-style: normal;
         font-weight: 400;
         line-height: pxToRem(172.093);
-        background:   $iac-text-gradient;
+        background: $iac-text-gradient;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @media (min-width: calc(#{$mobile} + 1px)) {
-
-        }
+        white-space: nowrap;
+        overflow: visible;
     }
     .iac-block-content {
     
@@ -63,13 +57,9 @@
             transition: all 0.3s ease;
             width: auto;
             min-width: pxToRem(91);
+            border-radius: pxToRem(1.471);
+            border: pxToRem(1.471) solid $iac-button-green;
             
-            &:hover {
-                background: $white;
-                color: #000;
-            }
-            
-            // Mobile responsive
           
         }    
         padding: pxToRem(36.68) pxToRem(23) pxToRem(117.56) pxToRem(28.14);
@@ -126,7 +116,7 @@
     }
 }
 
-// DESKTOP VERSION - Simple and reliable approach
+// DESKTOP VERSION 
 .iac-block-desktop {
     @media (max-width: $mobile) {
         display: none;
@@ -156,7 +146,6 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        opacity: 0.15;
         pointer-events: none;
         white-space: nowrap;
     }
@@ -181,7 +170,7 @@
         float: left;
         width: 33.33%;
         padding-right: pxToRem(20);
-        
+        margin-left: pxToRem(207);
         .icon-space {
             display: flex;
             align-items: center;
@@ -203,11 +192,13 @@
         
         h1 {
             color: $white;
-            font-size: pxToRem(72);
+            font-size: pxToRem(90);
             font-weight: 400;
-            line-height: pxToRem(76);
+            line-height: pxToRem(88);
             margin: 0;
             max-width: pxToRem(450);
+            text-align: left;
+            font-style: normal;
         }
     }
     
@@ -215,10 +206,10 @@
         float: left;
         width: 33.33%;
         text-align: center;
-        padding-top: pxToRem(40);
+        padding-top: pxToRem(80);
         
         .logo-container img {
-            width: pxToRem(180);
+            width: pxToRem(161.25);
             height: auto;
         }
     }
@@ -227,12 +218,13 @@
         float: right;
         width: 33.33%;
         text-align: right;
-        padding-left: pxToRem(20);
+        margin-right: pxToRem(129.55);
         
         .description-content {
-            max-width: pxToRem(400);
+            max-width: pxToRem(644.199);
             margin-left: auto;
             padding-top: pxToRem(80);
+            text-align: left;
             
             p {
                 margin: 0 0 pxToRem(16) 0;
@@ -277,10 +269,5 @@
         }
     }
     
-    // Clear floats
-    .desktop-layout::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+   
 }

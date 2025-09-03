@@ -5,7 +5,8 @@ $firstPart_description_iac  = get_field('firstPart_description_iac');
 $secondpart_description_iac = get_field('secondpart_description_iac');
 $button_iac   = get_field('button_iac');
 $logo_iac = get_field('logo_iac');
-
+$backgroundTextMobile= get_field('background_text_mobile');
+$backgroundTextDesktop= get_field('background_text_desktop');
 if (!empty($background_iac)) {
     $background_iac = is_array($background_iac) ? $background_iac['url'] : $background_iac;
 }
@@ -16,7 +17,7 @@ if (!empty($logo_iac)) {
 <!-- mobile -->
 <div class="iac-block" style="background-image: url('<?php echo esc_url($background_iac); ?>');">
     <div class="iac-block-content">
-    <div class="background-text">IAC<br>20<br>24</div>
+    <div class="background-text"><?php echo nl2br(esc_html($backgroundTextMobile)); ?></div>
 
         <div class="icon">
             <img src="<?php echo esc_url($logo_iac); ?>" alt="Logo" />
@@ -48,7 +49,7 @@ if (!empty($logo_iac)) {
 
 <!-- desktop -->
 <div class="iac-block-desktop" style="background-image: url('<?php echo esc_url($background_iac); ?>');">
-    <div class="background-text-desktop">IAC 2024</div>
+    <div class="background-text-desktop"><?php echo nl2br(esc_html($backgroundTextDesktop)); ?></div>
     <div class="iac-block-content-desktop">
         <div class="desktop-layout">
             <div class="left-section">
