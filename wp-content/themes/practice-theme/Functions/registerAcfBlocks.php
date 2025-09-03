@@ -19,7 +19,7 @@ function practice_theme_register_acf_blocks()
 
 
     acf_register_block_type(array(
-        'name' => 'bannerBlock',
+        'name' => 'banner-block',
         'title' => 'Banner Block',
         'description' => ('A custom banner block.'),
         'category' => 'theme',
