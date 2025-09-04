@@ -41,6 +41,17 @@ function practice_theme_register_acf_blocks()
         'render_template' => get_template_directory() . '/acf-blocks/bannerBlock/bannerBlock.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/bannerBlock.css',
     ));
+    acf_register_block_type(array(
+        'name' => 'members-block',
+        'title' => 'Members Block',
+        'description' => ('A custom that shows the members and the collaborators of the forum.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-format-image',
+        'keywords' => array('members', 'block'),
+        'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/members-block/members-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/members-block.css',
+    ));
 
 
 }
