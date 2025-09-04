@@ -1,0 +1,129 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.isf-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        flex-direction: row-reverse;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+    .img-isf{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        max-width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .isf-block-image{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            width: 50%;
+            height: 100vh
+        }
+        width: 100%;
+        height: pxToRem(324.327);
+        position: relative;
+     
+        .img-title{
+            position: absolute;
+            top: pxToRem(242.07);
+            left: pxToRem(27.4);
+            width: pxToRem(180.281);
+            height: pxToRem(94.462);
+            overflow:visible;
+            z-index: 2;
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                display: none;
+
+            }
+        }
+    }
+    .isf-block-content{
+
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            width: 50%;
+            padding: pxToRem(123.5) pxToRem(45.16) pxToRem(78) pxToRem(208.7);
+            box-sizing: border-box;
+            .mobile-only-br {
+                display: none;
+            }
+        }
+        
+        @media (max-width: $mobile) {
+            font-style: normal;
+            color: $black;
+            margin: pxToRem(36) pxToRem(21.05) pxToRem(53.64) pxToRem(27);
+            
+            .desktop-only-br {
+                display: none;
+            }
+        }
+        .img-title{
+            display: none;
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                margin-bottom: pxToRem(0);
+                display: block;
+                width: pxToRem(370.975);
+                height: pxToRem(194.381);
+            }
+        }
+        
+        .isf-block-first-description{
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                font-size: pxToRem(24);
+                line-height: normal;
+            }
+            font-size: pxToRem(15);
+            font-weight: 400;
+            line-height: pxToRem(22); 
+        }
+        .isf-block-second-description{
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                font-size: pxToRem(24);           line-height: normal;
+            }
+            font-size: pxToRem(15);
+            font-weight: 700;
+            line-height: pxToRem(9);
+        }
+        
+        a{
+            @media (min-width: calc(#{$mobile} + 1px)) {
+               width: pxToRem(225);
+                display: flex;
+                height: pxToRem(56);
+                padding: pxToRem(12) pxToRem(40);
+                gap: pxToRem(10);
+                border-radius: pxToRem(2);
+                border: pxToRem(2) solid $gradient-green;
+                font-size: pxToRem(24);
+                font-style: normal;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            margin: pxToRem(28) pxToRem(170.18) pxToRem(0) pxToRem(0);
+            color: $black;
+            font-size: pxToRem(15);
+            font-weight: 700;
+            line-height: pxToRem(22);
+            text-transform: uppercase;
+            border-radius: pxToRem(1.471);
+            border: pxToRem(1.471) solid $gradient-green;
+            display: flex;
+            padding: pxToRem(8.824) pxToRem(29.412);
+            justify-content: center;
+            align-items: center;
+            gap: pxToRem(7.353);
+            text-decoration: none;
+        }
+    }
+}
