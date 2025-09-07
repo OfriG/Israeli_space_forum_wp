@@ -1,5 +1,5 @@
 <?php 
-$headline_mobile_joinus = get_field('headline_joinus');
+$headline_mobile_joinus = get_field('headline_mobile_joinus');
 $headline_desktop_joinus = get_field('headline_desktop_joinus');
 $description_joinus = get_field('description_joinus');
 $first_name_form = get_field('first_name_form');
@@ -21,11 +21,17 @@ $job_title_form = is_array($job_title_form) ? '' : $job_title_form;
 $affiliation_form = is_array($affiliation_form) ? '' : $affiliation_form;
 $email_form = is_array($email_form) ? '' : $email_form;
 $phone_number_form = is_array($phone_number_form) ? '' : $phone_number_form;
-$register_button_form = is_array($register_button_form) ? '' : $register_button_form;
+// Handle register_button_form as link field (returns array with url, title, target)
+$register_button_text = '';
+$register_button_url = '';
+if (is_array($register_button_form) && !empty($register_button_form)) {
+    $register_button_text = $register_button_form['title'] ?? '';
+    $register_button_url = $register_button_form['url'] ?? '';
+}
 ?>
 <div class="joinUs-block">
     <div class="joinUs-block-content">
-        <h2 class="joinUs-block-content-title-mobile"><?php echo $headline_mobile_joinus ?: 'Join Us'; ?></h2>
+        <h2 class="joinUs-block-content-title-mobile"><?php echo $headline_mobile_joinus;  ?></h2>
         <h2 class="joinUs-block-content-title-desktop"><?php echo $headline_desktop_joinus; ?></h2>
         <p class="joinUs-block-content-description"><?php echo $description_joinus; ?></p>
  </div>
@@ -34,23 +40,26 @@ $register_button_form = is_array($register_button_form) ? '' : $register_button_
       <form id="joinUs-form" class="joinUs-ajax-form" method="post">
             <?php wp_nonce_field('joinUs_nonce', 'joinUs_nonce'); ?>          
             <div class="form-row">
-                <input class="form-field" type="text" name="first_name" placeholder="<?php echo esc_attr($first_name_form ?: 'First Name'); ?>">
-                <input class="form-field" type="text" name="last_name" placeholder="<?php echo esc_attr($last_name_form ?: 'Last Name'); ?>">
+                <input class="form-field" type="text" name="first_name" placeholder="<?php echo esc_attr($first_name_form ); ?>">
+                <input class="form-field" type="text" name="last_name" placeholder="<?php echo esc_attr($last_name_form); ?>">
             </div>
             <div class="form-row">
-                <input class="form-field" type="text" name="job_title" placeholder="<?php echo esc_attr($job_title_form ?: 'Job Title'); ?>">
-                <input class="form-field" type="text" name="affiliation" placeholder="<?php echo esc_attr($affiliation_form ?: 'Affiliation'); ?>">
+                <input class="form-field" type="text" name="job_title" placeholder="<?php echo esc_attr($job_title_form ); ?>">
+                <input class="form-field" type="text" name="affiliation" placeholder="<?php echo esc_attr($affiliation_form ); ?>">
             </div>
             <div class="form-row">
-                <input class="form-field" type="email" name="email" placeholder="<?php echo esc_attr($email_form ?: 'Email'); ?>">
+                <input class="form-field" type="email" name="email" placeholder="<?php echo esc_attr($email_form); ?>">
                 <div class="phone-input-container">
-                    <input class="form-field-phone-prefix" type="text" name="phone_prefix" value="+123" >
-                    <input class="form-field-phone" type="tel" name="phone_number" placeholder="Phone number">
+                    <input class="form-field-phone-prefix" type="text" name="phone_prefix" placeholder="<?php echo esc_attr($phone_prefix_form); ?>" >
+                    <input class="form-field-phone" type="tel" name="phone_number" placeholder="<?php echo esc_attr($phone_number_form); ?>">
                 </div>
             </div>
             <button type="submit">
-                <?php echo esc_html($register_button_form ?: 'Register'); ?>
+                <?php echo esc_html($register_button_text); ?>
             </button>    
+            <div id="error"></div>
+            <div id="result"></div>
+
      </form>
     </div>
  <div  >

@@ -146,7 +146,7 @@
             "label": "phone number form",
             "name": "phone_number_form",
             "aria-label": "",
-            "type": "number",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -156,12 +156,10 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
+            "rows": "",
             "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         },
         {
             "key": "field_68bd2c21008c6",
@@ -198,6 +196,26 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_68bd7bb7f5b65",
+            "label": "phone_prefix_form",
+            "name": "phone_prefix_form",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -218,5 +236,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1757242977
+    "modified": 1757248464
 }

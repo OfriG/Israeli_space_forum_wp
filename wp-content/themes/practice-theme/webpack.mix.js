@@ -24,6 +24,7 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('acf-blocks/joinUs-block/joinUs.scss', 'dist/css/joinUsBlock.css')
     .sass('acf-blocks/bannerBlock/bannerBlock.scss', 'dist/css/bannerBlock.css')
     .js('resources/js/newsLetter.js', 'dist/js')
+    .js('resources/js/joinUs.js', 'dist/js')
 
 
 

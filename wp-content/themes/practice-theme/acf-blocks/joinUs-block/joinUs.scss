@@ -126,6 +126,8 @@ align-self: stretch; margin-bottom: pxToRem(171.27);
             flex-shrink: 0;
             display: flex; 
             gap: pxToRem(12);
+
+
             
             @media (min-width: calc(#{$mobile} + 1px)) {
                 flex: 1;
@@ -200,6 +202,74 @@ button{
         flex-shrink: 0;
         color: $gray;
 
+    }
+}
+
+// Error and Success Message Styles
+#error, #success {
+    margin-top: pxToRem(15);
+    padding: pxToRem(12) pxToRem(16);
+    border-radius: pxToRem(4);
+    font-size: pxToRem(14);
+    font-weight: 500;
+    line-height: 1.4;
+    display: none;
+    
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        font-size: pxToRem(16);
+        padding: pxToRem(16) pxToRem(20);
+    }
+}
+
+#error {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+}
+
+#success, .success-message {
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #16a34a;
+}
+
+// Error state for form fields
+.form-field.error,
+.form-field-phone.error,
+.form-field-phone-prefix.error {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 1px #dc2626;
+    
+    &:focus {
+        border-color: #dc2626 !important;
+        box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+    }
+}
+
+// Loading state for submit button
+button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    
+    &:hover {
+        background: $button-background !important;
+        transform: none !important;
+    }
+}
+
+// Animation for success/error messages
+#error, #success {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 }
