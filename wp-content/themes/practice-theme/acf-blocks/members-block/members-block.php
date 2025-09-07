@@ -6,27 +6,24 @@ $background_image = get_field('background_image');
 $collaborators_logos = get_field('collaborators_logos');
 ?>
 
-<?php
-if (!empty($background_image)) {
-    $background_image = is_array($background_image) ? $background_image['url'] : $background_image;
-}
-?>
 
-<div class="members-block" style="background-image: url('<?php echo esc_url($background_image); ?>');">
+<div class="members-block" <?php if ($background_image && $background_image['url']): ?>
+    style="background-image: url('<?php echo esc_url($background_image['url']); ?>');"
+    <?php else: ?>style="background-color: $gray; height: pxToRem(50);"<?php endif; ?>>
     <div class="members-block-content">
         <div class="members-icon-space">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/home-page/icons/Line 9.svg'); ?>" alt="Line 9" />
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/home-page/icons/Layer_1.svg'); ?>" alt="Layer 1" />
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>"  />
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueStar.svg'); ?>"  />
         </div>
         <h2 class="members-first-title"><?php echo esc_html($first_headline ?: 'OUR MEMBERS'); ?></h2>
         <div class="members-block-logos">
-            <?php display_logo_grid($members_logos, 'member-logo'); ?>
+            <?php get_template_part('template-parts/members-block/members-block', null, array('logos' => $members_logos, 'logo_class' => 'member-logo')); ?>
         </div>
         
-        <h2 class="collaborators-second-title"><?php echo esc_html($second_headline ?: 'INTERNATIONAL COLLABORATORS'); ?></h2>
+        <h2 class="collaborators-second-title"><?php echo esc_html($second_headline); ?></h2>
         <div class="collaborators-block">
             <div class="collaborators-block-logos">
-                <?php display_logo_grid($collaborators_logos, 'collaborator-logo'); ?>
+                <?php get_template_part('template-parts/members-block/members-block', null, array('logos' => $collaborators_logos, 'logo_class' => 'collaborator-logo')); ?>
             </div>
         </div>
     </div>
