@@ -40,21 +40,24 @@
     }
 }
 .joinUs-block-content-title-desktop{
-    font-family: "Wallnutt Corps";
-    font-size: pxToRem(45);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%; 
-    background: $button-background;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
+
+
     display: none;
     visibility: hidden;
     
     @media (min-width: calc(#{$mobile} + 1px)) {
         display: block;
+
+        font-family: "Wallnutt Corps";
+        font-size: pxToRem(90);        font-style: normal;
+        font-weight: 400;
+        line-height: pxToRem(75); 
+        background: $button-background;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-style: normal;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
         visibility: visible;
     }
 }
@@ -112,12 +115,22 @@ align-self: stretch; margin-bottom: pxToRem(171.27);
                 align-items: center;
                 flex: 1;
             }
-            box-sizing: border-box ;
-            width: 100% ;
+            
+            box-sizing: border-box;
+            width: 100%;
             flex-shrink: 0;
             border-radius: pxToRem(2);
             border: pxToRem(0.5) solid $black;
-            padding: pxToRem(11) pxToRem(215.26) pxToRem(11) pxToRem(9.47) ;
+            padding: pxToRem(11) pxToRem(12) pxToRem(11) pxToRem(9.47);
+            
+            // // Prevent text breaking and ensure proper text handling
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // font-size: pxToRem(14);
+            // line-height: 1.2;
+            
+     
         }
         
         .phone-input-container {
@@ -148,6 +161,8 @@ align-self: stretch; margin-bottom: pxToRem(171.27);
                 padding: pxToRem(13.4) pxToRem(12.47) pxToRem(13.4) pxToRem(15);
                 width: 25%;
                 box-sizing: border-box;
+                
+              
             }
             
             .form-field-phone {
@@ -161,12 +176,26 @@ align-self: stretch; margin-bottom: pxToRem(171.27);
                 }
                 width: 75%;
                 display: flex;
-                padding: pxToRem(19.13) pxToRem(104) pxToRem(13.892) pxToRem(10.849);
+                padding: pxToRem(19.13) pxToRem(12) pxToRem(13.892) pxToRem(10.849);
                 align-items: center;
                 flex: 1;
                 box-sizing: border-box;
                 border-radius: pxToRem(2);
                 border: pxToRem(0.5) solid $black;
+                
+                // Prevent text breaking
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: pxToRem(14);
+                line-height: 1.2;
+                
+                &::placeholder {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color: #999;
+                }
             }
         }
 
@@ -202,74 +231,6 @@ button{
         flex-shrink: 0;
         color: $gray;
 
-    }
-}
-
-// Error and Success Message Styles
-#error, #success {
-    margin-top: pxToRem(15);
-    padding: pxToRem(12) pxToRem(16);
-    border-radius: pxToRem(4);
-    font-size: pxToRem(14);
-    font-weight: 500;
-    line-height: 1.4;
-    display: none;
-    
-    @media (min-width: calc(#{$mobile} + 1px)) {
-        font-size: pxToRem(16);
-        padding: pxToRem(16) pxToRem(20);
-    }
-}
-
-#error {
-    background-color: #fef2f2;
-    border: 1px solid #fecaca;
-    color: #dc2626;
-}
-
-#success, .success-message {
-    background-color: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    color: #16a34a;
-}
-
-// Error state for form fields
-.form-field.error,
-.form-field-phone.error,
-.form-field-phone-prefix.error {
-    border-color: #dc2626 !important;
-    box-shadow: 0 0 0 1px #dc2626;
-    
-    &:focus {
-        border-color: #dc2626 !important;
-        box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
-    }
-}
-
-// Loading state for submit button
-button[type="submit"]:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    
-    &:hover {
-        background: $button-background !important;
-        transform: none !important;
-    }
-}
-
-// Animation for success/error messages
-#error, #success {
-    animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 }
