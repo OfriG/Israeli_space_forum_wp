@@ -7,27 +7,23 @@ $isf_block_button = get_field('isf_block_button');
 ?>
 <div class="isf-block">
     <div class="isf-block-image">
-        <?php
-        if (!empty($isf_block_image)) {
-            $isf_block_image = is_array($isf_block_image) ? $isf_block_image['url'] : $isf_block_image;
-        }
-        ?>
-        <div class="img-isf" style="background-image: url('<?php echo esc_url($isf_block_image); ?>');"></div>
-        
-        <?php if (!empty($isf_img_title)): ?>
-            <?php
-            $isf_img_title = is_array($isf_img_title) ? $isf_img_title['url'] : $isf_img_title;
-            ?>
-            <img class="img-title" src="<?php echo esc_url($isf_img_title); ?>"  />
+    <?php if ($isf_block_image && $isf_block_image['url']): ?>
+    <div class="img-isf" style="background-image: url('<?php echo esc_url($isf_block_image['url']); ?>');"></div>
+<?php else: ?>
+    <div class="img-isf" style="background-color: $gray;"></div>
+<?php endif; ?>
+        <?php if ($isf_img_title && $isf_img_title['url']): ?>
+            <img class="img-title" src="<?php echo esc_url($isf_img_title['url']); ?>" alt="<?php echo esc_attr($isf_img_title['alt'] ?? ''); ?>" />
+        <?php else: ?>
+            <div class="img-title" style="background-color: $gray; height: pxToRem(50);"></div>
         <?php endif; ?>
     </div> 
 
     <div class="isf-block-content">
-    <?php if (!empty($isf_img_title)): ?>
-            <?php
-            $isf_img_title = is_array($isf_img_title) ? $isf_img_title['url'] : $isf_img_title;
-            ?>
-            <img class="img-title" src="<?php echo esc_url($isf_img_title); ?>"  />
+        <?php if ($isf_img_title && $isf_img_title['url']): ?>
+            <img class="img-title" src="<?php echo esc_url($isf_img_title['url']); ?>" alt="<?php echo esc_attr($isf_img_title['alt'] ?? ''); ?>" />
+        <?php else: ?>
+            <div class="img-title" style="background-color: $gray; height: pxToRem(50);"></div>
         <?php endif; ?>
         <br class="desktop-only-br">        <br class="desktop-only-br">
 
@@ -39,15 +35,6 @@ $isf_block_button = get_field('isf_block_button');
             <?php echo esc_html($isf_block_second_description); ?>
         </span>
         
-        <?php 
-        if ($isf_block_button && $isf_block_button['url']):
-            $link_url = $isf_block_button['url'];
-            $link_title = $isf_block_button['title'] ?? '';
-            $link_target = $isf_block_button['target'] ? $isf_block_button['target'] : '_self';
-        ?>
-            <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-                <?php echo esc_html($link_title); ?>
-            </a>
-        <?php endif; ?>
+        <?php get_template_part('template-parts/button', null, ['button' => $isf_block_button]); ?>
     </div>
 </div>
