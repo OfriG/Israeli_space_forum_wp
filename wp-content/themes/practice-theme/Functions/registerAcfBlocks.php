@@ -50,7 +50,7 @@ function practice_theme_register_acf_blocks()
         'keywords' => array('members', 'block'),
         'mode' => 'preview',
         'render_template' => get_template_directory() . '/acf-blocks/members-block/members-block.php',
-        'enq  ueue_style' => get_template_directory_uri() . '/dist/css/members-block.css',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/members-block.css',
     ));
 
     acf_register_block_type(array(
