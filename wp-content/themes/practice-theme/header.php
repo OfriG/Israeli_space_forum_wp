@@ -15,7 +15,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>כ
+<body <?php body_class(); ?>>
 
     <!-- Desktop Navbar -->
     <nav class="navbar-menu">
