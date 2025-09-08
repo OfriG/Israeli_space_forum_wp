@@ -65,5 +65,18 @@ function practice_theme_register_acf_blocks()
         'enqueue_style' => get_template_directory_uri() . '/dist/css/isf-block.css',
     ));
 
+    acf_register_block_type(array(
+        'name' => 'aboutUs missionBlock',
+        'title' => 'aboutUs mission Block',
+        'description' => ('A custom of aboutUs mission block.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-format-image',
+            'keywords' => array('aboutUs','mission', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/AU-missionBlock/missionBlock.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/missionBlock.css',
+    ));
+
+
 }
 
