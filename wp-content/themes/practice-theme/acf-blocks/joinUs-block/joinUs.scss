@@ -49,13 +49,13 @@
         display: block;
 
         font-family: "Wallnutt Corps";
-        font-size: pxToRem(90);        font-style: normal;
+        font-size: pxToRem(90);
+        font-style: normal;
         font-weight: 400;
-        line-height: pxToRem(75); 
+        line-height: 1.1; 
         background: $button-background;
         background-clip: text;
         -webkit-background-clip: text;
-        font-style: normal;
         -webkit-text-fill-color: transparent;
         margin: 0;
         visibility: visible;
@@ -225,12 +225,13 @@ button{
         align-items: flex-start;
         border-radius: pxToRem(2.805);
         border: pxToRem(1.402) solid $gradient-green;
-        width: 25%;
+        width: pxToRem(188);
         flex-direction: column;
-        gap: pxToRem(22.44);
-        flex-shrink: 0;
+        display: flex;
+        padding: pxToRem(12) pxToRem(40) pxToRem(12) pxToRem(40);
+        gap: pxToRem(14.025);   
         color: $gray;
-
+flex-shrink: 0;
     }
 }
 }

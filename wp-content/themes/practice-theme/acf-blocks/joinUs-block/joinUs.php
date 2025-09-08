@@ -1,5 +1,4 @@
 <?php 
-// Include the form components
 require_once get_template_directory() . '/acf-blocks/joinUs-block/form-fields-component.php';
 require_once get_template_directory() . '/acf-blocks/joinUs-block/button-component.php';
 
@@ -16,7 +15,6 @@ $register_button_form = get_field('register_button_form');
 $phone_prefix_form = get_field('phone_prefix_form');
 $register_button_text = $register_button_form['title'] ?? '';
 
-// Prepare data for the form fields component
 $form_fields_data = [
     'first_name_form' => $first_name_form,
     'last_name_form' => $last_name_form,
@@ -44,12 +42,10 @@ $form_fields_data = [
             <?php wp_nonce_field('joinUs_nonce', 'joinUs_nonce'); ?>
             
             <?php 
-            // Render form fields using component
             render_joinus_form_fields($form_fields_data); 
             ?>
             
             <?php 
-            // Render submit button using component
             render_joinus_button($register_button_text); 
             ?>
         </form>
