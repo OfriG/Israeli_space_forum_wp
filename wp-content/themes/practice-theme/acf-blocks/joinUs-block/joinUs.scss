@@ -122,14 +122,6 @@ align-self: stretch; margin-bottom: pxToRem(171.27);
             border-radius: pxToRem(2);
             border: pxToRem(0.5) solid $black;
             padding: pxToRem(11) pxToRem(12) pxToRem(11) pxToRem(9.47);
-            
-            // // Prevent text breaking and ensure proper text handling
-            // white-space: nowrap;
-            // overflow: hidden;
-            // text-overflow: ellipsis;
-            // font-size: pxToRem(14);
-            // line-height: 1.2;
-            
      
         }
         
@@ -182,8 +174,6 @@ align-self: stretch; margin-bottom: pxToRem(171.27);
                 box-sizing: border-box;
                 border-radius: pxToRem(2);
                 border: pxToRem(0.5) solid $black;
-                
-                // Prevent text breaking
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
