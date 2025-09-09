@@ -64,6 +64,17 @@ function practice_theme_register_acf_blocks()
         'render_template' => get_template_directory() . '/acf-blocks/isf-block/isf-block.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/isf-block.css',
     ));
+    acf_register_block_type(array(
+        'name' => 'mission-Intro-block',
+        'title' => 'Mission Intro Block',
+        'description' => ('A custom that tells about the the mission of the forum.'),
+        'category' => 'theme',
+        'icon' => 'superhero-alt',
+            'keywords' => array('mission', 'intro', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/mission-Intro-block/mission-Intro-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/mission-Intro-block.css',
+    ));
 
 }
 
