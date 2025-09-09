@@ -25,6 +25,7 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
 
     .sass('acf-blocks/isf-block/isf-block.scss', 'dist/css/isf-block.css')
     .sass('acf-blocks/bannerBlock/bannerBlock.scss', 'dist/css/bannerBlock.css')
+    .sass('acf-blocks/IAC/hero/hero-block.scss', 'dist/css/hero-block.css')
 
     .js('resources/js/newsLetter.js', 'dist/js')
 

@@ -1,0 +1,92 @@
+@import '../../../resources/scss/_colors';
+@import '../../../resources/scss/_variables';
+@import '../../../Functions/scssFunctions.scss';
+
+.iac-hero-block {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    .iac-hero-block-content {
+    display: flex;
+    flex-direction: column;
+    padding: pxToRem(36.83) pxToRem(21.86) pxToRem(72.35) pxToRem(32);
+    img{
+        width: pxToRem(102.941);
+        height: pxToRem(39.653);
+        flex-shrink: 0;
+        margin-bottom: pxToRem(28);
+    }
+    .iac-hero-block-content-headline-mobile{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            display: none;
+        }
+        margin-bottom: pxToRem(16);
+        align-self: stretch;
+        color: $white;
+        font-family: "Wallnutt Corps";
+        font-size: pxToRem(50);
+        font-style: normal;
+        font-weight: 400;
+        line-height: pxToRem(49);
+        text-align: left;
+    }
+    .iac-hero-block-content-headline-desktop{
+        display: none;
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            color: $white;
+            display: block;
+            text-align: left;
+            font-family: "Wallnutt Corps";
+            font-size: pxToRem(120);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(120);
+            
+            .gradient-text {
+                background: linear-gradient(90deg, #64E275 23.79%, #11B6BC 61.87%, #1776B1 99.95%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+    }
+    
+    .iac-hero-block-content-first-description{
+        margin: pxToRem(0) pxToRem(0) pxToRem(32) pxToRem(0);
+        align-self: stretch;
+        color: $white;
+        font-family: "Space Grotesk";
+        font-size: pxToRem(15);
+        font-style: normal;
+        font-weight: 400;
+        line-height: pxToRem(22);
+        text-align: left;
+    }
+    .iac-hero-block-second-description-container{
+        display: flex;
+        flex-direction: column;
+        margin: pxToRem(0) pxToRem(33) pxToRem(32) pxToRem(0);
+        font-family: "Space Grotesk";
+        font-size: pxToRem(23.023);
+        font-style: normal;
+        font-weight: 700;
+        line-height: pxToRem(24.667);
+        text-transform: uppercase;
+
+        .iac-hero-block-content-second-description{
+            margin: 0;
+            color: $white;
+        }
+        .iac-hero-block-content-third-description{
+            margin: 0;
+            background: linear-gradient(272deg, #64E275 -4.28%, #11B6BC 46.11%, #1776B1 96.5%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: left;
+        }
+    }
+}
+
