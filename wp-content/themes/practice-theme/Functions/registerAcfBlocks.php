@@ -72,7 +72,7 @@ function practice_theme_register_acf_blocks()
         'icon' => 'superhero-alt',
             'keywords' => array('mission', 'intro', 'block'),
             'mode' => 'preview',
-        'render_template' => get_template_directory() . '/acf-blocks/mission-Intro-block/mission-Intro-block.php',
+        'render_template' => get_template_directory() . '/acf-blocks/mission-Intro-block/mission-intro-block.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/mission-Intro-block.css',
     ));
 
