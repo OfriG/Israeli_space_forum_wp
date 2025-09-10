@@ -1,0 +1,45 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.aboutUs-banner-logos{
+    @media (min-width: calc(#{$mobile} + 1px)) { 
+        margin: pxToRem(49.406) pxToRem(210.678) pxToRem(49.864) pxToRem(209);
+    }
+    .banner_images{ 
+        display: flex;
+        margin: pxToRem(24.973) pxToRem(77.848) pxToRem(24.973) pxToRem(79.68);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        @media (min-width: calc(#{$mobile} + 1px)) {    
+            flex-direction: row;
+            align-items: center;
+            gap: pxToRem(63);
+            margin: 0;
+        }
+        .banner_images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                flex: 0 1 auto;
+            }
+            
+            img {
+                display: flex;
+                padding: pxToRem(21.75) pxToRem(66.293) pxToRem(21.75) pxToRem(66.291);
+                justify-content: center;
+                align-items: center;     
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    display: block;
+                    padding: pxToRem(0);
+                    max-height: pxToRem(75);
+                    max-width: pxToRem(120);
+                }
+            }
+        }
+    }
+}

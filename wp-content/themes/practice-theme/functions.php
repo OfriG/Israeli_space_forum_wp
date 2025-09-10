@@ -5,3 +5,6 @@ require_once get_template_directory() . '/Functions/logoFunctions.php';
 require_once get_template_directory() . '/Functions/newsLetterFunctions.php';
 require_once get_template_directory() . '/Functions/registerAcfBlocks.php';
 require_once get_template_directory() . '/Functions/acfLocalJson.php';
+require_once get_template_directory() . '/Functions/joinUsFunctions.php';
+require_once get_template_directory() . '/Functions/emailFunctions.php';
+
