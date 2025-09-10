@@ -1,18 +1,108 @@
 @import '../../resources/scss/_colors';
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
-
-.impact-block{
+.impact-block-mobile {
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        display: none;
+    }
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    .impact-block-content{
+    .icon-space{ 
         display: flex;
-        // .icon-space{}
-.impact-block-headline{
-    color: $white;
-}
+    padding: pxToRem(60.29) pxToRem(26) pxToRem(25) pxToRem(28.14);
+    img {
+        // @media (min-width: calc(#{$mobile} + 1px)) {
+        //     margin-top: pxToRem(197);
+        // }
+        flex-shrink: 0;    
+        &:nth-child(2) {
+            margin-left: pxToRem(-22); 
+        }
     }
+}
+.impact-block-content
+{
+    // @media (min-width: calc(#{$mobile} + 1px)) {
 
+    // }
+    display: flex;
+    flex-direction: column;
+    padding: pxToRem(0.29) pxToRem(26) pxToRem(76) pxToRem(28.14);
+   
+.impact-block-headline{
+    color:$white;
+    font-family: "Wallnutt Corps";
+    font-size: pxToRem(34);
+    font-style: normal;
+    font-weight: 400;
+    line-height: pxToRem(40);
+    margin-bottom: pxToRem(16);
+}
+.impact-block-description{
+    align-self: stretch;
+    color: $white;
+    font-family: "Space Grotesk";
+    font-size: pxToRem(15);
+    font-style: normal;
+    font-weight: 400;
+    line-height: pxToRem(22);
+    margin-bottom: pxToRem(52);
+}
+.impact-block-button{
+    display: flex;
+padding: pxToRem(8.824) pxToRem(29.412);
+justify-content: center;
+align-items: center;
+gap: pxToRem(7.353);
+border-radius: pxToRem(1.471);
+border: pxToRem(1.471) solid $gradient-green;
+color: $gradient-green;
+font-family: "Space Grotesk";
+font-size: pxToRem(15);
+font-style: normal;
+overflow: hidden;
+overflow: hidden;
+text-overflow: ellipsis;
+line-height: pxToRem(22); 
+max-width: pxToRem(172);
 
+a{
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $white;
+font-family: "Space Grotesk";
+font-size: pxToRem(15);
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: uppercase;
+}
+}
+}   
+}
+
+//desktop
+.impact-block-desktop {
+    @media (max-width: $mobile) {
+        display: none;
+    }
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .icon-space{
+        display: flex;
+        padding: pxToRem(60.29) pxToRem(26) pxToRem(25) pxToRem(28.14);
+        img {
+            flex-shrink: 0;    
+            &:nth-child(2) {
+                margin-left: pxToRem(-22); 
+            }
+        }
+    }
+ 
+
+    
 }
