@@ -39,6 +39,17 @@ function practice_theme_register_acf_blocks()
         'mode' => 'preview',
         'render_template' => get_template_directory() . '/acf-blocks/bannerBlock/bannerBlock.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/bannerBlock.css',
+    )); 
+      acf_register_block_type(array(
+        'name' => 'joinUs-block',
+        'title' => 'Join Us Block',
+        'description' => ('A custom join us block.'),
+        'category' => 'theme',
+        'icon' => 'email',
+        'keywords' => array('joinUs', 'block'),
+        'mode' => 'preview',
+         'render_template' => get_template_directory() . '/acf-blocks/joinUs-block/joinUs-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/joinUs-block.css',
     ));
     acf_register_block_type(array(
         'name' => 'members-block',
