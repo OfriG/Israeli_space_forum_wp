@@ -8,10 +8,18 @@
     background-position: center;
     
     .iac-hero-block-content {
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            padding: pxToRem(63.14) pxToRem(425) pxToRem(139) pxToRem(251);
+        }
     display: flex;
     flex-direction: column;
     padding: pxToRem(36.83) pxToRem(21.86) pxToRem(72.35) pxToRem(32);
     img{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            width: pxToRem(161.25);
+            height: pxToRem(62.113);
+            margin-bottom: pxToRem(23.63);
+        }
         width: pxToRem(102.941);
         height: pxToRem(39.653);
         flex-shrink: 0;
@@ -54,10 +62,13 @@
     }
     
     .iac-hero-block-content-first-description{
-        margin: pxToRem(0) pxToRem(0) pxToRem(32) pxToRem(0);
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            font-size: pxToRem(24);
+            margin: pxToRem(0) pxToRem(0) pxToRem(32) pxToRem(0);
+
+        }
         align-self: stretch;
         color: $white;
-        font-family: "Space Grotesk";
         font-size: pxToRem(15);
         font-style: normal;
         font-weight: 400;
@@ -65,10 +76,14 @@
         text-align: left;
     }
     .iac-hero-block-second-description-container{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            flex-direction: row;
+            font-size: pxToRem(30);
+            gap: pxToRem(10);
+        }
         display: flex;
         flex-direction: column;
         margin: pxToRem(0) pxToRem(33) pxToRem(32) pxToRem(0);
-        font-family: "Space Grotesk";
         font-size: pxToRem(23.023);
         font-style: normal;
         font-weight: 700;
@@ -88,5 +103,45 @@
             text-align: left;
         }
     }
-}
+    .iac-hero-block-button-container-mobile{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            display: none;
+        }
+        display: flex;
+        padding: pxToRem(8.824) pxToRem(29.412);
+        justify-content: center;
+        align-items: center;
+        gap: pxToRem(7.353);
+        border-radius: pxToRem(1.471);
+        border: pxToRem(1.471) solid $iac-button-green;
+        margin-right: pxToRem(211);
+        a{
+        font-size: pxToRem(15);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;}
+    }
+    .iac-hero-block-button-container-desktop{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            display: inline-flex;       
 
+width: pxToRem(221);
+padding: pxToRem(12) pxToRem(40);
+justify-content: center;
+align-items: center;
+gap: pxToRem(10);
+border-radius: pxToRem(2);
+border: pxToRem(2) solid $iac-button-green;
+a{
+    color: $white;
+    font-size: pxToRem(24);
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+        }
+        display: none;
+
+    }
+}
