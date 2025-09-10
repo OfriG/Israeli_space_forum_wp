@@ -64,6 +64,17 @@ function practice_theme_register_acf_blocks()
         'render_template' => get_template_directory() . '/acf-blocks/isf-block/isf-block.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/isf-block.css',
     ));
+    acf_register_block_type(array(
+        'name' => 'impact-block',
+        'title' => 'Impact Block',
+        'description' => ('A custom of Impact block.'),
+        'category' => 'theme',
+        'icon' => 'megaphone',
+        'keywords' => array('impact', 'block'),
+        'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/impact-block/impact-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/impact-block.css',
+    ));
 
 }
 

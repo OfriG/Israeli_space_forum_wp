@@ -1,14 +1,8 @@
 <?php
-/**
- * Template Name: IAC Page
- */
-get_header();
-?>
-
-<main id="main" class="site-main">
-    <div class="container">
-        Template: IAC Page
-    </div>
-</main>
-
-<?php get_footer(); ?>
+if (have_posts()) :
+    while (have_posts()) : the_post();
+        the_content();
+    endwhile;
+endif;
+get_footer();
+ ?>

@@ -22,6 +22,7 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('resources/scss/_colors.scss', 'dist/css')
     .sass('resources/scss/_variables.scss', 'dist/css')
     .sass('acf-blocks/members-block/members-block.scss', 'dist/css/members-block.css')
+    .sass('acf-blocks/impact-block/impact-block.scss', 'dist/css/impact-block.css')
 
     .sass('acf-blocks/isf-block/isf-block.scss', 'dist/css/isf-block.css')
     .sass('acf-blocks/bannerBlock/bannerBlock.scss', 'dist/css/bannerBlock.css')

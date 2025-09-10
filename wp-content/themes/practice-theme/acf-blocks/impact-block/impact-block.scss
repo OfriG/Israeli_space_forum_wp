@@ -1,0 +1,18 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.impact-block{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .impact-block-content{
+        display: flex;
+        // .icon-space{}
+.impact-block-headline{
+    color: $white;
+}
+    }
+
+
+}
