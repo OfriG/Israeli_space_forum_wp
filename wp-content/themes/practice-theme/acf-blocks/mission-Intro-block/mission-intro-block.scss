@@ -4,6 +4,9 @@
 
 .mission-intro-block {
     background: $mission-intro-gradient;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
 
     .AboutUs-mission-text {
@@ -20,7 +23,7 @@
             }
             color: $white;
             text-align: left;
-            font-family: "Wallnutt Corps";
+            font-family: $header-font-family;
             font-size: pxToRem(45);
             font-style: normal;
             font-weight: 400;
