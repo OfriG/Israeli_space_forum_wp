@@ -29,7 +29,7 @@
    
 .impact-block-headline{
     color:$white;
-    font-family: "Wallnutt Corps";
+    font-family: $header-font-family;
     font-size: pxToRem(34);
     font-style: normal;
     font-weight: 400;
@@ -39,7 +39,6 @@
 .impact-block-description{
     align-self: stretch;
     color: $white;
-    font-family: "Space Grotesk";
     font-size: pxToRem(15);
     font-style: normal;
     font-weight: 400;
@@ -55,7 +54,6 @@ gap: pxToRem(7.353);
 border-radius: pxToRem(1.471);
 border: pxToRem(1.471) solid $gradient-green;
 color: $gradient-green;
-font-family: "Space Grotesk";
 font-size: pxToRem(15);
 font-style: normal;
 overflow: hidden;
@@ -71,7 +69,6 @@ a{
     overflow: hidden;
     text-overflow: ellipsis;
     color: $white;
-font-family: "Space Grotesk";
 font-size: pxToRem(15);
 font-style: normal;
 font-weight: 700;
@@ -129,7 +126,7 @@ text-transform: uppercase;
             flex-direction: column;
             .impact-block-headline{
                             color: $white;
-                font-family: "Wallnutt Corps"; 
+                font-family: $header-font-family; 
                 font-size: pxToRem(90);
                 font-style: normal;
                 font-weight: 400;
@@ -145,7 +142,6 @@ text-transform: uppercase;
                 border-radius: pxToRem(2);
                 border: pxToRem(2) solid $gradient-green;
                 a{
-font-family: "Space Grotesk";
 font-size: pxToRem(24);
 font-style: normal;
 font-weight: 700;
@@ -161,7 +157,6 @@ text-transform: uppercase;
         .impact-block-description{
             max-width:pxToRem(548);
             color: $white;
-font-family: "Space Grotesk";
 font-size: pxToRem(24);
 font-style: normal;
 font-weight: 400;
