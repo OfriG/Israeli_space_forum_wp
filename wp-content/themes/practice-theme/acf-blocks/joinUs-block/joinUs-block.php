@@ -37,17 +37,10 @@ $form_fields_data = [
             <p class="joinUs-block-content-description"><?php echo $description_joinus; ?></p>
         <?php endif; ?>
     </div>
-    <div class="joinUs-block-form">
-        <form id="joinUs-form" class="joinUs-ajax-form" method="post">
-            <?php wp_nonce_field('joinUs_nonce', 'joinUs_nonce'); ?>
-            
-            <?php 
-            render_joinus_form_fields($form_fields_data); 
-            ?>
-            
-            <?php 
-            render_joinus_button($register_button_text); 
-            ?>
-        </form>
-    </div>
+    <?php
+    get_template_part('template-parts/joinUs-form', null, [
+        'form_fields_data' => $form_fields_data,
+        'register_button_text' => $register_button_text
+    ]);
+    ?>
 </div>

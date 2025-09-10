@@ -49,8 +49,8 @@ function practice_theme_register_acf_blocks()
         'icon' => 'email',
         'keywords' => array('joinUs', 'block'),
         'mode' => 'preview',
-         'render_template' => get_template_directory() . '/acf-blocks/joinUs-block/joinUs.php',
-        'enqueue_style' => get_template_directory_uri() . '/dist/css/joinUsBlock.css',
+         'render_template' => get_template_directory() . '/acf-blocks/joinUs-block/joinUs-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/joinUs-block.css',
     ));
 
 
