@@ -29,7 +29,6 @@ function practice_theme_register_acf_blocks()
         'enqueue_style' => get_template_directory_uri() . '/dist/css/iac-block.css?v=' . (file_exists(get_template_directory() . '/dist/css/iac-block.css') ? filemtime(get_template_directory() . '/dist/css/iac-block.css') : '1.0'),
     ));
 
-
     acf_register_block_type(array(
         'name' => 'banner-block',
         'title' => 'Banner Block',
@@ -76,5 +75,16 @@ function practice_theme_register_acf_blocks()
         'enqueue_style' => get_template_directory_uri() . '/dist/css/isf-block.css',
     ));
 
+    acf_register_block_type(array(
+        'name' => 'AboutUs-hero',
+        'title' => 'About Us Hero',
+        'description' => ('A custom of About Us Hero block.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-id',
+            'keywords' => array('AboutUs', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/AboutUs-hero/AboutUs-hero.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/AboutUs-hero.css',
+    ));
 }
 
