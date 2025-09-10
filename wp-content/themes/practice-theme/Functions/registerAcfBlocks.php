@@ -52,7 +52,29 @@ function practice_theme_register_acf_blocks()
          'render_template' => get_template_directory() . '/acf-blocks/joinUs-block/joinUs-block.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/joinUs-block.css',
     ));
+    acf_register_block_type(array(
+        'name' => 'members-block',
+        'title' => 'Members Block',
+        'description' => ('A custom that shows the members and the collaborators of the forum.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-format-image',
+        'keywords' => array('members', 'block'),
+        'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/members-block/members-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/members-block.css',
+    ));
 
+    acf_register_block_type(array(
+        'name' => 'isf-block',
+        'title' => 'ISF Block',
+        'description' => ('A custom of Israel Space Forum block.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-format-image',
+            'keywords' => array('isf', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/isf-block/isf-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/isf-block.css',
+    ));
 
 }
 

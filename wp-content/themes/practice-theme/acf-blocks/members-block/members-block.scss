@@ -1,0 +1,157 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+.members-block {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .collaborators-second-title{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            width: pxToRem(833.016);
+            font-size: pxToRem(90);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(88); 
+            margin: 0 auto;
+            display: block;
+            padding-bottom: pxToRem(39);
+        }
+        width: pxToRem(325);
+        font-size: pxToRem(34);
+        font-style: normal;
+        font-weight: 400;
+        line-height: pxToRem(37);
+        color: $white;
+        font-family: "Wallnutt Corps";
+        width: pxToRem(325);
+        text-align: center;
+        margin: pxToRem(0) pxToRem(0) pxToRem(27) pxToRem(0);
+    }
+    .members-block-content{
+        padding: pxToRem(63) pxToRem(33) pxToRem(65) pxToRem(30);
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            padding: pxToRem(0) pxToRem(260) pxToRem(86) pxToRem(260);
+        }
+        .members-icon-space{
+            display: flex;
+            align-items: center;
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                margin-top: pxToRem(25);
+                margin-bottom: pxToRem(84);
+                justify-content: center;
+     }
+            img {
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    margin-top: pxToRem(197);
+                }
+                flex-shrink: 0;    
+                &:nth-child(2) {
+                    margin-left: pxToRem(-22); 
+                }
+            }
+        }      
+        .members-first-title{
+            font-size: pxToRem(34);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(49);
+            color: $white;
+            width: pxToRem(273.811);
+            font-family: "Wallnutt Corps";
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                text-align: center;
+                font-size: pxToRem(90);
+                line-height: pxToRem(88); 
+                width: pxToRem(737);
+                margin: 0 auto;
+                display: block;
+                padding-bottom: pxToRem(52);
+            }
+        }
+        
+        .members-block-logos{
+            display: flex;
+            flex-direction: row;
+            gap: pxToRem(17.349);
+            margin-bottom: pxToRem(76.34);
+            flex-wrap: wrap;
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                gap: pxToRem(41.95);
+            }
+            
+            .member-logo{  
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    width: pxToRem(195);
+                    height: pxToRem(95);
+                    padding: pxToRem(22.385) pxToRem(64.013) pxToRem(22.384) pxToRem(64.012);
+                   
+                }  
+                 width: pxToRem(90.971);
+                 height: pxToRem(44.319);
+                 flex-shrink: 0;
+                 box-sizing: border-box;
+                 text-align: center;
+                 margin-bottom: pxToRem(17.349);
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 padding: pxToRem(9.964) 0;
+                 img {
+                     max-width: 100%;
+                     max-height: 100%;
+                     object-fit: contain;
+                     display: block;
+                 }
+              }
+        }       
+        .collaborators-block-logos{
+            display: flex;
+            flex-direction: row;
+            gap: pxToRem(17.349);
+            flex-wrap: wrap;
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                display: flex;
+                width: pxToRem(1127);
+                padding-bottom: pxToRem(3.715);
+                justify-content: center;
+                align-items: flex-start;
+                gap: pxToRem(38);
+            }
+            .collaborator-logo{    
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    width: pxToRem(140.121);
+                    height: pxToRem(104.193);
+                    flex-shrink: 0;
+                    box-sizing: border-box;
+                    padding: pxToRem(17) pxToRem(21) pxToRem(17) pxToRem(22);
+                }  
+                 width: pxToRem(90.971);
+                 height: pxToRem(44.319);
+                 flex-shrink: 0;
+                 box-sizing: border-box;
+                 text-align: center;
+                 margin-bottom: pxToRem(17.349);
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 padding: pxToRem(9.964) 0;         
+                 img {
+                     @media (min-width: calc(#{$mobile} + 1px)) {
+                        display: flex;
+                        width: pxToRem(195);
+                        height: pxToRem(95);
+                        padding: pxToRem(17) pxToRem(21) pxToRem(17) pxToRem(22);     
+                        justify-content: center;
+                        align-items: center;
+                        flex-shrink: 0;             
+                            box-sizing: border-box;
+                     }
+                     max-width: 100%;
+                     max-height: 100%;
+                     object-fit: contain;
+                     display: block;
+                 }
+              }
+        }
+    }
+}
