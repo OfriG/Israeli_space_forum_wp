@@ -86,5 +86,16 @@ function practice_theme_register_acf_blocks()
         'render_template' => get_template_directory() . '/acf-blocks/AboutUs-hero/AboutUs-hero.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/AboutUs-hero.css',
     ));
+    acf_register_block_type(array(
+        'name' => 'campanis-block',
+        'title' => 'Campanis Block',
+        'description' => ('A custom that present companies.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-groups',
+            'keywords' => array('Campanis', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/campanis-block/campanis-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/campanis-block.css',
+    ));
 }
 
