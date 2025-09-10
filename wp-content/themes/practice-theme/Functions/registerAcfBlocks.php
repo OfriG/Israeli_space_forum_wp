@@ -76,6 +76,18 @@ function practice_theme_register_acf_blocks()
     ));
 
     acf_register_block_type(array(
+        'name' => 'aboutUs-banner',
+        'title' => 'About Us Banner',
+        'description' => ('About Us Banner block.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-format-image',
+            'keywords' => array('aboutUs', 'banner'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/aboutUs-bannerBlock/aboutUs-banner.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/aboutUs-banner.css',
+    ));
+
+    acf_register_block_type(array(
         'name' => 'AboutUs-hero',
         'title' => 'About Us Hero',
         'description' => ('A custom of About Us Hero block.'),
