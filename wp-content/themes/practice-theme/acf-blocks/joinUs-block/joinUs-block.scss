@@ -1,0 +1,227 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+.joinUs-block{
+    display: flex;
+    flex-direction: column;
+    margin: pxToRem(41.61) pxToRem(34.72) pxToRem(42) pxToRem(40.28);
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        margin: pxToRem(180) pxToRem(411.5) pxToRem(188) pxToRem(411.5);    display: flex;
+        flex-direction: column;
+    }
+
+.joinUs-block-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: pxToRem(10);
+    @media (min-width: calc(#{$mobile} + 1px)) {
+       margin: pxToRem(21) pxToRem(168.07) pxToRem(49) pxToRem(168.07);
+       gap: pxToRem(21);
+    }
+
+.joinUs-block-content-title-mobile{
+    font-family: "Wallnutt Corps";
+    font-size: pxToRem(45);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; 
+    background: $button-background;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    display: block;
+    visibility: visible;
+    
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        display: none;
+        visibility: hidden;
+    }
+}
+.joinUs-block-content-title-desktop{
+
+
+    display: none;
+    visibility: hidden;
+    
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        display: block;
+
+        font-family: "Wallnutt Corps";
+        font-size: pxToRem(90);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.1; 
+        background: $button-background;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        visibility: visible;
+    }
+}
+.joinUs-block-content-description{
+    @media (min-width: calc(#{$mobile} + 1px)) {
+
+font-size: pxToRem(24);
+
+    }
+    margin: 0;
+    text-align: center;
+    font-size: pxToRem(13);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+}
+
+.joinUs-block-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: calc(#{$mobile} + 1px)) {
+   
+    }
+    form{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            padding-top: pxToRem(0);
+flex-shrink: 0;
+align-self: stretch; margin-bottom: pxToRem(171.27);
+        }
+        width: 100%;
+        padding-top: pxToRem(26.39);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: pxToRem(20);
+        
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: pxToRem(20);
+            
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                flex-direction: row;
+                gap: pxToRem(20);
+            }
+        }
+        
+        .form-field{            
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                display: flex;
+                padding: pxToRem(19.635) pxToRem(16.849) pxToRem(20.892) pxToRem(16.849);
+                align-items: center;
+                flex: 1;
+            }
+            
+            box-sizing: border-box;
+            width: 100%;
+            flex-shrink: 0;
+            border-radius: pxToRem(2);
+            border: pxToRem(0.5) solid $black;
+            padding: pxToRem(11) pxToRem(12) pxToRem(11) pxToRem(9.47);
+     
+        }
+        
+        .phone-input-container {
+            box-sizing: border-box;
+            width: 100%;
+            flex-shrink: 0;
+            display: flex; 
+            gap: pxToRem(12);
+
+
+            
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                flex: 1;
+                padding: pxToRem(19.635) pxToRem(16.849) pxToRem(20.892) pxToRem(16.849);
+                align-items: center;
+                border-radius: pxToRem(2);
+                border: pxToRem(0.5) solid $black;
+            }
+            
+            .form-field-phone-prefix {
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                 display: none;
+                }
+                border-radius: pxToRem(2);
+                border: pxToRem(0.5) solid $black;
+                background: $white;
+                
+                padding: pxToRem(13.4) pxToRem(12.47) pxToRem(13.4) pxToRem(15);
+                width: 25%;
+                box-sizing: border-box;
+                
+              
+            }
+            
+            .form-field-phone {
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    display: flex;
+                    padding: 0;
+                    align-items: center;
+                    flex: 1;
+                    border: none;
+                    background: transparent;
+                }
+                width: 75%;
+                display: flex;
+                padding: pxToRem(19.13) pxToRem(12) pxToRem(13.892) pxToRem(10.849);
+                align-items: center;
+                flex: 1;
+                box-sizing: border-box;
+                border-radius: pxToRem(2);
+                border: pxToRem(0.5) solid $black;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: pxToRem(14);
+                line-height: 1.2;
+                
+                &::placeholder {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color: #999;
+                }
+            }
+        }
+
+}
+}
+
+button{
+    display: flex;
+    padding: pxToRem(12) pxToRem(40);
+    justify-content: center;
+    align-items: center;
+    border-radius: pxToRem(2);
+    border: pxToRem(2) $button-border solid;
+    color: $button-text-disabled;
+    font-size: pxToRem(24);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    background-color: $white;
+    margin-bottom: pxToRem(22);
+    align-self: stretch;
+    gap: pxToRem(10);
+    
+ 
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        align-items: flex-start;
+        border-radius: pxToRem(2.805);
+        border: pxToRem(1.402) solid $gradient-green;
+        width: pxToRem(188);
+        flex-direction: column;
+        display: flex;
+        padding: pxToRem(12) pxToRem(40) pxToRem(12) pxToRem(40);
+        gap: pxToRem(14.025);   
+        color: $gray;
+flex-shrink: 0;
+    }
+}
+}
