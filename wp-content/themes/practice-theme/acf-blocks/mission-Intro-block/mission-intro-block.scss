@@ -1,0 +1,44 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.mission-intro-block {
+    background: $mission-intro-gradient;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+
+    .AboutUs-mission-text {
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            margin: pxToRem(92) pxToRem(1125) pxToRem(120) pxToRem(195);
+        }
+        margin: pxToRem(113) pxToRem(27.5) pxToRem(40) pxToRem(27.5);
+        display: flex;
+        flex-direction: column;
+        .AboutUs-mission-headline {
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                font-size: pxToRem(90);
+                line-height: pxToRem(88);
+            }
+            color: $white;
+            text-align: left;
+            font-family: $header-font-family;
+            font-size: pxToRem(45);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(49);
+        }
+        .AboutUs-mission-description {
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                font-size: pxToRem(24);
+                line-height: normal;
+            }
+            color: $white;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(22);
+        }
+    }
+}
