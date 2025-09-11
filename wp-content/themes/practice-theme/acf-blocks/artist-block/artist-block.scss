@@ -1,0 +1,136 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.artist-block{
+    .artist-block-content{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            flex-direction: row-reverse;
+            padding: pxToRem(130) pxToRem(126) pxToRem(130) pxToRem(205);
+            gap: pxToRem(81);
+
+        }
+            display: flex;
+        flex-direction: column;
+        padding: pxToRem(42) pxToRem(22.03) pxToRem(67.93) pxToRem(25.53);
+        .artist-block-content-headline{
+        img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+    
+    }
+    .artist-block-content-description{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+          font-size: pxToRem(24);
+        }
+        display: flex;
+        margin: pxToRem(24.12) pxToRem(0) pxToRem(60) pxToRem(0);
+        color: $black;
+        font-size: pxToRem(15);
+        font-style: normal;
+        font-weight: 400;
+        line-height: pxToRem(22); 
+    }
+    .artist-block-gallery{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            display: none;}
+        display: flex;
+        flex-direction: row;
+        overflow: hidden; 
+    .artist-gallery-item{
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        border: pxToRem(1) solid $shadowGray;
+        box-shadow: 0 pxToRem(2) pxToRem(4) 0 $shadowGray;
+        flex-shrink: 0;
+        width: pxToRem(290);
+        height: 100%;
+        &:first-child {
+            margin-right: pxToRem(18);
+        }
+        .artist-name{
+            display: flex;
+            margin: pxToRem(6) pxToRem(0) pxToRem(0) pxToRem(9.69);
+            color: $black;
+            font-size: pxToRem(28);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+        }
+        .artwork-title{
+            color: $black;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            margin: pxToRem(0) pxToRem(128.173) pxToRem(12) pxToRem(9.69);
+        }
+        .artist-gallery-image{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            img{
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+        .artwork-description{
+            color: $black;
+font-size: pxToRem(15);
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin: pxToRem(16.12) pxToRem(23.34) pxToRem(18.42) pxToRem(9.69);
+        }
+        .artist-email{
+            color: $black;
+            font-size: pxToRem(15);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin: pxToRem(0) pxToRem(119.18) pxToRem(15.74) pxToRem(9.69);
+        }
+    }
+    .artist-block-dotes{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            display: none;}
+        display: flex;    
+      padding: pxToRem(25.75) pxToRem(105.71) pxToRem(0) pxToRem(87.03);
+      img{
+        max-width: 100%; 
+        object-fit: contain;
+        width: auto;
+        height: auto;
+      }
+    }
+}
+
+//desktop
+.artist-block-gallery-desktop{
+    display: none;
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        display: flex;
+        flex-direction: row;
+        gap: pxToRem(18);
+        .artist-gallery-item-desktop{
+            height: pxToRem(716);
+
+    }
+}
+
+
+
+
+}
+}
