@@ -74,6 +74,16 @@ function practice_theme_register_acf_blocks()
         'render_template' => get_template_directory() . '/acf-blocks/isf-block/isf-block.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/isf-block.css',
     ));
+ acf_register_block_type(array(
+        'name' => 'AU-team-block',
+        'title' => 'AU Team Block',
+        'description' => ('A custom of about us team block with team pictures and names.'),
+        'category' => 'theme',
+        'icon' => 'admin-users  ',
+            'keywords' => array('AU', 'team', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/AU-team-block/team-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/team-block.css',
     acf_register_block_type(array(
         'name' => 'impact-block',
         'title' => 'Impact Block',
