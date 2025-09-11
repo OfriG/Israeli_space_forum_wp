@@ -15,18 +15,8 @@ $background_image_hero= get_field('background_image_hero');
     <div class="iac-hero-block-content">
             <img class="iac-hero-block-logo" src="<?php echo esc_url($iac_logo['url']); ?>" alt="<?php echo esc_attr($iac_logo['alt']); ?>">
         <h1 class="iac-hero-block-content-headline-mobile"><?php echo nl2br(esc_html($mobile_headline_hero)); ?></h1>
-        <h1 class="iac-hero-block-content-headline-desktop"><?php 
-            if ($desktop_headline_hero) {
-                $text = trim($desktop_headline_hero);
-                $last_space_pos = strrpos($text, ' ');
-                $second_last_space_pos = strrpos($text, ' ', $last_space_pos - strlen($text) - 1);
-                if ($second_last_space_pos !== false) {
-                    echo esc_html(substr($text, 0, $second_last_space_pos)) . ' <span class="gradient-text">' . esc_html(substr($text, $second_last_space_pos + 1)) . '</span>';
-                } else {
-                    echo esc_html($text);
-                }
-            }
-        ?></h1>
+        <h1 class="iac-hero-block-content-headline-desktop">    <?php echo wp_kses_post($desktop_headline_hero); ?>
+        </h1>
       
         <p class="iac-hero-block-content-first-description"><?php echo esc_html($first_description_hero); ?></p>
        <div class="iac-hero-block-second-description-container">
@@ -34,22 +24,22 @@ $background_image_hero= get_field('background_image_hero');
         <p class="iac-hero-block-content-third-description"><?php echo esc_html(" " . $third_description_hero); ?></p>
         </div>
         <?php if ($button_mobile_hero): ?>
-        <div class="iac-hero-block-button-container-mobile">
-        <?php 
-        get_template_part('template-parts/button', null, [
-            'button' => $button_mobile_hero
-        ]); 
-        ?>
-        </div>
+            <div class="iac-hero-block-button-container-mobile">
+                <?php 
+                get_template_part('template-parts/button', null, [
+                    'button' => $button_mobile_hero
+                ]); 
+                ?>
+            </div>
         <?php endif; ?>
         <?php if ($button_desktop_hero): ?>
-        <div class="iac-hero-block-button-container-desktop">
-        <?php 
-        get_template_part('template-parts/button', null, [
-            'button' => $button_desktop_hero
-        ]); 
-        ?>
-        </div>
+            <div class="iac-hero-block-button-container-desktop">
+                <?php 
+                get_template_part('template-parts/button', null, [
+                    'button' => $button_desktop_hero
+                ]); 
+                ?>
+            </div>
         <?php endif; ?>
     </div>
 </div>
