@@ -15,9 +15,9 @@ $icon = get_field('icon');
             <?php get_template_part('template-parts/button', null, ['button' => $first_button]); ?>
         </div>
         <div class="second-button">
-<?php get_template_part('template-parts/button', null, ['button' => $second_button]); ?>
-            </div>
-            </div>
+             <?php get_template_part('template-parts/button', null, ['button' => $second_button]); ?>
+        </div>
+        </div>
             <div class="icon">
                 <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
             </div>
@@ -47,8 +47,6 @@ $icon = get_field('icon');
             <img src="<?php echo get_template_directory_uri(); ?>/images/world.svg" alt="LinkedIn" />
             </div>  
             </div>
-
-
         </div>
     </div>
 </div>
