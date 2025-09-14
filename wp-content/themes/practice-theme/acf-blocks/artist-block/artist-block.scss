@@ -14,11 +14,25 @@
         flex-direction: column;
         padding: pxToRem(42) pxToRem(22.03) pxToRem(67.93) pxToRem(25.53);
         .artist-block-content-headline{
-        img{
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
+        .headline-mobile {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                display: none; 
+            }
+        }
+        
+        .headline-desktop {
+            max-width: 100%;
+            height: auto;
+            display: none; 
+            
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                display: block; 
+            }
+        }
     
     }
     .artist-block-content-description{
@@ -104,7 +118,10 @@ margin: pxToRem(16.12) pxToRem(23.34) pxToRem(18.42) pxToRem(9.69);
     }
     .artist-block-dotes{
         @media (min-width: calc(#{$mobile} + 1px)) {
-            display: none;}
+            flex-direction: row;
+            background: $black;
+        }
+        
         display: flex;    
       padding: pxToRem(25.75) pxToRem(105.71) pxToRem(0) pxToRem(87.03);
       img{
@@ -114,7 +131,7 @@ margin: pxToRem(16.12) pxToRem(23.34) pxToRem(18.42) pxToRem(9.69);
         height: auto;
       }
     }
-}
+
 
 //desktop
 .artist-block-gallery-desktop{
@@ -122,15 +139,102 @@ margin: pxToRem(16.12) pxToRem(23.34) pxToRem(18.42) pxToRem(9.69);
     @media (min-width: calc(#{$mobile} + 1px)) {
         display: flex;
         flex-direction: row;
-        gap: pxToRem(18);
-        .artist-gallery-item-desktop{
-            height: pxToRem(716);
+        width: 100%;
+        
+        .gallery-navigation-container {
+            display: flex;
+            align-items: center;
+            gap: pxToRem(30);
+            width: 100%;
+            
+            .gallery-arrow {
+                flex-shrink: 0;
+                cursor: pointer;
+                
+                img {
+                    width: pxToRem(40);
+                    height: pxToRem(40);
+                }
+            }
+            
+            .desktop-gallery-content {
+                display: flex;
+                position: relative;
+                justify-content: center;
+                flex: 1;
+                
+                .gallery-slide {
+                    display: flex;
+                    position: relative;
+                    justify-content: center;
+                    width: 100%;
+                    
+                    .artist-details-upper {
+                        position: absolute; 
+                        top: pxToRem(35);
+                        left: pxToRem(40);
+                        z-index: 2;
+                        
+                        .artist-name-desktop {
+                            margin: 0;
+                            color: white;
+                            font-size: pxToRem(30);
+                            font-weight: 700;
+                            line-height: normal;
+                            font-style: normal;
+                        }
+                        
+                        .artwork-title-desktop {
+                            margin: 0;
+                            color: white;
+                            font-size: pxToRem(24);
+                            font-weight: 700;
+                            line-height: normal;
+                            font-style: normal;
+                        }
+                    }
+                    
+                    .artist-gallery-item-desktop {
+                        flex-shrink: 0;
+                        height: pxToRem(716);
+                        width: pxToRem(892);
+                        
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: pxToRem(8);
+                        }
+                    }
+                    
+                    .artist-details-lower {
+                        position: absolute; 
+                        bottom: pxToRem(40);
+                        left: pxToRem(40);
+                        z-index: 2;
+                        
+                        .artwork-description-desktop {                    
+                            color: white;
+                            font-size: pxToRem(18);
+                            font-weight: 400;
+                            line-height: normal;
+                            margin-bottom: pxToRem(14);
+                            max-width: pxToRem(587);
+                        }
+                        
+                        .artist-email-desktop {
+                            color: white;
+                            font-size: pxToRem(18);
+                            font-weight: 500;
+                            line-height: normal;
+                            font-style: normal;
 
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-
-
-
-
 }
 }

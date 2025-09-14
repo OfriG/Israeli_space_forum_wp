@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_68c2987bbc6b1",
-            "label": "headline image",
-            "name": "headline_image",
+            "label": "headline image mobile",
+            "name": "headline_image_mobile",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -179,6 +179,31 @@
                     "parent_repeater": "field_68c298a2bc6b3"
                 }
             ]
+        },
+        {
+            "key": "field_68c67c77d1b55",
+            "label": "headline_image_desktop",
+            "name": "headline_image_desktop",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -199,5 +224,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1757593388
+    "modified": 1757838489
 }
