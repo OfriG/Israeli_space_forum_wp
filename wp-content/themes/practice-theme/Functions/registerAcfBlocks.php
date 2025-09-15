@@ -154,16 +154,5 @@ function practice_theme_register_acf_blocks()
         'render_template' => get_template_directory() . '/acf-blocks/AboutUs-hero/AboutUs-hero.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/AboutUs-hero.css',
     ));
-     acf_register_block_type(array(
-        'name' => 'error-404-block',
-        'title' => '404 Error Block',
-        'description' => ('A custom 404 error page block.'),
-        'category' => 'theme',
-        'icon' => 'warning',
-            'keywords' => array('404', 'error', 'block', 'not found'),
-            'mode' => 'preview',
-        'render_template' => get_template_directory() . '/acf-blocks/error-block/error-block.php',
-        'enqueue_style' => get_template_directory_uri() . '/dist/css/error-block.css',
-    ));
+ 
 }
-
