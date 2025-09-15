@@ -1,3 +1,5 @@
+    </main>
+
 <footer class="footer" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/footerMobileBackground.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
     <!-- Mobile Footer (hidden on desktop) -->
     <div class="mobile-footer">
@@ -14,4 +16,7 @@
         ?>
     </div>
 </footer>
+
 <?php wp_footer(); ?>
+</body>
+</html>

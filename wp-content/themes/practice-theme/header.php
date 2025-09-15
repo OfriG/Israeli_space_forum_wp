@@ -72,7 +72,4 @@
         </div>
     </div>
 
-    <?php wp_footer(); ?>
-</body>
-
-</html>
+    <main id="main" class="main-content">
