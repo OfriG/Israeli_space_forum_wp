@@ -35,7 +35,7 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('acf-blocks/contactUs-block/contactUs-block.scss', 'dist/css/contactUs-block.css')
     .js('resources/js/newsLetter.js', 'dist/js')
     .js('resources/js/joinUs.js', 'dist/js')
-    .js('resources/js/contactUs.js', 'dist/js')
+    .js('acf-blocks/contactUs-block/contactUs.js', 'dist/js')
 
 
 
