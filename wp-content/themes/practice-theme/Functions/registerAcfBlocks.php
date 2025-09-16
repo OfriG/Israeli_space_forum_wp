@@ -165,6 +165,8 @@ function practice_theme_register_acf_blocks()
         'render_template' => get_template_directory() . '/acf-blocks/AboutUs-hero/AboutUs-hero.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/AboutUs-hero.css',
     ));
+ 
+}
     acf_register_block_type(array(
         'name' => 'artist-block',
         'title' => 'Artist Block',
