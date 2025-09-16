@@ -1,6 +1,12 @@
 @import '../../resources/scss/_colors';
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
+
+// Override WordPress block layout styles
+[class*="wp-container-core-group-is-layout"] {
+    display: block !important;
+}
+
 //mobile
 .impact-block-mobile {
     @media (min-width: calc(#{$mobile} + 1px)) {
@@ -23,8 +29,7 @@
 .impact-block-content
 {
  
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding: pxToRem(0.29) pxToRem(26) pxToRem(76) pxToRem(28.14);
    
 .impact-block-headline{
