@@ -34,6 +34,7 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('acf-blocks/AU-missionBlock/missionBlock.scss', 'dist/css/missionBlock.css')
     .js('resources/js/newsLetter.js', 'dist/js')
     .js('resources/js/joinUs.js', 'dist/js')
+    .js('resources/js/header.js', 'dist/js')
 
 
 

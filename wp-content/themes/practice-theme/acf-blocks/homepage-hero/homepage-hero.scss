@@ -21,7 +21,7 @@
 
 
     .content-wrapper{
-        position: relative;
+        // position: relative;
         z-index: 2;
         flex: 1 1 325vw;
         display: flex;
@@ -30,13 +30,17 @@
 
 
         h1 {
+            margin-right: pxToRem(54.59);
             color: $white;
             text-align: left;
             font-family: "Wallnutt Corps";
             font-size: pxToRem(50);
             font-style: normal;
-            font-weight: 400;
-            line-height: pxToRem(49);
+            font-weight: 400;           
+             line-height: pxToRem(49);
+            @media (min-width: calc(#{$mobile} + 1px)) {
+            line-height: pxToRem(120);
+            }
 
             .gradient-text {
                 background: $beautyGreen;
@@ -47,7 +51,8 @@
         }
 
         p {
-            margin: pxToRem(16) pxToRem(27.59) pxToRem(24) pxToRem(0);
+            text-overflow: wrap;
+            margin: pxToRem(16) pxToRem(54.59) pxToRem(24) pxToRem(0);
             color: var(--Main_2, $white);
             font-size: pxToRem(15);
             font-style: normal;
@@ -92,7 +97,7 @@
                 font-size: pxToRem(120);
                 font-style: normal;
                 font-weight: 400;
-                line-height: pxToRem(120);
+                line-height: pxToRem(135);
                 word-wrap: break-word;
                 overflow-wrap: break-word;
                 white-space: normal;

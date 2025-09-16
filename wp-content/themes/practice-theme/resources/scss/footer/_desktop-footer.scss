@@ -20,6 +20,12 @@
 
         .site-logo-desktop {
             margin-left: pxToRem(-30);
+            
+            img {
+                width: pxToRem(139.469);
+                height: pxToRem(106.075);
+                flex-shrink: 0;
+            }
         }
 
         .footer-lower-nav {
@@ -74,7 +80,9 @@
                 align-items: center;
 
                 img {
-                    height: pxToRem(20);
+                    width: pxToRem(94);
+                    height: pxToRem(14);
+                    flex-shrink: 0;
                     width: auto;
                     vertical-align: middle;
                     margin-left: pxToRem(5);
