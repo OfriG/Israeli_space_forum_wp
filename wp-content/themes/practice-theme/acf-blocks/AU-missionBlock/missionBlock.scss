@@ -1,0 +1,88 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+.AboutUs-mission {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .mission-content{
+        display: flex;
+        flex-direction: column;
+        padding: pxToRem(45) pxToRem(0) pxToRem(0) pxToRem(28);
+        .AboutUs-mission-text{
+            @media (min-width: calc(#{$mobile} + 1px)) {
+            flex-direction: row;
+            gap: pxToRem(118);
+            padding: pxToRem(60) pxToRem(218) pxToRem(133) pxToRem(209);
+            }
+            display: flex;
+            padding: pxToRem(40) pxToRem(21) 0 0;
+            flex-direction: column;
+            .AboutUs-mission-headline{
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    font-size: pxToRem(90);
+                    font-style: normal;           
+
+                    line-height: pxToRem(88);
+             
+                }
+                align-self: stretch;
+                text-align: left;
+                color:$white;   
+                font-family: "Wallnutt Corps";
+                font-size: pxToRem(45);
+                font-style: normal;
+                font-weight: 400;
+                line-height: pxToRem(49);
+                }
+                    .AboutUs-mission-description{
+                        @media (min-width: calc(#{$mobile} + 1px)) {
+                            font-size: pxToRem(24);
+                            line-height: normal;
+                        }
+                        margin: pxToRem(16) pxToRem(33) pxToRem(0) pxToRem(0);
+                        color: $white;
+                        font-size: pxToRem(15);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: pxToRem(22); 
+                }
+        
+        }
+        .AboutUs-mission-gallery{
+            @media (min-width: calc(#{$mobile} + 1px)) {
+               gap: pxToRem(34);
+               margin: pxToRem(133) pxToRem(208) pxToRem(199.72) pxToRem(209);
+            }
+
+            display: flex;
+            flex-direction: row;
+            gap: pxToRem(18);overflow: hidden; 
+            margin: pxToRem(39) pxToRem(0) pxToRem(60.72) pxToRem(0);
+            img{   
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    width: pxToRem(478.229);
+                    height: pxToRem(543.275);
+flex-shrink: 0;
+border-radius: pxToRem(2);
+
+
+                }
+width: pxToRem(254.877);
+align-items: center;
+            }
+        }
+    .icon-space{
+        display: flex;
+        align-items: center;
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            margin: pxToRem(162) 0 pxToRem(60) pxToRem(209);
+ }
+        img {
+            flex-shrink: 0;    
+            &:nth-child(2) {
+                margin-left: pxToRem(-22); 
+            }
+        }}
+
+}}

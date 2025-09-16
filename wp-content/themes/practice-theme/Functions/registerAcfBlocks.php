@@ -73,6 +73,74 @@ function practice_theme_register_acf_blocks()
             'mode' => 'preview',
         'render_template' => get_template_directory() . '/acf-blocks/isf-block/isf-block.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/isf-block.css',
+    ));    
+    acf_register_block_type(array(
+        'name' => 'iac-hero-block',
+        'title' => 'IAC Hero Block',
+        'description' => ('A custom of IAC Hero block.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-format-image',
+            'keywords' => array('iac', 'hero', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/IAC/hero/hero-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/hero-block.css',
+    ));
+ acf_register_block_type(array(
+        'name' => 'AU-team-block',
+        'title' => 'AU Team Block',
+        'description' => ('A custom of about us team block with team pictures and names.'),
+        'category' => 'theme',
+        'icon' => 'admin-users  ',
+            'keywords' => array('AU', 'team', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/AU-team-block/team-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/team-block.css',
+ ));
+    acf_register_block_type(array(
+        'name' => 'impact-block',
+        'title' => 'Impact Block',
+        'description' => ('A custom of Impact block.'),
+        'category' => 'theme',
+        'icon' => 'megaphone',
+        'keywords' => array('impact', 'block'),
+        'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/impact-block/impact-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/impact-block.css',
+      ));
+    acf_register_block_type(array(
+        'name' => 'mission-Intro-block',
+        'title' => 'Mission Intro Block',
+        'description' => ('A custom that tells about the the mission of the forum.'),
+        'category' => 'theme',
+        'icon' => 'superhero-alt',
+            'keywords' => array('mission', 'intro', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/mission-Intro-block/mission-intro-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/mission-Intro-block.css',
+    ));
+
+    acf_register_block_type(array(
+        'name' => 'aboutUs missionBlock',
+        'title' => 'aboutUs mission Block',
+        'description' => ('A custom of aboutUs mission block.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-format-image',
+            'keywords' => array('aboutUs','mission', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/AU-missionBlock/missionBlock.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/missionBlock.css',
+    ));
+
+    acf_register_block_type(array(
+        'name' => 'aboutUs-banner',
+        'title' => 'About Us Banner',
+        'description' => ('About Us Banner block.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-format-image',
+            'keywords' => array('aboutUs', 'banner'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/aboutUs-bannerBlock/aboutUs-banner.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/aboutUs-banner.css',
     ));
 
     acf_register_block_type(array(
