@@ -19,10 +19,6 @@ $gallery = get_field('gallery');
         <?php 
         if ($gallery) {
             get_template_part('template-parts/acf-blocks/artist-block/mobile-gallery', null, array('gallery' => $gallery));
-        }
-        ?>
-        <?php 
-        if ($gallery) {
             get_template_part('template-parts/acf-blocks/artist-block/desktop-gallery', null, array('gallery' => $gallery));
         }
         ?>
@@ -34,5 +30,5 @@ $gallery = get_field('gallery');
 </div>
 
 <?php 
-get_template_part('template-parts/acf-blocks/artist-block/gallery-script');
+wp_enqueue_script('gallery-script', get_template_directory_uri() . '/acf-blocks/artist-block/gallery-script.js', array(), '1.0.0', true);
 ?>

@@ -1,6 +1,3 @@
-
-
-<script>
 document.addEventListener('DOMContentLoaded', function() {
     const galleryContainer = document.getElementById('gallery-container');
     const prevButton = document.getElementById('gallery-prev');
@@ -50,4 +47,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-</script>
