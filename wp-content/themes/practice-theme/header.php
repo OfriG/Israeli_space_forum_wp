@@ -32,14 +32,12 @@
             'menu_class' => 'navbar-all',
         ));
         ?>
-        </ul>
 
-        <!-- Mobile menu toggle button with hamburger lines -->
         <div class="mobile-navbar">
             <div class="mobile-logo-left"> <?php display_site_logo(); ?>
             </div>
             <button class="navbar-toggle" aria-label="Toggle mobile menu">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/Dark.svg" alt="Close" />
+                <span class="hamburger-line"></span>
             </button>
         </div>
     </nav>
@@ -52,10 +50,9 @@
                 <?php display_site_logo(); ?>
             </div>
         </div>
-
-        <!-- Right side with menu items on black background -->
+        
+        <!-- Right side with menu items -->
         <div class="overlay-right">
-            <!-- Close button positioned at top right -->
             <button class="mobile-close-btn">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/x.svg" alt="Close" />
             </button>

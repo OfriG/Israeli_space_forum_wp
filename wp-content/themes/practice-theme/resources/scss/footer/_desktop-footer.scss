@@ -20,6 +20,12 @@
 
         .site-logo-desktop {
             margin-left: pxToRem(-30);
+            
+            img {
+                width: pxToRem(52.309);
+                height: pxToRem(40.671);
+                flex-shrink: 0;
+            }
         }
 
         .footer-lower-nav {
