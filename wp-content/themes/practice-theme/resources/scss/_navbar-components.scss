@@ -13,7 +13,6 @@ h1 {
   background: $black;
   height: pxToRem(124);
   display: flex;
-  // align-items: center;
   justify-content:space-around;
   z-index: $navbar-z-index;
 
@@ -23,7 +22,6 @@ h1 {
   }
 
   @media (min-width: calc(#{$mobile} + 1px)) {
-    // padding: 0 pxToRem(80);
   img{
   padding: pxToRem(10) pxToRem(500) pxToRem(10) pxToRem(37.62);
 }
@@ -76,10 +74,9 @@ h1 {
 
   img,
   .site-logo {
-    width: clamp(40px, 8vw, 52.3px);
-    height: clamp(31px, 6.2vw, 40.67px);
-    max-width: 52.3px;
-    max-height: 40.67px;
+    width: pxToRem(52.309);
+    height: pxToRem(40.671);
+
     display: block;
     margin: 0 auto;
   }
@@ -170,7 +167,7 @@ a {
       font-weight: 700;
       text-transform: uppercase;
 
-      color: $gradient-green; // fallback color
+      color: $gradient-green;
       background: $cta-gradient;
       background-clip: text;
       -webkit-background-clip: text;
@@ -261,27 +258,10 @@ a {
     }
   }
 
-  // Hide hamburger button when menu is open
   &.active {
     display: none;
   }
 
-  // Hamburger animation when active - disabled to avoid duplicate X buttons
-  // &.active {
-  //   .hamburger-line {
-  //     background: transparent;
-
-  //     &::before {
-  //       top: 0;
-  //       transform: rotate(45deg);
-  //     }
-
-  //     &::after {
-  //       top: 0;
-  //       transform: rotate(-45deg);
-  //     }
-  //   }
-  // }
 }
 
 .mobile-navbar {
@@ -305,8 +285,8 @@ a {
   }
 
   img {
-    width: clamp(40px, 8vw, 52.3px);
-    height: clamp(31px, 6.2vw, 40.67px);
+    width: pxToRem(52.309);
+    height: pxToRem(40.671);
     flex-shrink: 0;
   }
 }
@@ -318,7 +298,7 @@ a {
   width: 50%;;
 
 
-  justify-content: flex-start; // align-items: center;
+  justify-content: flex-start;
   margin-top: 20px;
   img{
 
@@ -491,9 +471,7 @@ height: pxToRem(40.671);
 
 
 #menu-main-menu-1 {
-  // margin-top: pxToRem(41.62); // Spacing from mobile-close-btn
-  // margin-bottom: 595px;
-  // margin-left: 39px;
+ 
   gap: 20px;
 }
 
@@ -508,7 +486,6 @@ height: pxToRem(40.671);
 }
 
 
-// Smooth transitions for better UX
 .navbar-mobile-overlay {
   transition: opacity 0.3s ease;
 
@@ -523,7 +500,6 @@ height: pxToRem(40.671);
   }
 }
 
-// Focus states for accessibility
 .navbar-toggle:focus,
 .mobile-close-btn:focus {
   outline: pxToRem(2) solid $gradient-green;

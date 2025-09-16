@@ -2,16 +2,15 @@
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
 
-.isf-block{
-    display: flex;
+.isf-block{    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     @media (min-width: calc(#{$mobile} + 1px)) {
         flex-direction: row-reverse;
         width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        margin-right: calc(-50vw + 50%);
+        // margin-left: calc(-50vw + 50%);
+        // margin-right: calc(-50vw + 50%);
     }
     .img-isf{
         display: flex;
@@ -28,7 +27,7 @@
     .isf-block-image{
         @media (min-width: calc(#{$mobile} + 1px)) {
             width: 50%;
-            height: 100vh
+            height: 100vh;
         }
         width: 100%;
         height: pxToRem(324.327);
