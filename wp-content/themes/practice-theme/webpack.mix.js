@@ -29,12 +29,16 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('acf-blocks/AboutUs-hero/AboutUs-hero.scss', 'dist/css/AboutUs-hero.css')
     .sass('acf-blocks/isf-block/isf-block.scss', 'dist/css/isf-block.css')
     .sass('acf-blocks/bannerBlock/bannerBlock.scss', 'dist/css/bannerBlock.css')
+    .sass('acf-blocks/companies-block/companies-block.scss', 'dist/css/companies-block.css')
     .sass('acf-blocks/IAC/hero/hero-block.scss', 'dist/css/hero-block.css')
     .sass('acf-blocks/mission-Intro-block/mission-Intro-block.scss', 'dist/css/mission-Intro-block.css')
     .sass('acf-blocks/AU-missionBlock/missionBlock.scss', 'dist/css/missionBlock.css')
     .sass('acf-blocks/artist-block/artist-block.scss', 'dist/css/artist-block.css')
+    .sass('acf-blocks/contactUs-block/contactUs-block.scss', 'dist/css/contactUs-block.css')
     .js('resources/js/newsLetter.js', 'dist/js')
     .js('resources/js/joinUs.js', 'dist/js')
+    .js('acf-blocks/contactUs-block/contactUs.js', 'dist/js')
+    .js('resources/js/header.js', 'dist/js')
 
 
 
