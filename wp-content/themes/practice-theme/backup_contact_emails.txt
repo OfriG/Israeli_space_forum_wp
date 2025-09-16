@@ -1,0 +1,24 @@
+2025-09-15 06:53:18 - Contact Form Submission
+Name: Ofri Gross
+Email: ofri900@gmail.com
+Message: hey
+Post ID: 880
+
+2025-09-15 07:06:56 - Contact Form Submission
+Name: Ofri Gross
+Email: ofri.gross@moveo.co.il
+Message: nice website
+Post ID: 881
+
+2025-09-15 07:28:22 - Contact Form Submission
+Name: Ofri Gross
+Email: ofri900@gmail.com
+Message: dd
+Post ID: 882
+
+2025-09-16 17:12:36 - Contact Form Submission
+Name: Ofri Gross
+Email: ofri.gross@moveo.co.il
+Message: ewd
+Post ID: 918
+

@@ -20,10 +20,15 @@ function theme_enqueue_assets()
     wp_enqueue_script('theme-js', get_template_directory_uri() . '/dist/js/app.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('header-js', get_template_directory_uri() . '/dist/js/header.js', array(), '1.0.0', true);
     wp_enqueue_script('joinUs-js', get_template_directory_uri() . '/dist/js/joinUs.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('contactUs-js', get_template_directory_uri() . '/dist/js/contactUs.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('stars-background-js', get_template_directory_uri() . '/resources/js/starsBackground.js', array(), '1.0.0', true);
     wp_enqueue_script( 'sweetalert2', 'https://cdn.jsdelivr.net/npm/sweetalert2@11', array(), null, true );
 
     // Localize script for AJAX
     wp_localize_script('joinUs-js', 'ajax_object', array(
+        'ajax_url' => admin_url('admin-ajax.php')
+    ));
+    wp_localize_script('contactUs-js', 'ajax_object', array(
         'ajax_url' => admin_url('admin-ajax.php')
     ));
 }

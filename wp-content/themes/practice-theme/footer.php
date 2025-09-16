@@ -1,4 +1,9 @@
-<footer class="footer" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/footerMobileBackground.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    </main>
+
+<footer class="footer">
+    <!-- Animated Stars Background -->
+    <div class="stars-container"></div>
+    
     <!-- Mobile Footer (hidden on desktop) -->
     <div class="mobile-footer">
         <?php
@@ -14,4 +19,7 @@
         ?>
     </div>
 </footer>
+
 <?php wp_footer(); ?>
+</body>
+</html>
