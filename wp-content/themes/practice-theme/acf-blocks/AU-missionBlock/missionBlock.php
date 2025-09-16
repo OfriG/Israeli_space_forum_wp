@@ -1,13 +1,11 @@
 <?php
-$mission_block_backgroundImage = get_field('mission_block_backgroundimage');
 $mission_block_headline = get_field('mission_block_headline');
 $mission_block_description = get_field('mission_block_description');
 $mission_block_gallery = get_field('mission_block_gallery');
 ?>
 
-<div class="AboutUs-mission" <?php if ($mission_block_backgroundImage && $mission_block_backgroundImage['url']): ?>
-    style="background-image: url('<?php echo esc_url($mission_block_backgroundImage['url']); ?>');"
-    <?php else: ?>style="background-color: $gray; height: pxToRem(50);"<?php endif; ?>>
+<div class="AboutUs-mission" >
+    <div class="stars-container"></div>
     <div class="mission-content">
         <div class="icon-space">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>"  />

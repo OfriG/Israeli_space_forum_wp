@@ -6,6 +6,18 @@
     display: flex;
     background-size: cover;
     background-repeat: no-repeat;
+    background: black;
+    position: relative;
+    overflow: hidden;
+    .stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
     .companies-block-content {
         @media (min-width: calc(#{$mobile} + 1px)) {
             padding: pxToRem(67.1) pxToRem(202.96) pxToRem(123.09) pxToRem(204.07);

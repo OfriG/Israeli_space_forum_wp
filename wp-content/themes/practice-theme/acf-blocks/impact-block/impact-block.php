@@ -2,14 +2,12 @@
 $impact_block_headline = get_field('headline');
 $impact_block_description = get_field('description');
 $button = get_field('button');
-$impact_block_background_image = get_field('background_image');
 $video = get_field('video');
 
 $template_args = [
     'headline' => $impact_block_headline,
     'description' => $impact_block_description,
     'button' => $button,
-    'background_image' => $impact_block_background_image,
     'video' => $video
 ];
 

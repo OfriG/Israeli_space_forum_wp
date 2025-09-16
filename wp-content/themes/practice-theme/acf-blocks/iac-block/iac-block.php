@@ -1,5 +1,4 @@
 <?php 
-$background_iac = get_field('background_iac');
 $headline_iac = get_field('headline_iac');
 $firstPart_description_iac  = get_field('firstPart_description_iac');
 $secondpart_description_iac = get_field('secondpart_description_iac');
@@ -9,12 +8,9 @@ $backgroundTextMobile= get_field('background_text_mobile');
 $backgroundTextDesktop= get_field('background_text_desktop');
 ?>
 <!-- mobile -->
-<?php
-if (!empty($background_iac)) {
-    $background_iac = is_array($background_iac) ? $background_iac['url'] : $background_iac;
-}
-?>
-<div class="iac-block" style="background-image: url('<?php echo esc_url($background_iac); ?>');">
+
+<div class="iac-block">
+    <div class="stars-container"></div>
     <div class="iac-block-content">
     <div class="background-text"><?php echo nl2br(esc_html($backgroundTextMobile)); ?></div>
 
@@ -53,7 +49,8 @@ if (!empty($background_iac)) {
 </div>
 
 <!-- desktop -->
-<div class="iac-block-desktop-container" style="background-image: url('<?php echo esc_url($background_iac); ?>');">
+<div class="iac-block-desktop-container">
+    <div class="stars-container"></div>
     <div class="iac-background-text"><?php echo nl2br(esc_html($backgroundTextDesktop)); ?></div>
     <div class="iac-main-content">
         <div class="iac-three-column-layout">
