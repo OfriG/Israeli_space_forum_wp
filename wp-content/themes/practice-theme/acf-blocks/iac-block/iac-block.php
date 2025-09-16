@@ -29,8 +29,8 @@ if (!empty($background_iac)) {
         </div>
         
         <div class="icon-space">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/home-page/icons/Line 9.svg'); ?>" alt="Line 9" />
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/home-page/icons/Layer_1.svg'); ?>" alt="Layer 1" />
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>" alt="Blue Line" />
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueStar.svg'); ?>" alt="Blue Star" />
         </div>
 
         <div class="section-content">
@@ -52,7 +52,6 @@ if (!empty($background_iac)) {
     </div>
 </div>
 
-
 <!-- desktop -->
 <div class="iac-block-desktop-container" style="background-image: url('<?php echo esc_url($background_iac); ?>');">
     <div class="iac-background-text"><?php echo nl2br(esc_html($backgroundTextDesktop)); ?></div>
@@ -60,8 +59,8 @@ if (!empty($background_iac)) {
         <div class="iac-three-column-layout">
             <div class="iac-header-section">
                 <div class="iac-decorative-icons">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/home-page/icons/Line 9.svg'); ?>" alt="Line 9" />
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/home-page/icons/Layer_1.svg'); ?>" alt="Layer 1" />
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>"  />
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueStar.svg'); ?>"  />
                 </div>
                 <h1><?php echo esc_html($headline_iac); ?></h1>
             </div>
