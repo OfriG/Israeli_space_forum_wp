@@ -2,7 +2,7 @@ class StarsBackground {
     constructor(container) {
         this.container = container;
         this.stars = [];
-        this.numStars = 150; // Number of stars
+        this.numStars = 40; // Number of stars
         this.init();
     }
 
