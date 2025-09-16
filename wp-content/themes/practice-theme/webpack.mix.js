@@ -33,8 +33,10 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('acf-blocks/IAC/hero/hero-block.scss', 'dist/css/hero-block.css')
     .sass('acf-blocks/mission-Intro-block/mission-Intro-block.scss', 'dist/css/mission-Intro-block.css')
     .sass('acf-blocks/AU-missionBlock/missionBlock.scss', 'dist/css/missionBlock.css')
+    .sass('acf-blocks/contactUs-block/contactUs-block.scss', 'dist/css/contactUs-block.css')
     .js('resources/js/newsLetter.js', 'dist/js')
     .js('resources/js/joinUs.js', 'dist/js')
+    .js('acf-blocks/contactUs-block/contactUs.js', 'dist/js')
     .js('resources/js/header.js', 'dist/js')
 
 
