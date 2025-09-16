@@ -166,6 +166,15 @@ function practice_theme_register_acf_blocks()
         'enqueue_style' => get_template_directory_uri() . '/dist/css/AboutUs-hero.css',
     ));
     acf_register_block_type(array(
+        'name' => 'artist-block',
+        'title' => 'Artist Block',
+        'description' => ('A custom that presenting artists.'),
+        'category' => 'theme',
+        'icon' => 'dashicons-art',
+            'keywords' => array('artist', 'block'),
+            'mode' => 'preview',
+        'render_template' => get_template_directory() . '/acf-blocks/artist-block/artist-block.php',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/artist-block.css',
         'name' => 'campanis-block',
         'title' => 'Campanis Block',
         'description' => ('A custom that present companies.'),
