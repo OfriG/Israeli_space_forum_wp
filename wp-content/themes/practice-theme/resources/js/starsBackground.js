@@ -134,14 +134,18 @@ class StarsBackground {
 
 // Initialize stars when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    const starsContainer = document.querySelector('.stars-container');
-    if (starsContainer) {
-        const starsBackground = new StarsBackground(starsContainer);
-        
-        // Handle window resize
-        window.addEventListener('resize', () => {
+    const starsContainers = document.querySelectorAll('.stars-container');
+    const starsBackgrounds = [];
+    
+    starsContainers.forEach(container => {
+        const starsBackground = new StarsBackground(container);
+        starsBackgrounds.push(starsBackground);
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        starsBackgrounds.forEach(starsBackground => {
             starsBackground.resize();
         });
-        
-    }
+    });
 });

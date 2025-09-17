@@ -5,13 +5,10 @@ get_header();
 <?php
 $headline_image = get_field('headline_image', 'option');
 $description = get_field('description', 'option');
-$button = get_field('button', 'option');
-$background_image = get_field('background', 'option');
-?>
+$button = get_field('button', 'option');?>
 
-<div class="error-block" <?php if ($background_image && isset($background_image['url']) && $background_image['url']): ?>
-    style="background-image: url('<?php echo esc_url($background_image['url']); ?>');"
-    <?php endif; ?>>
+<div class="error-block">
+    <div class="stars-container"></div>
     <div class="error-block-content">
             <?php if ($headline_image && isset($headline_image['url']) && $headline_image['url']): ?>
             <div class="headline-image">
@@ -30,3 +27,7 @@ $background_image = get_field('background', 'option');
             <?php endif; ?>
     </div>
 </div>
+
+<?php wp_footer(); ?>
+</body>
+</html>

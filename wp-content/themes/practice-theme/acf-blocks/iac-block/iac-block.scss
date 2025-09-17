@@ -2,11 +2,23 @@
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
 .iac-block {
+    background: black;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
     overflow: hidden;
+    
+    // Stars background container
+    .stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
     
     // Show mobile version only up to 768px
     @media (max-width: $mobile) {
@@ -124,6 +136,7 @@
     
     @media (min-width: calc(#{$mobile} + 1px)) {
         display: block;
+        background: black;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -132,6 +145,17 @@
         padding: pxToRem(60) pxToRem(80);
         box-sizing: border-box;
         overflow: hidden;
+    }
+    
+    // Stars background container for desktop
+    .stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
     }
     
     .iac-background-text {

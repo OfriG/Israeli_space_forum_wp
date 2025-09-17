@@ -15,6 +15,7 @@ const fs = require('fs');
 mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .sass('resources/scss/_navbar-components.scss', 'dist/css')
     .sass('resources/scss/_footer.scss', 'dist/css')
+    .sass('resources/scss/_fonts.scss', 'dist/css')
     .sass('acf-blocks/homepage-hero/homepage-hero.scss', 'dist/css/homepage-hero.css')
     .sass('acf-blocks/iac-block/iac-block.scss', 'dist/css/iac-block.css')
     .sass('resources/scss/footer/_desktop-footer.scss', 'dist/css/footer')
@@ -41,13 +42,16 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .js('acf-blocks/contactUs-block/contactUs.js', 'dist/js')
     .js('resources/js/header.js', 'dist/js')
 
-
-
+mix.copyDirectory('resources/fonts', 'dist/fonts');
 
 // Disable mix-manifest.json generation
 mix.disableNotifications();
 
 // Set public path to theme directory
 mix.setPublicPath('./');
+
+mix.options({
+    processCssUrls: false
+});
 
 mix.version();

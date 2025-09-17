@@ -1,11 +1,9 @@
 <?php 
-$background_image = get_field('background_image');
 $gallery = get_field('gallery');
 $headline = get_field('headline');
 ?>
-<div class="companies-block" <?php if ($background_image && $background_image['url']): ?>
-    style="background-image: url('<?php echo esc_url($background_image['url']); ?>');"
-    <?php else: ?>style="background-color: $gray; height: pxToRem(50);"<?php endif; ?>>
+<div class="companies-block">
+    <div class="stars-container"></div>
         <div class="companies-block-content">
         <div class="icon-space">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>"  />
