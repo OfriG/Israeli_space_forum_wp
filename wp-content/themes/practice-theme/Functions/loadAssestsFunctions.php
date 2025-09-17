@@ -5,12 +5,11 @@
 // Load assets
 function theme_enqueue_assets()
 {
-    // Google Fonts
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap', array(), null);
+    wp_enqueue_style('local-fonts', get_template_directory_uri() . '/dist/css/_fonts.css', array(), '1.0.0');
 
     // CSS Files - Add navbar styles directly
-    wp_enqueue_style('navbar-styles', get_template_directory_uri() . '/dist/css/_navbar-components.css', array(), '1.0.0');
-    wp_enqueue_style('main-styles', get_template_directory_uri() . '/dist/css/_main-styles.css', array(), '1.0.0');
+    wp_enqueue_style('navbar-styles', get_template_directory_uri() . '/dist/css/_navbar-components.css', array('local-fonts'), '1.0.0');
+    wp_enqueue_style('main-styles', get_template_directory_uri() . '/dist/css/_main-styles.css', array('local-fonts'), '1.0.0');
     wp_enqueue_style('footer-styles', get_template_directory_uri() . '/dist/css/_footer.css', array(), '1.0.0');
     wp_enqueue_style('newsletter-styles', get_template_directory_uri() . '/dist/css/footer/_newsletter.css', array(), '1.0.0');
     wp_enqueue_style('404-styles', get_template_directory_uri() . '/dist/css/404.css', array(), '1.0.0');
