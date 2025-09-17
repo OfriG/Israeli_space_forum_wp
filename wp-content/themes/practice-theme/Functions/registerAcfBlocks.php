@@ -127,7 +127,7 @@ function practice_theme_register_acf_blocks()
             'keywords' => array('mission', 'intro', 'block'),
             'mode' => 'preview',
         'render_template' => get_template_directory() . '/acf-blocks/mission-Intro-block/mission-intro-block.php',
-        'enqueue_style' => get_template_directory_uri() . '/dist/css/mission-Intro-block.css',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/mission-intro-block.css',
     ));
 
     acf_register_block_type(array(
