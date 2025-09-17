@@ -1,11 +1,9 @@
 <?php 
-$background_image = get_field('background_image');
 $headline_team_block = get_field('headline_team_block');
 $team_members_images = get_field('team_members_images');
 ?>
-<div class="AU-team-block" <?php if ($background_image && $background_image['url']): ?>
-    style="background-image: url('<?php echo esc_url($background_image['url']); ?>');"
-    <?php else: ?>style="background-color: $gray; height: pxToRem(50);"<?php endif; ?>>
+        <div class="AU-team-block">
+            <div class="stars-container"></div>
     <div class="AU-team-block-content">
         <div class="AU-team-icon-space">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>"  />

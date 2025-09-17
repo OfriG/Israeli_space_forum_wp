@@ -1,0 +1,83 @@
+@import 'variables';
+@import 'colors';
+@import '../../Functions/scssFunctions.scss';
+.error-block{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    background: black;
+    position: relative;
+    .stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .error-block-content{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            @media (min-width: calc(#{$mobile} + 1px)) {
+               width: pxToRem(659);
+               padding: pxToRem(164) pxToRem(0) pxToRem(0) pxToRem(0);
+            }
+            padding: pxToRem(137) pxToRem(0) pxToRem(8.58) pxToRem(0);
+            width: pxToRem(186.086);
+            height: auto;
+        }
+        .description{
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                margin: pxToRem(0) pxToRem(750) pxToRem(108) pxToRem(752);
+                font-size: pxToRem(30);
+
+            }
+            margin: pxToRem(0) pxToRem(104) pxToRem(137) pxToRem(105);
+            color: $white;
+            font-size: pxToRem(23);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+        .button{
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                width: pxToRem(214);
+                margin: pxToRem(0) pxToRem(849) pxToRem(232) pxToRem(849);
+                display: inline-flex;
+                padding: pxToRem(12) pxToRem(40);
+                border-radius: pxToRem(2);
+                border: pxToRem(2) solid $gradient-green;
+            }
+           width: pxToRem(82.82);
+
+            height: auto;
+            margin: pxToRem(0) pxToRem(116) pxToRem(149) pxToRem(116);
+            padding: pxToRem(8.824) pxToRem(29.412);
+            justify-content: center;
+            align-items: center;
+            gap: pxToRem(7.353);
+            border-radius: pxToRem(1.471);
+            border: pxToRem(1.471) solid $gradient-green;
+             a{
+          @media (min-width: calc(#{$mobile} + 1px)) {
+        font-size: pxToRem(24);
+          }
+        color: $white;
+        font-size: pxToRem(15);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+         }
+        }
+       
+    }
+}

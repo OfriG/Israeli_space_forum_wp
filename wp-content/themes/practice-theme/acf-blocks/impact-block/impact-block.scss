@@ -1,10 +1,28 @@
 @import '../../resources/scss/_colors';
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
+
+// Override WordPress block layout styles
+[class*="wp-container-core-group-is-layout"] {
+    display: block !important;
+}
+
 //mobile
 .impact-block-mobile {
     @media (min-width: calc(#{$mobile} + 1px)) {
         display: none;
+    }
+    background: black;
+    position: relative;
+    overflow: hidden;
+    .stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
     }
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,8 +41,7 @@
 .impact-block-content
 {
  
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding: pxToRem(0.29) pxToRem(26) pxToRem(76) pxToRem(28.14);
    
 .impact-block-headline{
@@ -106,6 +123,18 @@ text-transform: uppercase;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background: black;
+    position: relative;
+    overflow: hidden;
+    .stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
     .icon-space{
         display: flex;
         padding: pxToRem(162.5) pxToRem(1510) pxToRem(0) pxToRem(209);

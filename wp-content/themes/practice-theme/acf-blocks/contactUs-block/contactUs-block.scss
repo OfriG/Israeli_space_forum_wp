@@ -1,0 +1,255 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.contactUs-block {
+    max-width: 100%;
+    margin: 0 auto;
+    
+    .contactUs-block-content {
+        background: $contactus-gradient;
+        position: relative;
+        overflow: hidden;
+        .stars-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            display: flex;
+            flex-direction: row;
+        }
+        .contactUs-block-header {
+            width: 100%;
+            
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                width: 50%;
+            }
+         
+            .header-content {
+       
+                h1 {
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                    font-size: pxToRem(46);
+                    text-align: left;    
+                    padding: pxToRem(153.24) pxToRem(0) pxToRem(42.76) pxToRem(124.65);
+                    }
+                    padding: pxToRem(38) pxToRem(0) pxToRem(8.23) pxToRem(40);
+                    color: $white;
+                    font-family: $header-font-family;
+                    font-size: pxToRem(24);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    margin: 0;
+                }
+            }
+            
+            .mobile-description {
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    display: none;
+                }
+                p {
+                    padding: pxToRem(0) pxToRem(36) pxToRem(36) pxToRem(36);
+                    color: $white;
+                    font-size: pxToRem(13);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    text-align: center;
+                    margin: 0;
+                }
+                .adress {
+                 font-weight: 700;
+              
+                }
+                
+                .mail-text {
+                    padding: pxToRem(2) pxToRem(4);
+                    border-radius: pxToRem(2);
+                    color: $white;
+                    font-weight: bold;
+                }
+            }
+            .desktop-description {
+                display: none;
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    display: block;
+                    color: $white;
+                    font-size: pxToRem(24);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;  
+                    margin: pxToRem(42.76) pxToRem(0) pxToRem(0) pxToRem(124.26);                
+                    
+                    p {
+                        margin-bottom: pxToRem(55.36);
+                    }
+                    
+                    .mail-text {
+                        padding: pxToRem(4) pxToRem(8);
+                        border-radius: pxToRem(2);
+                        color: $white;
+                        font-weight: 700;
+
+                    }
+                }
+            }
+        }
+        
+            .contactUs-block-form {
+                position: relative;
+                background: $white;
+                width: 100%;
+                
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    width: 50%;
+                }
+             .close-x {
+                 display: none;
+                 @media (min-width: calc(#{$mobile} + 1px)) {
+                     display: flex;
+                     position: absolute;
+                     top: pxToRem(42.52);
+                     right: pxToRem(31.94);
+                     width: pxToRem(24);
+                     height: pxToRem(24);
+                     justify-content: center;
+                     align-items: center;
+                     border-radius: pxToRem(2);
+                     z-index: 100;
+                     cursor: pointer;
+                     font-size: pxToRem(16);
+                     font-weight: bold;
+                     color: $black;
+                 }
+             }
+            .contact-form {
+                padding: pxToRem(38) pxToRem(33) pxToRem(19) pxToRem(33);
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    padding: pxToRem(85.63) pxToRem(128) pxToRem(59.37) pxToRem(92.52);
+                }
+                .form-row {
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                        margin-bottom: pxToRem(22);
+                    }
+                    margin-bottom: pxToRem(20);
+                    
+                    &:last-child {
+                        @media (min-width: calc(#{$mobile} + 1px)) {
+                            text-align: left;
+                        }
+                        text-align: center;
+                    }
+                }
+                
+                .input-wrapper {
+                    position: relative;
+                    width: 100%;
+                }
+                
+                .required-asterisk {
+                    display: none;
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                        display: inline;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: $gradient-blue;
+                        font-size: pxToRem(8.333);
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: pxToRem(6.667);
+                        pointer-events: none;
+                        z-index: 10;
+                    }
+                }
+                
+               
+                
+                .form-row:nth-child(3) .required-asterisk {
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                        left: pxToRem(115);
+                    }
+                }
+                
+                .form-row:nth-child(4) .required-asterisk {
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                        left: pxToRem(115);
+                    }
+                }
+                
+                .form-row:nth-child(5) .required-asterisk {
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                        left: pxToRem(70); 
+                        top: pxToRem(25);
+                        transform: none;
+                    }
+                }.form-row:nth-child(6) .required-asterisk {
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                        left: pxToRem(105); 
+                        top: pxToRem(25); 
+                        transform: none;
+                    }
+                }
+            
+                .form-field {
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                        border-radius: pxToRem(2);
+                        border: pxToRem(1) solid $black;
+                    }
+                    width: 100%;
+                    padding: pxToRem(15) pxToRem(20);
+                    border: pxToRem(0.5) solid $black;
+                    background: $white;
+                    font-size: pxToRem(16);
+                    border-radius: pxToRem(2);
+                    box-sizing: border-box;
+
+                     &::placeholder {
+                        @media (min-width: calc(#{$mobile} + 1px)) {
+                            color: $black;
+                            font-size: pxToRem(18);
+                            line-height: normal;
+                        }
+                        color: $smokedWhite;
+                        font-family: $font-family;
+                        font-size: pxToRem(15);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: pxToRem(18);
+                     }
+                 
+                 
+                }
+                
+                .form-textarea {
+                    resize: vertical;
+                    min-height: pxToRem(120);
+                    font-family: inherit;
+                }
+                
+                .submit-button {
+                    display: inline-flex;
+                    padding: pxToRem(8.824) pxToRem(29.412);
+                    justify-content: center;
+                    align-items: center;
+                    gap: pxToRem(7.353);
+                    border-radius: pxToRem(2);
+                    border: pxToRem(1.471) solid $gradient-green;
+                    background: $white;
+                
+                }
+            }
+        }
+    }
+   
+}

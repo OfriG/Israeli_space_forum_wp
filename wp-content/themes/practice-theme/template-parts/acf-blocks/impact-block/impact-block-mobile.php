@@ -2,12 +2,10 @@
 $impact_block_headline = $args['headline'];
 $impact_block_description = $args['description'];
 $button = $args['button'];
-$impact_block_background_image = $args['background_image'];
 $video = $args['video'];
 ?>
-<div class="impact-block-mobile" <?php if ($impact_block_background_image && $impact_block_background_image['url']): ?>
-    style="background-image: url('<?php echo esc_url($impact_block_background_image['url']); ?>');"
-    <?php else: ?>style="background-color: $gray; height: pxToRem(50);"<?php endif; ?>>
+<div class="impact-block-mobile">
+    <div class="stars-container"></div>
         <div class="icon-space">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>" alt="Blue line decoration" />
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueStar.svg'); ?>" alt="Blue star decoration" />
