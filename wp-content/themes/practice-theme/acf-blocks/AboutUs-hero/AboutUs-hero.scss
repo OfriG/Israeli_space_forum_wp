@@ -1,0 +1,77 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+.AboutUs-hero{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    .AboutUs-hero-content{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+margin: pxToRem(132.71) pxToRem(558.21) pxToRem(185) pxToRem(215.37);
+        }
+    display: flex;
+    flex-direction: column;
+    margin: pxToRem(86.68) pxToRem(22) pxToRem(136.68) pxToRem(32.28);
+    h1{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            font-size: pxToRem(120);
+            margin-bottom: pxToRem(42);
+            line-height: pxToRem(120);
+        }
+        align-self: stretch;
+        color: $white;
+        font-family: "Wallnutt Corps";
+        font-size: pxToRem(50);
+        font-style: normal;
+        font-weight: 400;
+        line-height: pxToRem(49);
+        text-align: left;
+        margin-bottom: pxToRem(16);
+    }
+    p{
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            font-size: 24px;
+            line-height: normal;
+            margin: pxToRem(0) pxToRem(84.9) pxToRem(40) pxToRem(0);
+        }
+        color: $white;
+font-family: "Space Grotesk";
+font-size: pxToRem(15);
+font-style: normal;
+font-weight: 400;
+line-height: pxToRem(22);
+margin: pxToRem(0) pxToRem(27.59) pxToRem(24) pxToRem(0);
+    }
+    .button{@media (min-width: calc(#{$mobile} + 1px)) {
+        padding: pxToRem(12) pxToRem(40);
+        margin-right: pxToRem(989);
+        border-radius: pxToRem(2);
+        gap: pxToRem(10);        
+        border: pxToRem(2) solid $iac-button-green;
+        max-width: pxToRem(180);
+    }
+        display: flex;
+        padding: pxToRem(8.824) pxToRem(29.412);
+        justify-content: center;
+        align-items: center;
+        gap: pxToRem(7.353);
+        border-radius: pxToRem(1.471);
+        margin-right: pxToRem(200.18);
+border: pxToRem(1.471) solid $iac-button-green;
+border: border-box;
+max-width: pxToRem(115.82);
+a{
+    @media (min-width: calc(#{$mobile} + 1px)) {
+        font-size: pxToRem(18);
+    }
+color: $white;
+    font-size: pxToRem(15);
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: uppercase;
+}    
+}
+    }
+}

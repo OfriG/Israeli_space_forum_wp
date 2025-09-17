@@ -2,14 +2,12 @@
 $members_logos = get_field('members_logos');
 $first_headline = get_field('first_headline');
 $second_headline = get_field('second_headline');
-$background_image = get_field('background_image');
 $collaborators_logos = get_field('collaborators_logos');
 ?>
 
 
-<div class="members-block" <?php if ($background_image && $background_image['url']): ?>
-    style="background-image: url('<?php echo esc_url($background_image['url']); ?>');"
-    <?php else: ?>style="background-color: $gray; height: pxToRem(50);"<?php endif; ?>>
+<div class="members-block" >
+    <div class="stars-container"></div>
     <div class="members-block-content">
         <div class="members-icon-space">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>"  />

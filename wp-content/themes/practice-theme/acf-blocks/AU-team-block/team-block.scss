@@ -1,0 +1,122 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.AU-team-block {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    background: black;
+    .stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .AU-team-block-content {
+        display: flex;
+        flex-direction: column;
+        .AU-team-icon-space{
+            display: flex;
+            align-items: center;
+        margin: pxToRem(65) pxToRem(196) pxToRem(35) pxToRem(25);
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            margin: pxToRem(199) pxToRem(1511) pxToRem(78) pxToRem(209);
+        }
+            img {
+
+                flex-shrink: 0;    
+                &:nth-child(2) {
+                    margin-left: pxToRem(-22); 
+                }
+            }
+        }     
+        .AU-team-block-headline{
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                margin: pxToRem(75) pxToRem(911) pxToRem(90) pxToRem(209);
+                font-size: pxToRem(90);
+                line-height: pxToRem(88);
+          
+
+            }
+            text-align: left;
+            margin: pxToRem(0) pxToRem(21.45) pxToRem(53) pxToRem(28.55);
+            color: $white;
+            font-family: "Wallnutt Corps";
+            font-size: pxToRem(45);
+            font-style: normal;
+            font-weight: 400;
+            line-height: pxToRem(49);
+
+        }
+        .AU-team-block-members{
+            .AU-team-block-members-logos{
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    flex-direction: row;
+                    gap: pxToRem(128);
+                    margin: pxToRem(0) pxToRem(493) pxToRem(198.55) pxToRem(442);
+                }
+                margin: pxToRem(0) pxToRem(47) pxToRem(67) pxToRem(47);
+                display: flex;
+                flex-direction: column;
+                gap: pxToRem(53);
+                
+                .AU-team-block-member-logo {
+                    .member-image-container {
+                        position: relative;
+                        display: inline-block;
+                        width: 100%;
+                        img {
+                            width: 100%;
+                            height: auto;
+                            display: block;                                       
+                        }
+                        .linkedin-icon {
+                            position: absolute;
+                            top: -5%;
+                            right: -5%;
+                            z-index: 10;
+                            img {
+                                @media (min-width: calc(#{$mobile} + 1px)) {
+                                    width:pxToRem(54.91);
+                                    height:pxToRem(54.91);
+                                }
+                                width:pxToRem(36.7);
+                                height:pxToRem(36.7);
+                            }
+                        }
+                    }
+                    .member-caption {
+                        color: $white;
+                        font-size: pxToRem(15);
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        text-align: left;
+                        margin: pxToRem(18) pxToRem(0) pxToRem(4) pxToRem(0);
+                        @media (min-width: calc(#{$mobile} + 1px)) {
+                            margin: pxToRem(31) pxToRem(0) pxToRem(0) pxToRem(0);
+                            font-size: pxToRem(24);
+                        }
+                    }
+
+                    .member-description {
+                        @media (min-width: calc(#{$mobile} + 1px)) {
+                            font-size: pxToRem(24);
+                        }
+                        color: $white;
+                        font-size: pxToRem(15);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }}

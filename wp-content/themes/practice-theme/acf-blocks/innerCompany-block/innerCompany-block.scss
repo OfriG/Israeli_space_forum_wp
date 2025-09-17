@@ -1,0 +1,203 @@
+@import '../../resources/scss/_colors';
+@import '../../resources/scss/_variables';
+@import '../../Functions/scssFunctions.scss';
+
+.innerCompany-block {
+    .innerCompany-block-content {
+        @media (min-width: calc(#{$mobile} + 1px)) {
+            padding: pxToRem(120) pxToRem(62.37) pxToRem(121) pxToRem(37.63);
+        }
+
+        display: flex;
+        flex-direction: column;
+        padding: pxToRem(30) pxToRem(27) pxToRem(12.79) pxToRem(23);
+
+        .innerCompany-buttons {
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                display: flex;
+                flex-direction: row;
+                gap: pxToRem(15);
+            }
+
+            .first-button {
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    padding: pxToRem(10);
+                    gap: pxToRem(10);
+                    height: pxToRem(31);
+
+                    a {
+                        color: $white;
+                        font-size: pxToRem(24);
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                }
+
+                margin-bottom: pxToRem(7.96);
+                max-width: pxToRem(127.96);
+                display: flex;
+                padding: pxToRem(8.019);
+                background: $innerCompany-gradient;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    color: $white;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    font-size: pxToRem(12);
+                    display: inline-flex;
+
+                }
+            }
+
+            .second-button {
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    margin-bottom: pxToRem(41);
+                    padding: pxToRem(10);
+                    height: pxToRem(31);
+                    gap: pxToRem(10);
+
+                    a {
+                        font-size: pxToRem(24);
+                    }
+                }
+
+                margin-bottom: pxToRem(20.96);
+                max-width: pxToRem(91.96);
+                display: flex;
+                padding: pxToRem(8.019);
+                background: $innerCompany-gradient;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                gap: pxToRem(8.019);
+
+                a {
+                    color: $white;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    font-size: pxToRem(12);
+                    display: inline-flex;
+                }
+            }
+        }
+
+        .icon {
+          
+
+            margin-bottom: pxToRem(15.54);
+
+            img { 
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                width: pxToRem(109);
+                height: pxToRem(82);}
+
+                
+                width: pxToRem(40.427);
+                height: pxToRem(30.459);
+                background-color: $black;
+
+            }
+        }
+
+        .headline {
+            h1 {
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    font-size: pxToRem(30);
+                    margin-bottom: pxToRem(20);
+                }
+
+                text-align: left;
+                color: $black;
+                font-size: pxToRem(24);
+                font-style: normal;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 110%;
+                margin-bottom: pxToRem(16);
+            }
+        }
+
+        .description {
+            p {
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    font-size: pxToRem(24);
+                    margin-bottom: pxToRem(69.45);
+                    width: pxToRem(1021);
+                    height: pxToRem(325);
+                    flex-shrink: 0;
+                }
+
+                margin: pxToRem(0) pxToRem(0) pxToRem(20) pxToRem(0);
+                text-align: left;
+                color: $black;
+                font-size: pxToRem(15);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+        .person-info-container {
+            @media (min-width: calc(#{$mobile} + 1px)) {
+                display: flex;
+                flex-direction: row;
+                gap: pxToRem(22);
+
+            }
+
+            .person-info {
+
+                .full-name,
+                .job-title,
+                .mail {
+                    p {
+                        @media (min-width: calc(#{$mobile} + 1px)) {
+                            font-size: pxToRem(24);
+                        }
+
+                        text-align: left;
+                        color: $black;
+                        font-size: pxToRem(15);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                }
+
+                .line {
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                        max-width: pxToRem(409);
+                        height: pxToRem(0.2);
+                        background-color: $black;
+                    }
+
+                    max-width:pxToRem(239.75);
+                    height: pxToRem(0.16);
+                    background-color: $black;
+                }
+            }
+
+            .social-icons {
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    align-items: flex-end;
+                }
+
+                gap: pxToRem(13);
+                margin: pxToRem(24) pxToRem(0) pxToRem(0) pxToRem(0);
+                display: flex;
+                flex-direction: row;
+
+                img {
+                    width: pxToRem(30);
+                    height: pxToRem(30);
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+}
