@@ -39,6 +39,8 @@
                 display: flex;
                 padding: pxToRem(8.019);
                 background: $innerCompany-gradient;
+                justify-content: center;
+                align-items: center;
 
                 a {
                     color: $white;
@@ -85,17 +87,16 @@
         }
 
         .icon {
-            @media (min-width: calc(#{$mobile} + 1px)) {
-                img {
-                    width: pxToRem(109);
-                    height: pxToRem(82);
-
-                }
-            }
+          
 
             margin-bottom: pxToRem(15.54);
 
-            img {
+            img { 
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                width: pxToRem(109);
+                height: pxToRem(82);}
+
+                
                 width: pxToRem(40.427);
                 height: pxToRem(30.459);
                 background-color: $black;

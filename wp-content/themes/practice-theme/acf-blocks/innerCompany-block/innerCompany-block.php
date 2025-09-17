@@ -18,9 +18,12 @@ $icon = get_field('icon');
              <?php get_template_part('template-parts/button', null, ['button' => $second_button]); ?>
         </div>
         </div>
-            <div class="icon">
-                <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
-            </div>
+        <?php if ($icon && is_array($icon)) : ?>
+    <div class="icon">
+        <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>">
+    </div>
+<?php endif; ?>
+
             <div class="headline">
             <h1><?php echo nl2br(esc_html($headline)); ?></h1>
             </div>
