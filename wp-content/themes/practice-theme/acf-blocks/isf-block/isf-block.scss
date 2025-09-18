@@ -2,7 +2,8 @@
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
 
-.isf-block{    display: flex;
+.isf-block{
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -12,6 +13,8 @@
         // margin-left: calc(-50vw + 50%);
         // margin-right: calc(-50vw + 50%);
     }
+
+
     .img-isf{
         display: flex;
         flex-direction: column;
@@ -109,6 +112,15 @@
                 line-height: normal;
                 text-transform: uppercase;
             }
+          
+              
+              &:hover {
+                transition: background-color 0.9s ease-in-out;
+                background-color: $gradient-green;
+                color: $black;
+                border-color: transparent;
+              }
+              
             margin: pxToRem(28) pxToRem(170.18) pxToRem(0) pxToRem(0);
             color: $black;
             font-size: pxToRem(15);

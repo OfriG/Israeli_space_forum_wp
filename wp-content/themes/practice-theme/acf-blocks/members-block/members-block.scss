@@ -1,7 +1,9 @@
 @import '../../resources/scss/_colors';
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
-.members-block {    background: black;
+
+.members-block {
+    background: black;
     position: relative;
     overflow: hidden;
     background-size: cover;
@@ -16,6 +18,13 @@
         z-index: 1;
         pointer-events: none;
     }
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+
+    }
+
     .collaborators-second-title{
         @media (min-width: calc(#{$mobile} + 1px)) {
             width: pxToRem(833.016);

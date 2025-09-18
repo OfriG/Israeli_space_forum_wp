@@ -5,9 +5,9 @@
 .desktop-upper-section {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 
-    padding: pxToRem(70) pxToRem(104) pxToRem(10) pxToRem(104);
+    padding: pxToRem(70) pxToRem(40) pxToRem(10) pxToRem(40);
     box-sizing: border-box;
 
     .left-section {

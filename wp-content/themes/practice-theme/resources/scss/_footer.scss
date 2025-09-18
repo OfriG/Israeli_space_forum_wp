@@ -9,6 +9,12 @@
     background: black;
     overflow: hidden;
 
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        position: relative;
+    }
+
     // Stars background container
     .stars-container {
         position: absolute;
@@ -35,6 +41,15 @@
     .desktop-footer {
         position: relative;
         z-index: 2;
+        display: none;
+
+        @media (min-width: $mobile) {
+            display: block;
+        }
+    }
+
+    // Desktop footer lower wrapper - full width
+    .desktop-footer-lower-wrapper {
         display: none;
 
         @media (min-width: $mobile) {

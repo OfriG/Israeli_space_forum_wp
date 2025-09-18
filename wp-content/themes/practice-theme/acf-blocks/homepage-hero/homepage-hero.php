@@ -18,7 +18,7 @@ $highlight_headline = get_field('highlight_headline');
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> homepage-hero-block">
     <div class="stars-container"></div>
     
-
+<div class="responsive-container">
     <div class="content-wrapper">
         <h1>
             <?php echo esc_html($headline); ?>
@@ -35,7 +35,9 @@ $highlight_headline = get_field('highlight_headline');
                 <a class="joinud-btn" href="<?php echo esc_url($button['url']); ?>" target="<?php echo esc_attr($button['target'] ?: '_self'); ?>"><?php echo esc_html($button['title']); ?></a>
             <?php else : ?>
                 <a class="joinud-btn" href="#"><?php echo esc_html($button); ?></a>
-            <?php endif; ?>
+                <?php endif; ?>
+            </div>
         <?php endif; ?>
+    </div>
     </div>
 </div>

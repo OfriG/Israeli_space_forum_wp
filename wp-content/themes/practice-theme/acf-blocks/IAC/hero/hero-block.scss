@@ -6,9 +6,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+
+    }
     
     .iac-hero-block-content {
-        @media (min-width: calc(#{$mobile} + 1px)) {
+        @media (min-width: 1200px) and (max-width: 1439px) {
             padding: pxToRem(63.14) pxToRem(425) pxToRem(139) pxToRem(251);
         }
     display: flex;
@@ -139,6 +145,13 @@ a{
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+}
+&:hover {
+    box-shadow: 0 8px 20px rgba(0, 255, 128, 0.3);
+    transform: scale(1.05) translateY(-2px);
+    background-color: $gradient-green;
+    color: $black;
+    border-color: transparent;
 }
         }
         display: none;

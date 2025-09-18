@@ -3,8 +3,9 @@ $headline_team_block = get_field('headline_team_block');
 $team_members_images = get_field('team_members_images');
 ?>
         <div class="AU-team-block">
-            <div class="stars-container"></div>
-    <div class="AU-team-block-content">
+            <div class="responsive-container">
+                <div class="stars-container"></div>
+                <div class="AU-team-block-content">
         <div class="AU-team-icon-space">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>"  />
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueStar.svg'); ?>"  />
@@ -19,5 +20,6 @@ $team_members_images = get_field('team_members_images');
             ); 
             ?>
         </div>
-    </div>
+            </div>
+        </div>
 </div>

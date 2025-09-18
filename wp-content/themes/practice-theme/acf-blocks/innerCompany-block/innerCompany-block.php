@@ -9,7 +9,8 @@ $mail = get_field('mail');
 $icon = get_field('icon');
 ?>
 <div class="innerCompany-block">
-    <div class="innerCompany-block-content">
+    <div class="responsive-container">
+        <div class="innerCompany-block-content">
         <div class="innerCompany-buttons">
         <div class="first-button">
             <?php get_template_part('template-parts/button', null, ['button' => $first_button]); ?>
@@ -51,5 +52,6 @@ $icon = get_field('icon');
             </div>  
             </div>
         </div>
+    </div>
     </div>
 </div>

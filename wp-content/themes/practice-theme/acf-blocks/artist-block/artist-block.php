@@ -5,7 +5,8 @@ $description = get_field('description');
 $gallery = get_field('gallery'); 
 ?>
 <div class="artist-block">
-    <div class="artist-block-content">
+    <div class="responsive-container">
+        <div class="artist-block-content">
         <div class="artist-block-text">
         <div class="artist-block-content-headline">
             <img class="headline-mobile" src="<?php echo $headline_image_mobile['url']; ?>" alt="<?php echo $headline_image_mobile['alt']; ?>">
@@ -26,6 +27,7 @@ $gallery = get_field('gallery');
                 <img src="<?php echo get_template_directory_uri(); ?>/images/dotes.svg" alt="dotes">
             </div>
         </div>
+    </div>
     </div>
 </div>
 

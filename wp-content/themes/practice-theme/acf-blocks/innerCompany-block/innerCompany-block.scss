@@ -3,6 +3,12 @@
 @import '../../Functions/scssFunctions.scss';
 
 .innerCompany-block {
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
     .innerCompany-block-content {
         @media (min-width: calc(#{$mobile} + 1px)) {
             padding: pxToRem(120) pxToRem(62.37) pxToRem(121) pxToRem(37.63);

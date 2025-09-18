@@ -26,21 +26,23 @@ $form_fields_data = [
 ];
 ?>
 <div class="joinUs-block">
-    <div class="joinUs-block-content">
-        <?php if ($headline_mobile_joinus): ?>
-            <h2 class="joinUs-block-content-title-mobile"><?php echo $headline_mobile_joinus; ?></h2>
-        <?php endif; ?>
-        <?php if ($headline_desktop_joinus): ?>
-            <h2 class="joinUs-block-content-title-desktop"><?php echo $headline_desktop_joinus; ?></h2>
-        <?php endif; ?>
-        <?php if ($description_joinus): ?>
-            <p class="joinUs-block-content-description"><?php echo $description_joinus; ?></p>
-        <?php endif; ?>
+    <div class="responsive-container">
+        <div class="joinUs-block-content">
+            <?php if ($headline_mobile_joinus): ?>
+                <h2 class="joinUs-block-content-title-mobile"><?php echo $headline_mobile_joinus; ?></h2>
+            <?php endif; ?>
+            <?php if ($headline_desktop_joinus): ?>
+                <h2 class="joinUs-block-content-title-desktop"><?php echo $headline_desktop_joinus; ?></h2>
+            <?php endif; ?>
+            <?php if ($description_joinus): ?>
+                <p class="joinUs-block-content-description"><?php echo $description_joinus; ?></p>
+            <?php endif; ?>
+        </div>
+        <?php
+        get_template_part('template-parts/joinUs-form', null, [
+            'form_fields_data' => $form_fields_data,
+            'register_button_text' => $register_button_text
+        ]);
+        ?>
     </div>
-    <?php
-    get_template_part('template-parts/joinUs-form', null, [
-        'form_fields_data' => $form_fields_data,
-        'register_button_text' => $register_button_text
-    ]);
-    ?>
 </div>

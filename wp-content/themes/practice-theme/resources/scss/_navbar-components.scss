@@ -16,6 +16,14 @@ h1 {
   justify-content:space-around;
   z-index: $navbar-z-index;
 
+  .responsive-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
   @media (max-width: $mobile) {
     height: pxToRem(72);
     padding: pxToRem(15.66) pxToRem(24) pxToRem(15.66) pxToRem(24);
