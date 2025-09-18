@@ -1,13 +1,32 @@
 @import '../../resources/scss/_colors';
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
+
 .joinUs-block{
     display: flex;
     flex-direction: column;
     margin: pxToRem(41.61) pxToRem(34.72) pxToRem(42) pxToRem(40.28);
-    @media (min-width: calc(#{$mobile} + 1px)) {
-        margin: pxToRem(180) pxToRem(411.5) pxToRem(188) pxToRem(411.5);    display: flex;
+    @media (min-width: calc(#{$mobile} + 1px)) and (max-width: 1440px) {
+        margin: pxToRem(180) pxToRem(411.5) pxToRem(188) pxToRem(411.5);
+        display: flex;
         flex-direction: column;
+    }
+    
+    @media (min-width: 1441px) {
+        margin: pxToRem(180) 0 pxToRem(188) 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+        
+        @media (max-width: 1440px) {
+            max-width: none;
+            margin: 0;
+        }
     }
 
 .joinUs-block-content{
@@ -15,8 +34,13 @@
     flex-direction: column;
     align-items: center;
     gap: pxToRem(10);
-    @media (min-width: calc(#{$mobile} + 1px)) {
+    @media (min-width: calc(#{$mobile} + 1px)) and (max-width: 1440px) {
        margin: pxToRem(21) pxToRem(168.07) pxToRem(49) pxToRem(168.07);
+       gap: pxToRem(21);
+    }
+    
+    @media (min-width: 1441px) {
+       margin: pxToRem(21) pxToRem(40) pxToRem(49) pxToRem(40);
        gap: pxToRem(21);
     }
 
@@ -208,8 +232,12 @@ button{
     margin-bottom: pxToRem(22);
     align-self: stretch;
     gap: pxToRem(10);
-    
- 
+    &:hover {
+        transition: background-color 0.9s ease-in-out;
+        background-color: $iac-button-green;
+        color: $black;
+        border-color: transparent;
+    }
     @media (min-width: calc(#{$mobile} + 1px)) {
         align-items: flex-start;
         border-radius: pxToRem(2.805);

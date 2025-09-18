@@ -19,26 +19,28 @@
 
     <!-- Desktop Navbar -->
     <nav class="navbar-menu">
-        <a class="navbar-logo" href="<?php echo home_url(); ?>">
-            <div class="desktop-logo-container">
-                <?php display_site_logo(); ?>
-            </div>
-        </a>
+        <div class="responsive-container">
+            <a class="navbar-logo" href="<?php echo home_url(); ?>">
+                <div class="desktop-logo-container">
+                    <?php display_site_logo(); ?>
+                </div>
+            </a>
 
-        <?php
-        wp_nav_menu(array(
-            'theme_location' => 'main-menu',
-            'container' => false,
-            'menu_class' => 'navbar-all',
-        ));
-        ?>
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'main-menu',
+                'container' => false,
+                'menu_class' => 'navbar-all',
+            ));
+            ?>
 
-        <div class="mobile-navbar">
-            <div class="mobile-logo-left"> <?php display_site_logo(); ?>
+            <div class="mobile-navbar">
+                <div class="mobile-logo-left"> <?php display_site_logo(); ?>
+                </div>
+                <button class="navbar-toggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
-            <button class="navbar-toggle" aria-label="Toggle mobile menu">
-                <span class="hamburger-line"></span>
-            </button>
         </div>
     </nav>
 

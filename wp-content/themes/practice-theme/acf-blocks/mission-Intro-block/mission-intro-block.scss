@@ -9,9 +9,15 @@
     background-position: center;
     display: flex;
 
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
     .AboutUs-mission-text {
         @media (min-width: calc(#{$mobile} + 1px)) {
-            margin: pxToRem(92) pxToRem(1125) pxToRem(120) pxToRem(195);
+            margin: pxToRem(92) pxToRem(0) pxToRem(120) pxToRem(195);
         }
         margin: pxToRem(113) pxToRem(27.5) pxToRem(40) pxToRem(27.5);
         display: flex;
@@ -33,6 +39,7 @@
             @media (min-width: calc(#{$mobile} + 1px)) {
                 font-size: pxToRem(24);
                 line-height: normal;
+                width: pxToRem(586);
             }
             color: $white;
             font-size: pxToRem(15);

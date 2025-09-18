@@ -1,6 +1,7 @@
 @import '../../resources/scss/_colors';
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
+
 .iac-block {
     background: black;
     background-size: cover;
@@ -28,6 +29,12 @@
     // Hide mobile version on desktop
     @media (min-width: calc(#{$mobile} + 1px)) {
         display: none;
+    }
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
     }
     
     .background-text {
@@ -145,6 +152,12 @@
         padding: pxToRem(60) pxToRem(80);
         box-sizing: border-box;
         overflow: hidden;
+    }
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
     }
     
     // Stars background container for desktop

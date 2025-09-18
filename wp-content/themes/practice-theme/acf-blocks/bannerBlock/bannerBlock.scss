@@ -1,6 +1,7 @@
 @import '../../resources/scss/_colors';
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
+  
 
 .bannerBlock {
     display: flex;
@@ -12,7 +13,10 @@
     @media (min-width: calc(#{$mobile} + 1px)) {
         padding: pxToRem(29) pxToRem(33);
     }
-
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
 
     .desktop-only {
         display: none;
@@ -187,4 +191,5 @@
             }
         }
     }
+}
 }
