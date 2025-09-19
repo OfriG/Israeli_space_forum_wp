@@ -30,6 +30,11 @@
         <div class="desktop-newsletter-wrapper">
             <?php get_template_part('template-parts/footer/newsLetterFooter'); ?>
         </div>
+        <div class="contact-us-section">
+            <a href="#" class="contact-us-button" data-contact-trigger>
+                Contact Us
+            </a>
+        </div>
     </div>
 </div>
 

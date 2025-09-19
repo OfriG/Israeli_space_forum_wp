@@ -17,8 +17,12 @@
         <?php
         get_template_part('template-parts/footer/desktopFooter');
         ?>
+     
     </div>
+
 </footer>
+
+<?php get_template_part('acf-blocks/contactUs-block/contactUs-block'); ?>
 
 <?php wp_footer(); ?>
 </body>
