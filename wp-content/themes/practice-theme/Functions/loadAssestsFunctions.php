@@ -13,6 +13,7 @@ function theme_enqueue_assets()
     wp_enqueue_style('footer-styles', get_template_directory_uri() . '/dist/css/_footer.css', array(), '1.0.0');
     wp_enqueue_style('newsletter-styles', get_template_directory_uri() . '/dist/css/footer/_newsletter.css', array(), '1.0.0');
     wp_enqueue_style('404-styles', get_template_directory_uri() . '/dist/css/404.css', array(), '1.0.0');
+    wp_enqueue_style('contactUs-styles', get_template_directory_uri() . '/dist/css/contactUs-block.css', array(), '1.0.0');
     wp_enqueue_style( 'sweetalert2-css', 'https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css' );
 
     // JavaScript

@@ -7,7 +7,7 @@ $message = $args['message'];
 ?>
 
 <div class="contactUs-block-form">
-    <div class="close-x">X</div>
+    <div class="close-x" id="close-x" aria-label="Close contact form">×</div>
     <form id="contactUs-form" class="contact-form contactUs-ajax-form" method="post">
         <?php wp_nonce_field('contactUs_nonce', 'contactUs_nonce'); ?>
         
@@ -40,11 +40,7 @@ $message = $args['message'];
         </div>
         
         <div class="form-row">
-            <?php if ($button && !empty($button['title'])): ?>
                 <button type="submit" class="submit-button"><?php echo esc_html($button['title']); ?></button>
-            <?php else: ?>
-                <button type="submit" class="submit-button">SUBMIT</button>
-            <?php endif; ?>
         </div>
     </form>
 </div>
