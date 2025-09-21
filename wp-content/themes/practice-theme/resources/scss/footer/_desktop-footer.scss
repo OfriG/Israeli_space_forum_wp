@@ -284,24 +284,28 @@
                 }
 
                 // Override the template structure with CSS grid
-                display: grid;
-                grid-template-areas: "email subscribe"
-                "linkedin .";
-                grid-template-columns: pxToRem(200) auto;
-                gap: pxToRem(15) pxToRem(15);
-                align-items: start;
+                display: flex;
+                flex-direction: column;
+                gap: pxToRem(15);
 
                 .email-input {
-                    grid-area: email;
+                    width: 100%;
+                }
+
+                .newsletter-actions {
+                    display: flex;
+                    align-items: center;
+                    gap: pxToRem(15);
+                    width: 100%;
+                    flex-wrap: wrap;
                 }
 
                 .newsletter-actions .subscribe-btn {
-                    grid-area: subscribe;
+                    flex-shrink: 0;
                 }
 
                 .newsletter-actions .linkedin-link {
-                    grid-area: linkedin;
-                    margin-left: pxToRem(-8);
+                    flex-shrink: 0;
                 }
             }
         }
