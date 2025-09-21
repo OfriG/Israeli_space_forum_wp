@@ -20,6 +20,7 @@ jQuery(document).ready(function($) {
         console.log('Form data:', formData);
         console.log('AJAX URL:', ajax_object.ajax_url);
         console.log('Nonce:', ajax_object.nonce);
+        console.log('Form HTML:', $form[0].outerHTML);
         
         $.ajax({
             type: 'POST',
