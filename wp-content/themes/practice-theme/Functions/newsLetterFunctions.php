@@ -3,10 +3,18 @@
 add_action('wp_ajax_handle_newsletter_signup', 'handle_newsletter_signup');
 add_action('wp_ajax_nopriv_handle_newsletter_signup', 'handle_newsletter_signup');
 
+// Debug: Check if actions are registered
+add_action('init', function() {
+    error_log("Newsletter actions registered: " . (has_action('wp_ajax_handle_newsletter_signup') ? 'YES' : 'NO'));
+    error_log("Newsletter nopriv actions registered: " . (has_action('wp_ajax_nopriv_handle_newsletter_signup') ? 'YES' : 'NO'));
+});
+
 function handle_newsletter_signup()
 {
     // Add debugging
     error_log("Newsletter function called!");
+    error_log("POST data: " . print_r($_POST, true));
+    error_log("Server info: " . print_r($_SERVER, true));
     
     if (!isset($_POST['newsletter_nonce']) || !wp_verify_nonce($_POST['newsletter_nonce'], 'newsletter_nonce')) {
         error_log("Newsletter nonce check failed");
