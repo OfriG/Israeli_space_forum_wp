@@ -1,11 +1,17 @@
 
+console.log('Newsletter script file loaded');
+
 jQuery(document).ready(function($) {
-    console.log('Newsletter script loaded');
+    console.log('Newsletter script loaded - jQuery ready');
+    console.log('jQuery version:', $.fn.jquery);
+    console.log('ajax_object available:', typeof ajax_object !== 'undefined');
     console.log('Found newsletter forms:', $('#newsletter').length);
     console.log('Found desktop newsletter forms:', $('.desktop-newsletter-wrapper #newsletter').length);
+    console.log('All forms on page:', $('form').length);
     
     // Use event delegation to catch forms that might be loaded later
     $(document).on('submit', '#newsletter', function(e){
+        console.log('Newsletter form submitted!');
         e.preventDefault();
         let $form = $(this);
         
