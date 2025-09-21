@@ -76,9 +76,9 @@ jQuery(document).ready(function ($) {
 
         // Submit newsletter subscription via AJAX
         submitNewsletter() {
-            // Check if newsletter settings are available
-            if (typeof newsletterSettings === 'undefined') {
-                console.error('newsletterSettings is not defined');
+            // Check if ajax object is available
+            if (typeof ajax_object === 'undefined') {
+                console.error('ajax_object is not defined');
                 this.showMessage('Configuration error', 'error');
                 this.showLoading(false);
                 return;
@@ -86,11 +86,11 @@ jQuery(document).ready(function ($) {
 
             // Send AJAX request to server
             $.post({
-                url: newsletterSettings.ajaxUrl,
+                url: ajax_object.ajax_url,
                 data: {
                     action: 'practice_newsletter',
                     email: this.emailInput.val().trim(),
-                    nonce: newsletterSettings.nonce // Security nonce for validation
+                    nonce: ajax_object.nonce // Security nonce for validation
                 },
                 dataType: 'json'
             })

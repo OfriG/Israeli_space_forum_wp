@@ -31,9 +31,9 @@
         }
         ?>
   </p>
-  <form class="newsletter-form" method="post" action="">
-      <?php wp_nonce_field('newsletter_subscribe', 'newsletter_nonce'); ?>
-      <input type="email" name="subscriber_email" placeholder="Email" class="email-input" required />
+  <form id="newsletter" class="newsletter-form" method="post" action="">
+      <?php wp_nonce_field('newsletter_nonce', 'newsletter_nonce'); ?>
+      <input type="email" id="email" name="email" placeholder="Email" class="email-input" required />
 
       <div class="newsletter-actions">
           <button type="submit" class="subscribe-btn">Subscribe</button>
