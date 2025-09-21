@@ -5,12 +5,13 @@ jQuery(document).ready(function($) {
     console.log('Newsletter script loaded - jQuery ready');
     console.log('jQuery version:', $.fn.jquery);
     console.log('ajax_object available:', typeof ajax_object !== 'undefined');
-    console.log('Found newsletter forms:', $('#newsletter').length);
-    console.log('Found desktop newsletter forms:', $('.desktop-newsletter-wrapper #newsletter').length);
+    console.log('Found mobile newsletter forms:', $('#newsletter-mobile').length);
+    console.log('Found desktop newsletter forms:', $('#newsletter-desktop').length);
     console.log('All forms on page:', $('form').length);
     
     // Use event delegation to catch forms that might be loaded later
-    $(document).on('submit', '#newsletter', function(e){
+    // Target both mobile and desktop newsletter forms
+    $(document).on('submit', '#newsletter-mobile, #newsletter-desktop', function(e){
         console.log('Newsletter form submitted!');
         e.preventDefault();
         let $form = $(this);
