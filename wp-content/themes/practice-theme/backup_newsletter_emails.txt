@@ -1,0 +1,10 @@
+# Newsletter Subscription Backup File
+# This file contains newsletter subscription data when email sending fails
+# Format: Date - Newsletter Subscription
+# Email: [email]
+# Post ID: [post_id]
+
+2025-09-21 08:54:10 - Newsletter Subscription
+Email: ofri90a0@gmail.com
+Post ID: 977
+
