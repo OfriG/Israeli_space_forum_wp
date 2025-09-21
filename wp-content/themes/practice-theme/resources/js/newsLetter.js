@@ -1,6 +1,11 @@
 
 jQuery(document).ready(function($) {
-    $('#newsletter').on('submit', function(e){
+    console.log('Newsletter script loaded');
+    console.log('Found newsletter forms:', $('#newsletter').length);
+    console.log('Found desktop newsletter forms:', $('.desktop-newsletter-wrapper #newsletter').length);
+    
+    // Use event delegation to catch forms that might be loaded later
+    $(document).on('submit', '#newsletter', function(e){
         e.preventDefault();
         let $form = $(this);
         
