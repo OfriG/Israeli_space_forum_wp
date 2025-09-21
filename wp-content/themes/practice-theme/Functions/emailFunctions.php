@@ -37,6 +37,39 @@ function send_joinUs_notification_email($registration_data, $post_id) {
     return ['success' => true, 'message' => 'Email sent successfully'];
 }
 
+function send_newsletter_notification_email($email) {
+    $to = get_option('admin_email');
+    $subject = "New Newsletter Subscription from {$email}";
+    $headers = ['Content-Type: text/html; charset=UTF-8'];
+
+    $body = "<h2>Newsletter Subscription</h2>";
+    $body .= "<p><strong>Email:</strong> {$email}</p>";
+    $body .= "<p><strong>Subscription Date:</strong> " . date('Y-m-d H:i:s') . "</p>";
+
+    $email_sent = wp_mail($to, $subject, $body, $headers);
+
+    if (!$email_sent) {
+        error_log("Newsletter subscription: Failed to send email for: {$email}");
+
+        $email_backup = "=== Newsletter Subscription ===\n";
+        $email_backup .= "Date: " . date('Y-m-d H:i:s') . "\n";
+        $email_backup .= "To: {$to}\n";
+        $email_backup .= "Subject: {$subject}\n";
+        $email_backup .= "Content:\n" . strip_tags($body) . "\n";
+        $email_backup .= "================================\n\n";
+
+        file_put_contents(
+            get_template_directory() . '/email_backup.txt',
+            $email_backup,
+            FILE_APPEND | LOCK_EX
+        );
+
+        return ['success' => false, 'message' => 'Email failed, saved to backup file'];
+    }
+
+    return ['success' => true, 'message' => 'Email sent successfully'];
+}
+
 function create_email_backup($to, $subject, $body, $post_id) {
     $email_backup = "=== Join Us Form Submission ===\n";
     $email_backup .= "Date: " . date('Y-m-d H:i:s') . "\n";

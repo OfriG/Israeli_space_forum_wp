@@ -1,4 +1,5 @@
 <?php
+
 function enqueue_newsletter_scripts()
 {
     wp_enqueue_script('newsletter-js', get_theme_file_uri('/dist/js/newsLetter.js'), ['jquery'], '1.0', true);
@@ -27,6 +28,12 @@ function handle_newsletter_signup()
         wp_send_json_error(['message' => 'Invalid email address']);
     }
 
-
-    wp_send_json_success(['message' => 'Thank you for subscribing!']);
+    // Send admin notification email
+    $email_result = send_newsletter_notification_email($email);
+    
+    if ($email_result['success']) {
+        wp_send_json_success(['message' => 'Thank you for subscribing!']);
+    } else {
+        wp_send_json_success(['message' => 'Thank you for subscribing! Email notification saved to backup file.']);
+    }
 }
