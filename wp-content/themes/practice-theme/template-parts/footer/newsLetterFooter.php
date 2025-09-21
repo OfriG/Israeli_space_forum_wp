@@ -31,7 +31,11 @@
         }
         ?>
   </p>
-  <form id="newsletter" class="newsletter-form" method="post" action="">
+  <?php 
+  // Get the form ID from the passed parameter, default to 'newsletter-mobile' for backward compatibility
+  $form_id = isset($args['form_id']) ? $args['form_id'] : 'newsletter-mobile';
+  ?>
+  <form id="<?php echo esc_attr($form_id); ?>" class="newsletter-form" method="post" action="">
       <?php wp_nonce_field('newsletter_nonce', 'newsletter_nonce'); ?>
       <input type="email" id="email" name="email" placeholder="Email" class="email-input" required />
 

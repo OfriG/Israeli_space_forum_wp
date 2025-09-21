@@ -56,6 +56,7 @@ function handle_newsletter_signup()
     if ($email_result['success']) {
         wp_send_json_success(['message' => 'Your submission has been sent and saved successfully.']);
     } else {
+        // Email failed but post was created successfully - still show success
         wp_send_json_success([
             'message' => 'Your submission has been saved successfully. Email notification saved to backup file.'
         ]);
