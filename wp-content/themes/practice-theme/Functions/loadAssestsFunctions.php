@@ -31,7 +31,7 @@ function theme_enqueue_assets()
     wp_localize_script('contactUs-js', 'ajax_object', array(
         'ajax_url' => admin_url('admin-ajax.php')
     ));
-    wp_localize_script('newsletter-js', 'ajax_object', array(
+    wp_localize_script('newsletter-js', 'newsletter_ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('newsletter_nonce')
     ));
