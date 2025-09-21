@@ -127,7 +127,7 @@ function practice_theme_register_acf_blocks()
             'keywords' => array('mission', 'intro', 'block'),
             'mode' => 'preview',
         'render_template' => get_template_directory() . '/acf-blocks/mission-Intro-block/mission-intro-block.php',
-        'enqueue_style' => get_template_directory_uri() . '/dist/css/mission-Intro-block.css',
+        'enqueue_style' => get_template_directory_uri() . '/dist/css/mission-intro-block.css',
     ));
 
     acf_register_block_type(array(
@@ -183,17 +183,20 @@ function practice_theme_register_acf_blocks()
         'description' => ('A custom that presenting artists.'),
         'category' => 'theme',
         'icon' => 'dashicons-art',
-            'keywords' => array('artist', 'block'),
-            'mode' => 'preview',
+        'keywords' => array('artist', 'block'),
+        'mode' => 'preview',
         'render_template' => get_template_directory() . '/acf-blocks/artist-block/artist-block.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/artist-block.css',
-        'name' => 'campanis-block',
-        'title' => 'Campanis Block',
+    ));
+
+    acf_register_block_type(array(
+        'name' => 'companies-block',
+        'title' => 'Companies Block',
         'description' => ('A custom that present companies.'),
         'category' => 'theme',
         'icon' => 'dashicons-groups',
-            'keywords' => array('Campanis', 'block'),
-            'mode' => 'preview',
+        'keywords' => array('companies', 'block'),
+        'mode' => 'preview',
         'render_template' => get_template_directory() . '/acf-blocks/companies-block/companies-block.php',
         'enqueue_style' => get_template_directory_uri() . '/dist/css/companies-block.css',
     ));

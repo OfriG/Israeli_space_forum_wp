@@ -10,7 +10,7 @@
 
     <div class="newsletter-container">
 
-        <?php get_template_part('template-parts/footer/newsLetterFooter'); ?>
+        <?php get_template_part('template-parts/footer/newsLetterFooter', null, ['form_id' => 'newsletter-mobile']); ?>
     </div>
     <div class="line"></div>
 </div>
