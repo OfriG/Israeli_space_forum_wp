@@ -11,3 +11,5 @@ require_once get_template_directory() . '/Functions/emailFunctions.php';
 require_once get_template_directory() . '/Functions/innerCompanyBlockFunction.php';
 require_once get_template_directory() . '/Functions/innerCompanyAcfFields.php';
 require_once get_template_directory() . '/Functions/404OptionPageFunctions.php';
+require_once get_template_directory() . '/Functions/artistblockFunctions.php';
+require_once get_template_directory() . '/Functions/artistCustomPostTypeFields.php';

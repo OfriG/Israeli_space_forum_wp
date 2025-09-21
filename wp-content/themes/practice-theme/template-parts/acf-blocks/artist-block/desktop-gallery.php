@@ -12,13 +12,8 @@ $gallery = $args['gallery'];
             <?php foreach ($gallery as $index => $artist_item): ?>
                 <div class="gallery-slide" data-slide="<?php echo $index; ?>" <?php echo $index === 0 ? 'style="display: block;"' : 'style="display: none;"'; ?>>
                     <div class="artist-details-upper">
-                        <?php if ($artist_item['first_headline']): ?>
-                            <h3 class="artist-name-desktop"><?php echo esc_html($artist_item['first_headline']); ?></h3>
-                        <?php endif; ?>
-                        
-                        <?php if ($artist_item['second_headline']): ?>
-                            <h4 class="artwork-title-desktop"><?php echo esc_html($artist_item['second_headline']); ?></h4>
-                        <?php endif; ?>
+                        <h3 class="artist-name-desktop"><?php echo esc_html($artist_item['first_headline']); ?></h3>
+                        <h4 class="artwork-title-desktop"><?php echo esc_html($artist_item['second_headline']); ?></h4>
                     </div>
                     
                     <div class="artist-gallery-item-desktop">
@@ -28,15 +23,10 @@ $gallery = $args['gallery'];
                     </div>
                     
                     <div class="artist-details-lower">
-                        <?php if ($artist_item['description']): ?>
-                            <p class="artwork-description-desktop"><?php echo nl2br(esc_html($artist_item['description'])); ?></p>
-                        <?php endif; ?>
-                        
-                        <?php if ($artist_item['email']): ?>
-                            <a href="mailto:<?php echo esc_attr($artist_item['email']); ?>" class="artist-email-desktop">
-                                <?php echo esc_html($artist_item['email']); ?>
-                            </a>
-                        <?php endif; ?>
+                        <p class="artwork-description-desktop"><?php echo nl2br(esc_html($artist_item['item_description'])); ?></p>
+                        <a href="mailto:<?php echo esc_attr($artist_item['email']); ?>" class="artist-email-desktop">
+                            <?php echo esc_html($artist_item['email']); ?>
+                        </a>
                     </div>
                 </div>
             <?php endforeach; ?>

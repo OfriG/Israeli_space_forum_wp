@@ -1,25 +1,38 @@
 <?php 
-$headline_image_mobile = get_field('headline_image_mobile');
-$headline_image_desktop = get_field('headline_image_desktop');
-$description = get_field('description');
-$gallery = get_field('gallery'); 
+$artists_query = new WP_Query(array(
+    'post_type' => 'artist',
+    'posts_per_page' => 1, 
+    'post_status' => 'publish'
+));
 ?>
 <div class="artist-block">
     <div class="artist-block-content">
         <div class="artist-block-text">
+        <?php 
+        if ($artists_query->have_posts()) {
+            $artists_query->the_post();
+            
+            $headline_image_mobile = get_field('headline_image_mobile');
+            $headline_image_desktop = get_field('headline_image_desktop');
+            $description = get_field('description');
+            $gallery = get_field('gallery');
+        ?>
         <div class="artist-block-content-headline">
-            <img class="headline-mobile" src="<?php echo $headline_image_mobile['url']; ?>" alt="<?php echo $headline_image_mobile['alt']; ?>">
-            <img class="headline-desktop" src="<?php echo $headline_image_desktop['url']; ?>" alt="<?php echo $headline_image_desktop['alt']; ?>">
+                <img class="headline-mobile" src="<?php echo esc_url($headline_image_mobile['url']); ?>" alt="<?php echo esc_attr($headline_image_mobile['alt']); ?>">
+                <img class="headline-desktop" src="<?php echo esc_url($headline_image_desktop['url']); ?>" alt="<?php echo esc_attr($headline_image_desktop['alt']); ?>">
         </div>
         <div class="artist-block-content-description">
-            <p><?php echo nl2br($description); ?></p>
+                <p><?php echo nl2br(esc_html($description)); ?></p>
         </div>  
         </div>
         
         <?php 
-        if ($gallery) {
-            get_template_part('template-parts/acf-blocks/artist-block/mobile-gallery', null, array('gallery' => $gallery));
-            get_template_part('template-parts/acf-blocks/artist-block/desktop-gallery', null, array('gallery' => $gallery));
+            if ($gallery) {
+                get_template_part('template-parts/acf-blocks/artist-block/mobile-gallery', null, array('gallery' => $gallery));
+                get_template_part('template-parts/acf-blocks/artist-block/desktop-gallery', null, array('gallery' => $gallery));
+            }
+            
+            wp_reset_postdata();
         }
         ?>
             <div class="artist-block-dotes mobile-dots">
