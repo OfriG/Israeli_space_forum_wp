@@ -1,5 +1,4 @@
 <?php
-// Register ACF fields for inner company
 function innerCompany_acf_fields() {
     if (function_exists('acf_add_local_field_group')) {
         acf_add_local_field_group(array(
@@ -11,7 +10,7 @@ function innerCompany_acf_fields() {
                     'label' => 'First Button',
                     'name' => 'first_button',
                     'type' => 'link',
-                    'return_format' => 'array',
+                    'return_format' => 'array', 
                 ),
                 array(
                     'key' => 'field_second_button',
