@@ -17,6 +17,9 @@ jQuery(document).ready(function($) {
         
         let formData = $form.serialize();
         formData += '&action=handle_newsletter_signup';
+        console.log('Form data:', formData);
+        console.log('AJAX URL:', ajax_object.ajax_url);
+        console.log('Nonce:', ajax_object.nonce);
         
         $.ajax({
             type: 'POST',
@@ -61,6 +64,8 @@ jQuery(document).ready(function($) {
             },
             error: function(xhr, status, error) {
                 console.error("AJAX Error: " + status + " " + error);
+                console.error("XHR Response:", xhr.responseText);
+                console.error("XHR Status:", xhr.status);
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
