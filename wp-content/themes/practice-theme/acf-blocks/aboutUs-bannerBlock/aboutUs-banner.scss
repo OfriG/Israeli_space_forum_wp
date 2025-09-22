@@ -6,6 +6,12 @@
     @media (min-width: calc(#{$mobile} + 1px)) { 
         margin: pxToRem(49.406) pxToRem(210.678) pxToRem(49.864) pxToRem(209);
     }
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
     .banner_images{ 
         display: flex;
         margin: pxToRem(24.973) pxToRem(77.848) pxToRem(24.973) pxToRem(79.68);

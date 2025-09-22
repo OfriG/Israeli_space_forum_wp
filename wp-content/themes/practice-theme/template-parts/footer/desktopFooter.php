@@ -28,7 +28,7 @@
     <!-- Right Section -->
     <div class="right-section">
         <div class="desktop-newsletter-wrapper">
-            <?php get_template_part('template-parts/footer/newsLetterFooter'); ?>
+            <?php get_template_part('template-parts/footer/newsLetterFooter', null, ['form_id' => 'newsletter-desktop']); ?>
         </div>
         <div class="contact-us-section">
             <a href="#" class="contact-us-button" data-contact-trigger>

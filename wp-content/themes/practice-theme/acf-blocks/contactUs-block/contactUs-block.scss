@@ -329,6 +329,12 @@ body.modal-open {
                     border-radius: pxToRem(2);
                     border: pxToRem(1.471) solid $gradient-green;
                     background: $white;
+
+                    &:hover {
+                                transition: background-color 0.9s ease-in-out;
+background-color: $gradient-green;                                color: $black;
+                                border-color: transparent;
+                    }
                 
                 }
             }

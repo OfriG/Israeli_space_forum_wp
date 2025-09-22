@@ -1,11 +1,19 @@
 @import '../../resources/scss/_colors';
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
+
 .AboutUs-hero{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     overflow: hidden;
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+
+    }
+
     .AboutUs-hero-content{
         @media (min-width: calc(#{$mobile} + 1px)) {
 margin: pxToRem(132.71) pxToRem(558.21) pxToRem(185) pxToRem(215.37);

@@ -81,7 +81,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/campanis-block"
+                "value": "all"
             }
         ]
     ],
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1757576769
+    "modified": 1758457497
 }

@@ -12,7 +12,8 @@ $background_image_hero= get_field('background_image_hero');
 <div class="iac-hero-block" <?php if ($background_image_hero && $background_image_hero['url']): ?>
     style="background-image: url('<?php echo esc_url($background_image_hero['url']); ?>');"
     <?php else: ?>style="background-color: $gray; height: pxToRem(50);"<?php endif; ?>>
-    <div class="iac-hero-block-content">
+    <div class="responsive-container">
+        <div class="iac-hero-block-content">
             <img class="iac-hero-block-logo" src="<?php echo esc_url($iac_logo['url']); ?>" alt="<?php echo esc_attr($iac_logo['alt']); ?>">
         <h1 class="iac-hero-block-content-headline-mobile"><?php echo nl2br(esc_html($mobile_headline_hero)); ?></h1>
         <h1 class="iac-hero-block-content-headline-desktop">    <?php echo wp_kses_post($desktop_headline_hero); ?>
@@ -41,5 +42,6 @@ $background_image_hero= get_field('background_image_hero');
                 ?>
             </div>
         <?php endif; ?>
+        </div>
     </div>
 </div>
