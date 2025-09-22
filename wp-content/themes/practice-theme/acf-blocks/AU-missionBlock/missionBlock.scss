@@ -1,6 +1,7 @@
 @import '../../resources/scss/_colors';
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
+
 .AboutUs-mission {
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,6 +18,12 @@
         z-index: 1;
         pointer-events: none;
     }
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
     .mission-content{
         display: flex;
         flex-direction: column;
