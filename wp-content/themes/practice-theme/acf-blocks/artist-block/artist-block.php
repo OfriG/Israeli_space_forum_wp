@@ -1,158 +1,66 @@
 <?php
+require_once get_template_directory() . '/acf-blocks/artist-block/artist-functions.php';
+
 $artists_query = new WP_Query(array(
     'post_type'      => 'artist',
     'posts_per_page' => -1,
     'post_status'    => 'publish',
+    'orderby'        => 'menu_order',
+    'order'          => 'ASC'
 ));
+
+$artists_data = array();
+if ($artists_query->have_posts()) {
+    while ($artists_query->have_posts()) : $artists_query->the_post();
+        $artists_data[] = get_artist_data(get_the_ID());
+    endwhile;
+    wp_reset_postdata();
+}
 ?>
 
-<div class="artist-block">
-    <?php if ($artists_query->have_posts()) : ?>
-        <?php while ($artists_query->have_posts()) : $artists_query->the_post(); ?>
-            <?php
-            $post_id = get_the_ID();
-            $headline_image_mobile  = get_field('headline_image_mobile', $post_id);
-            $headline_image_desktop = get_field('headline_image_desktop', $post_id);
-            $description            = get_field('description', $post_id);
-            $gallery                 = get_field('gallery', $post_id);
-            $gallery                 = (is_array($gallery) ? $gallery : array());
-            $gallery_count           = count($gallery);
-            ?>
+<div class="artist-navigation-block">
+    <div class="artist-navigation-container">
+        <?php if (!empty($artists_data)) : ?>
+            <div class="artist-counter">
+                <span id="current-artist">1</span> / <span id="total-artists"><?php echo count($artists_data); ?></span>
+            </div>
 
-            <div class="artist-block-content">
+            <?php $first_artist_data = $artists_data[0]; ?>
 
-                <div class="artist-block-text">
-                    <div class="artist-block-content-headline">
-                        <?php
-                        if ($headline_image_mobile) {
-                            if (is_array($headline_image_mobile) && !empty($headline_image_mobile['url'])) {
-                                echo '<img class="headline-mobile" src="' . esc_url($headline_image_mobile['url']) . '" alt="' . esc_attr($headline_image_mobile['alt'] ?? '') . '">';
-                            } elseif (is_numeric($headline_image_mobile)) {
-                                echo wp_get_attachment_image($headline_image_mobile, 'full', false, array('class' => 'headline-mobile', 'loading' => 'lazy'));
-                            } elseif (filter_var($headline_image_mobile, FILTER_VALIDATE_URL)) {
-                                echo '<img class="headline-mobile" src="' . esc_url($headline_image_mobile) . '" alt="" loading="lazy">';
-                            }
-                        }
-                        if ($headline_image_desktop) {
-                            if (is_array($headline_image_desktop) && !empty($headline_image_desktop['url'])) {
-                                echo '<img class="headline-desktop" src="' . esc_url($headline_image_desktop['url']) . '" alt="' . esc_attr($headline_image_desktop['alt'] ?? '') . '">';
-                            } elseif (is_numeric($headline_image_desktop)) {
-                                echo wp_get_attachment_image($headline_image_desktop, 'full', false, array('class' => 'headline-desktop', 'loading' => 'lazy'));
-                            } elseif (filter_var($headline_image_desktop, FILTER_VALIDATE_URL)) {
-                                echo '<img class="headline-desktop" src="' . esc_url($headline_image_desktop) . '" alt="" loading="lazy">';
-                            }
-                        }
-                        ?>
-                    </div>
+            <div class="artist-block">
+                <div class="artist-block-content">
+                    <div class="artist-block-text">
+                        <div class="artist-block-content-headline" id="artist-headline">
+                            <?php 
+                            echo render_artist_image($first_artist_data['headline_mobile'], 'headline-mobile');
+                            echo render_artist_image($first_artist_data['headline_desktop'], 'headline-desktop');
+                            ?>
+                        </div>
 
-                    <div class="artist-block-content-description">
-                        <p><?php echo nl2br(esc_html($description)); ?></p>
-                    </div>
-                </div>
-
-                <?php if (!empty($gallery)) : ?>
-
-                    <div class="artist-block-gallery mobile-gallery">
-                        <?php foreach ($gallery as $item) :
-                            $first  = $item['first_headline'] ?? '';
-                            $second = $item['second_headline'] ?? '';
-                            $desc   = $item['item_description'] ?? '';
-                            $email  = $item['email'] ?? '';
-                            $image  = $item['image'] ?? '';
-
-                            $img_html = '';
-                            if ($image) {
-                                if (is_array($image) && !empty($image['url'])) {
-                                    $img_html = '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt'] ?? '') . '" loading="lazy">';
-                                } elseif (is_numeric($image)) {
-                                    $img_html = wp_get_attachment_image($image, 'large', false, array('loading' => 'lazy'));
-                                } elseif (filter_var($image, FILTER_VALIDATE_URL)) {
-                                    $img_html = '<img src="' . esc_url($image) . '" alt="" loading="lazy">';
-                                }
-                            }
-                        ?>
-                            <div class="artist-gallery-item">
-                                <?php if ($first) : ?><h3 class="artist-name"><?php echo esc_html($first); ?></h3><?php endif; ?>
-                                <?php if ($second) : ?><h4 class="artwork-title"><?php echo esc_html($second); ?></h4><?php endif; ?>
-                                <?php if ($img_html) : ?><div class="artist-gallery-image"><?php echo $img_html; ?></div><?php endif; ?>
-                                <?php if ($desc) : ?><p class="artwork-description"><?php echo nl2br(esc_html($desc)); ?></p><?php endif; ?>
-                                <?php if ($email) : ?><a href="mailto:<?php echo antispambot($email); ?>" class="artist-email"><?php echo antispambot($email); ?></a><?php endif; ?>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <!-- DESKTOP GALLERY -->
-                    <div class="artist-block-gallery-desktop" data-gallery-count="<?php echo intval($gallery_count); ?>">
-                        <div class="gallery-navigation-container">
-                            <div class="gallery-arrow gallery-arrow-left" id="gallery-prev">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-right.svg" alt="Previous">
-                            </div>
-
-                            <div class="desktop-gallery-content" id="gallery-container">
-                                <?php foreach ($gallery as $index => $item) :
-                                    $first  = $item['first_headline'] ?? '';
-                                    $second = $item['second_headline'] ?? '';
-                                    $desc   = $item['item_description'] ?? '';
-                                    $email  = $item['email'] ?? '';
-                                    $image  = $item['image'] ?? '';
-
-                                    $img_html = '';
-                                    if ($image) {
-                                        if (is_array($image) && !empty($image['url'])) {
-                                            $img_html = '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt'] ?? '') . '" loading="lazy">';
-                                        } elseif (is_numeric($image)) {
-                                            $img_html = wp_get_attachment_image($image, 'large', false, array('loading' => 'lazy'));
-                                        } elseif (filter_var($image, FILTER_VALIDATE_URL)) {
-                                            $img_html = '<img src="' . esc_url($image) . '" alt="" loading="lazy">';
-                                        }
-                                    }
-
-                                    $style = ($index === 0) ? 'style="display:block;"' : 'style="display:none;"';
-                                ?>
-                                    <div class="gallery-slide" data-slide="<?php echo intval($index); ?>" <?php echo $style; ?>>
-                                        <div class="artist-details-upper">
-                                            <?php if ($first) : ?><h3 class="artist-name-desktop"><?php echo esc_html($first); ?></h3><?php endif; ?>
-                                            <?php if ($second) : ?><h4 class="artwork-title-desktop"><?php echo esc_html($second); ?></h4><?php endif; ?>
-                                        </div>
-
-                                        <div class="artist-gallery-item-desktop">
-                                            <?php echo $img_html; ?>
-                                        </div>
-
-                                        <div class="artist-details-lower">
-                                            <?php if ($desc) : ?><p class="artwork-description-desktop"><?php echo nl2br(esc_html($desc)); ?></p><?php endif; ?>
-                                            <?php if ($email) : ?><a href="mailto:<?php echo esc_attr($email); ?>" class="artist-email-desktop"><?php echo esc_html($email); ?></a><?php endif; ?>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-
-                            <div class="gallery-arrow gallery-arrow-right" id="gallery-next">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-left.svg" alt="Next">
-                            </div>
+                        <div class="artist-block-content-description">
+                            <p id="artist-description"><?php echo nl2br(esc_html($first_artist_data['description'])); ?></p>
                         </div>
                     </div>
 
-                <?php endif; ?>
+                    <?php get_template_part('template-parts/acf-blocks/artist-block/mobile-gallery', null, array('gallery' => $first_artist_data['gallery'])); ?>
 
-                <div class="artist-block-dotes mobile-dots">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dotes.svg" alt="dotes">
+                    <?php get_template_part('template-parts/acf-blocks/artist-block/desktop-gallery', null, array('gallery' => $first_artist_data['gallery'])); ?>
+
+                    <div class="artist-block-dotes mobile-dots">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/dotes.svg" alt="dotes">
+                    </div>
                 </div>
+            </div>
 
-            </div><!-- /.artist-block-content -->
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-    <?php else: ?>
-        <p>No artist posts found.</p>
-    <?php endif; ?>
-</div><!-- /.artist-block -->
+            <script type="application/json" id="artists-data">
+                <?php echo json_encode($artists_data, JSON_HEX_APOS | JSON_HEX_QUOT); ?>
+            </script>
+        <?php else: ?>
+            <p>No artist posts found.</p>
+        <?php endif; ?>
+    </div>
+</div>
 
-<?php
-wp_enqueue_script(
-    'gallery-script',
-    get_template_directory_uri() . '/acf-blocks/artist-block/gallery-script.js',
-    array(),
-    '1.0.0',
-    true
-);
+<?php 
+wp_enqueue_script('artist-navigation-script', get_template_directory_uri() . '/acf-blocks/artist-block/artist-navigation.js', array(), '1.0.0', true);
 ?>
