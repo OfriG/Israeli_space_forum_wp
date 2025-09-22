@@ -2,9 +2,75 @@
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
 
+body.modal-open {
+    overflow: hidden;
+}
+
+// Contact Us Button Styling
+.contact-us-button {
+    display: inline-block;
+    padding: pxToRem(12) pxToRem(24);
+    background: $gradient-green;
+    color: $white;
+    text-decoration: none;
+    border-radius: pxToRem(4);
+    font-weight: 600;
+    font-size: pxToRem(16);
+    transition: all 0.3s ease;
+    border: pxToRem(2) solid $gradient-green;
+    
+    &:hover {
+        background: transparent;
+        color: $gradient-green;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    &:focus {
+        outline: pxToRem(2) solid $gradient-blue;
+        outline-offset: pxToRem(2);
+    }
+}
+
+.contact-us-section {
+    margin-top: pxToRem(20);
+    text-align: center;
+}
+
+.contactUs-block-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
 .contactUs-block {
-    max-width: 100%;
+    max-width: 90%;
+    max-height: 90vh;
     margin: 0 auto;
+    background: $white;
+    border-radius: pxToRem(8);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    
+    .contactUs-block-container.show & {
+        transform: scale(1);
+    }
     
     .contactUs-block-content {
         background: $contactus-gradient;
@@ -35,6 +101,15 @@
             }
          
             .header-content {
+                #close-x {
+                    color: $white;
+                    margin: pxToRem(10) pxToRem(10) pxToRem(0) pxToRem(0);
+                    display: flex;
+                    justify-content: flex-end;
+                    @media (min-width: calc(#{$mobile} + 1px)) {
+                        display: none;
+                    }
+                }
        
                 h1 {
                     @media (min-width: calc(#{$mobile} + 1px)) {
@@ -114,23 +189,31 @@
                     width: 50%;
                 }
              .close-x {
-                 display: none;
-                 @media (min-width: calc(#{$mobile} + 1px)) {
-                     display: flex;
-                     position: absolute;
-                     top: pxToRem(42.52);
-                     right: pxToRem(31.94);
-                     width: pxToRem(24);
-                     height: pxToRem(24);
-                     justify-content: center;
-                     align-items: center;
-                     border-radius: pxToRem(2);
-                     z-index: 100;
-                     cursor: pointer;
-                     font-size: pxToRem(16);
-                     font-weight: bold;
-                     color: $black;
+               display: none;
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                 display: flex;
+                 position: absolute;
+                 top: pxToRem(20);
+                 right: pxToRem(20);
+                 width: pxToRem(32);
+                 height: pxToRem(32);
+                 justify-content: center;
+                 align-items: center;
+                 border-radius: 50%;
+                 z-index: 100;
+                 cursor: pointer;
+                 font-size: pxToRem(18);
+                 font-weight: bold;
+                 color: $black;
+                 background: rgba(255, 255, 255, 0.9);
+                 
+                 &:hover {
+                     background: $black;
+                     color: $white;
+                     transform: scale(1.1);
                  }
+                 
+               }
              }
             .contact-form {
                 padding: pxToRem(38) pxToRem(33) pxToRem(19) pxToRem(33);
@@ -246,6 +329,12 @@
                     border-radius: pxToRem(2);
                     border: pxToRem(1.471) solid $gradient-green;
                     background: $white;
+
+                    &:hover {
+                                transition: background-color 0.9s ease-in-out;
+background-color: $gradient-green;                                color: $black;
+                                border-color: transparent;
+                    }
                 
                 }
             }

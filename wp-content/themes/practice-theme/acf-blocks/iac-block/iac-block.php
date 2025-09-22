@@ -10,8 +10,9 @@ $backgroundTextDesktop= get_field('background_text_desktop');
 <!-- mobile -->
 
 <div class="iac-block">
-    <div class="stars-container"></div>
-    <div class="iac-block-content">
+    <div class="responsive-container">
+        <div class="stars-container"></div>
+        <div class="iac-block-content">
     <div class="background-text"><?php echo nl2br(esc_html($backgroundTextMobile)); ?></div>
 
         <div class="icon">
@@ -45,12 +46,14 @@ $backgroundTextDesktop= get_field('background_text_desktop');
         </a>
         <?php endif; ?>
     
+        </div>
     </div>
 </div>
 
 <!-- desktop -->
 <div class="iac-block-desktop-container">
-    <div class="stars-container"></div>
+    <div class="responsive-container">
+        <div class="stars-container"></div>
     <div class="iac-background-text"><?php echo nl2br(esc_html($backgroundTextDesktop)); ?></div>
     <div class="iac-main-content">
         <div class="iac-three-column-layout">
@@ -94,5 +97,6 @@ $backgroundTextDesktop= get_field('background_text_desktop');
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>

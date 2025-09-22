@@ -31,9 +31,13 @@
         }
         ?>
   </p>
-  <form class="newsletter-form" method="post" action="">
-      <?php wp_nonce_field('newsletter_subscribe', 'newsletter_nonce'); ?>
-      <input type="email" name="subscriber_email" placeholder="Email" class="email-input" required />
+  <?php 
+  // Get the form ID from the passed parameter, default to 'newsletter-mobile' for backward compatibility
+  $form_id = isset($args['form_id']) ? $args['form_id'] : 'newsletter-mobile';
+  ?>
+  <form id="<?php echo esc_attr($form_id); ?>" class="newsletter-form" method="post" action="">
+      <?php wp_nonce_field('newsletter_nonce', 'newsletter_nonce'); ?>
+      <input type="email" id="email" name="email" placeholder="Email" class="email-input" required />
 
       <div class="newsletter-actions">
           <button type="submit" class="subscribe-btn">Subscribe</button>

@@ -1,155 +1,121 @@
-jQuery(document).ready(function ($) {
 
-    // Newsletter form handler class for managing subscription functionality
-    class NewsletterHandler {
-        constructor() {
-            // Initialize form elements and properties
-            this.form = $('#newsletter');
-            this.emailInput = $('#email');
-            this.submitButton = this.form.find('.subscribe-btn');
-            this.messageContainer = null;
+console.log('Newsletter script file loaded');
 
-            this.init();
-        }
-
-        // Initialize the newsletter handler
-        init() {
-            this.createMessageContainer();
-            this.bindEvents();
-            console.log('Newsletter initialized');
-        }
-
-        // Create message container for displaying feedback to users
-        createMessageContainer() {
-            this.messageContainer = this.form.find('.newsletter-message');
-
-            // If message container doesn't exist, create it
-            if (this.messageContainer.length === 0) {
-                this.messageContainer = $('<div class="newsletter-message"></div>');
-                this.form.find('.newsletter-actions').after(this.messageContainer);
-            }
-        }
-
-        // Bind event listeners to form elements
-        bindEvents() {
-            this.form.on('submit', (e) => this.handleSubmit(e));
-        }
-
-        // Handle form submission
-        handleSubmit(e) {
-            e.preventDefault(); // Prevent default form submission
-            console.log('Form submitted');
-
-            // Validate email before submitting
-            if (!this.validateEmail()) {
-                return;
-            }
-
-            this.showLoading(true);
-            this.submitNewsletter();
-        }
-
-        // Validate email input
-        validateEmail() {
-            const email = this.emailInput.val().trim();
-
-            // Check if email field is empty
-            if (!email) {
-                this.showMessage('Please insert email', 'error');
-                return false;
-            }
-
-            // Check if email format is valid
-            if (!this.isValidEmail(email)) {
-                this.showMessage('Please insert valid email', 'error');
-                return false;
-            }
-
-            return true;
-        }
-
-        // Check if email format is valid using regex
-        isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-
-        // Submit newsletter subscription via AJAX
-        submitNewsletter() {
-            // Check if newsletter settings are available
-            if (typeof newsletterSettings === 'undefined') {
-                console.error('newsletterSettings is not defined');
-                this.showMessage('Configuration error', 'error');
-                this.showLoading(false);
-                return;
-            }
-
-            // Send AJAX request to server
-            $.post({
-                url: newsletterSettings.ajaxUrl,
-                data: {
-                    action: 'practice_newsletter',
-                    email: this.emailInput.val().trim(),
-                    nonce: newsletterSettings.nonce // Security nonce for validation
-                },
-                dataType: 'json'
-            })
-                .done((response) => this.handleSuccess(response)) // Handle successful response
-                .fail((xhr, status, error) => this.handleError(xhr, status, error)) // Handle errors
-                .always(() => this.showLoading(false)); // Always hide loading state
-        }
-
-        // Handle successful AJAX response
-        handleSuccess(response) {
-            if (response.success) {
-                // Show success message and clear input
-                this.showMessage(response.data.message || 'Thanks for registration', 'success');
-                this.emailInput.val('');
-            } else {
-                // Show error message from server
-                this.showMessage(response.data.message || 'Try again', 'error');
-            }
-        }
-
-        // Handle AJAX errors
-        handleError(xhr, status, error) {
-            console.error('Newsletter submission error:', { xhr, status, error });
-            this.showMessage('Error, try again', 'error');
-        }
-
-        // Display message to user with specified type (success, error, info)
-        showMessage(message, type = 'info') {
-            this.messageContainer
-                .removeClass('success error info') // Remove previous message types
-                .addClass(type) // Add current message type
-                .text(message)
-                .slideDown(300); // Show message with animation
-
-            // Auto-hide message after 5 seconds
-            setTimeout(() => {
-                this.messageContainer.slideUp(300);
-            }, 5000);
-        }
-
-        // Show/hide loading state on form elements
-        showLoading(isLoading) {
-            if (isLoading) {
-                // Disable form elements and show loading text
-                this.submitButton.prop('disabled', true).text('send...');
-                this.emailInput.prop('disabled', true);
-            } else {
-                // Re-enable form elements and restore original text
-                this.submitButton.prop('disabled', false).text(this.getOriginalButtonText());
-                this.emailInput.prop('disabled', false);
-            }
-        }
-
-        // Get original button text for reset
-        getOriginalButtonText() {
-            return 'Subscribe';
-        }
+jQuery(document).ready(function($) {
+    console.log('Newsletter script loaded - jQuery ready');
+    console.log('jQuery version:', $.fn.jquery);
+    console.log('ajax_object available:', typeof ajax_object !== 'undefined');
+    
+    // Debug AJAX object
+    if (typeof ajax_object !== 'undefined') {
+        console.log('AJAX URL:', ajax_object.ajax_url);
+        console.log('Nonce:', ajax_object.nonce);
+    } else {
+        console.error('AJAX object is not defined! This will cause form submission to fail.');
     }
-
-    // Initialize newsletter handler when document is ready
-    const newsletter = new NewsletterHandler();
+    
+    console.log('Found mobile newsletter forms:', $('#newsletter-mobile').length);
+    console.log('Found desktop newsletter forms:', $('#newsletter-desktop').length);
+    console.log('All forms on page:', $('form').length);
+    
+    // Debug form elements
+    console.log('Mobile form HTML:', $('#newsletter-mobile')[0] ? $('#newsletter-mobile')[0].outerHTML : 'Not found');
+    console.log('Desktop form HTML:', $('#newsletter-desktop')[0] ? $('#newsletter-desktop')[0].outerHTML : 'Not found');
+    
+    // Use event delegation to catch forms that might be loaded later
+    // Target both mobile and desktop newsletter forms
+    $(document).on('submit', '#newsletter-mobile, #newsletter-desktop', function(e){
+        console.log('Newsletter form submitted!');
+        console.log('Form ID:', this.id);
+        console.log('Form element:', this);
+        
+        e.preventDefault();
+        let $form = $(this);
+        
+        // Check if AJAX object is available before proceeding
+        if (typeof ajax_object === 'undefined') {
+            console.error('AJAX object not available - cannot submit form');
+            alert('Form submission failed: AJAX configuration missing');
+            return;
+        }
+        
+        let formData = $form.serialize();
+        formData += '&action=handle_newsletter_signup';
+        console.log('Form data:', formData);
+        console.log('AJAX URL:', ajax_object.ajax_url);
+        console.log('Nonce from AJAX object:', ajax_object.nonce);
+        console.log('Nonce from form:', $form.find('input[name="newsletter_nonce"]').val());
+        console.log('Form HTML:', $form[0].outerHTML);
+        
+        // Validate form data before sending
+        let email = $form.find('input[name="email"]').val();
+        if (!email) {
+            console.error('Email field is empty');
+            alert('Please enter an email address');
+            return;
+        }
+        
+        $.ajax({
+            type: 'POST',
+            url: ajax_object.ajax_url,
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.data.message,
+                        confirmButtonColor: '#64E275',
+                        confirmButtonText: 'confirm',
+                        background: '#FFF',
+                        color: '#1B1B1B',
+                        customClass: {
+                            popup: 'newsletter-success-popup',
+                            title: 'newsletter-success-title',
+                            content: 'newsletter-success-content',
+                            confirmButton: 'newsletter-success-button'
+                        }
+                    });
+                    $form[0].reset();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.data.message,
+                        confirmButtonColor: '#1776B1',
+                        confirmButtonText: 'אישור',
+                        background: '#FFF',
+                        color: '#1B1B1B',
+                        customClass: {
+                            popup: 'newsletter-error-popup',
+                            title: 'newsletter-error-title',
+                            content: 'newsletter-error-content',
+                            confirmButton: 'newsletter-error-button'
+                        }
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Error: " + status + " " + error);
+                console.error("XHR Response:", xhr.responseText);
+                console.error("XHR Status:", xhr.status);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'An error occurred. Please try again.',
+                    confirmButtonColor: '#1776B1',
+                    confirmButtonText: 'אישור',
+                    background: '#FFF',
+                    color: '#1B1B1B',
+                    customClass: {
+                        popup: 'newsletter-error-popup',
+                        title: 'newsletter-error-title',
+                        content: 'newsletter-error-content',
+                        confirmButton: 'newsletter-error-button'
+                    }
+                });
+            }
+        });
+    });
 });

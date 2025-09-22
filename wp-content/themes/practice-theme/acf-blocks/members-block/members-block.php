@@ -7,8 +7,9 @@ $collaborators_logos = get_field('collaborators_logos');
 
 
 <div class="members-block" >
-    <div class="stars-container"></div>
-    <div class="members-block-content">
+    <div class="responsive-container">
+        <div class="stars-container"></div>
+        <div class="members-block-content">
         <div class="members-icon-space">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueLine.svg'); ?>"  />
             <img src="<?php echo esc_url(get_template_directory_uri() . '/images/blueStar.svg'); ?>"  />
@@ -24,5 +25,6 @@ $collaborators_logos = get_field('collaborators_logos');
                 <?php get_template_part('template-parts/members-block/members-block', null, array('logos' => $collaborators_logos, 'logo_class' => 'collaborator-logo')); ?>
             </div>
         </div>
+    </div>
     </div>
 </div>

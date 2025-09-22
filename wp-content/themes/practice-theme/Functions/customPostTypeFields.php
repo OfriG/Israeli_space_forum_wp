@@ -74,7 +74,7 @@ function innerCompany_acf_fields() {
                     'label' => 'First Button',
                     'name' => 'first_button',
                     'type' => 'link',
-                    'return_format' => 'array',
+                    'return_format' => 'array', 
                 ),
                 array(
                     'key' => 'field_second_button',

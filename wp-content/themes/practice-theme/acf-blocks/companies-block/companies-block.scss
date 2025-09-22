@@ -18,13 +18,20 @@
         z-index: 1;
         pointer-events: none;
     }
+
+   
+
     .companies-block-content {
-        @media (min-width: calc(#{$mobile} + 1px)) {
+        @media (min-width: calc(#{$mobile} + 1px)){
             padding: pxToRem(67.1) pxToRem(202.96) pxToRem(123.09) pxToRem(204.07);
         }
         padding: pxToRem(47.5) pxToRem(11.75) pxToRem(47.5) pxToRem(27.37);
         display: flex;
         flex-direction: column;
+        .responsive-container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
     .icon-space {
         display: flex;
         align-items: center;

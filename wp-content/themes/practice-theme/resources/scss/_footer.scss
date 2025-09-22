@@ -9,6 +9,12 @@
     background: black;
     overflow: hidden;
 
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        position: relative;
+    }
+
     // Stars background container
     .stars-container {
         position: absolute;
@@ -35,6 +41,15 @@
     .desktop-footer {
         position: relative;
         z-index: 2;
+        display: none;
+
+        @media (min-width: $mobile) {
+            display: block;
+        }
+    }
+
+    // Desktop footer lower wrapper - full width
+    .desktop-footer-lower-wrapper {
         display: none;
 
         @media (min-width: $mobile) {
@@ -201,4 +216,73 @@ height: pxToRem(23.137);
     align-items: center;
 
     background: $beautyGreen;
+}
+
+// Newsletter Alert Styles
+.newsletter-success-popup {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px $shadowGray;
+    border: 2px solid $gradient-green;
+}
+
+.newsletter-success-title {
+    color: $gradient-green;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.newsletter-success-content {
+    color: $lightBlack;
+    font-weight: 400;
+}
+
+.newsletter-success-button {
+    background: $beautyGreen;
+    border: none;
+    border-radius: 8px;
+    color: $white;
+    font-weight: 600;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(100, 226, 117, 0.3);
+    }
+}
+
+.newsletter-error-popup {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px $shadowGray;
+    border: 2px solid $gradient-dark-blue;
+}
+
+.newsletter-error-title {
+    color: $gradient-dark-blue;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.newsletter-error-content {
+    color: $lightBlack;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 400;
+}
+
+.newsletter-error-button {
+    background: $gradient-dark-blue;
+    border: none;
+    border-radius: 8px;
+    color: $white;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: $gradient-blue;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(23, 118, 177, 0.3);
+    }
 }

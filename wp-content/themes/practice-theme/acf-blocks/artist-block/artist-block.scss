@@ -41,6 +41,13 @@
 }
 
 .artist-block{
+
+    .responsive-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
     .artist-block-content{
         position: relative;
         @media (min-width: calc(#{$mobile} + 1px)) {

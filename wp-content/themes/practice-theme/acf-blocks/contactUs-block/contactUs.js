@@ -1,14 +1,15 @@
 jQuery(document).ready(function($) {
+
     $('#contactUs-form').on('submit', function(e){
         e.preventDefault();
         let $form = $(this);
         let $submitButton = $form.find('.submit-button');
-        
+
         $submitButton.prop('disabled', true).text('Sending...');
-        
+
         let formData = $form.serialize();
         formData += '&action=handle_contactUs_form';
-        
+
         $.ajax({
             type: 'POST',
             url: ajax_object.ajax_url,
@@ -22,6 +23,7 @@ jQuery(document).ready(function($) {
                         text: response.data.message,
                     });
                     $form[0].reset();
+                    $(document).trigger('contactFormSuccess');
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -43,4 +45,6 @@ jQuery(document).ready(function($) {
             }
         });
     });
+
+
 });

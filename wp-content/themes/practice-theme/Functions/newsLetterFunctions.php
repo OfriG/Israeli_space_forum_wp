@@ -1,32 +1,75 @@
 <?php
-function enqueue_newsletter_scripts()
-{
-    wp_enqueue_script('newsletter-js', get_theme_file_uri('/dist/js/newsLetter.js'), ['jquery'], '1.0', true);
 
-    wp_localize_script('newsletter-js', 'newsletterSettings', [
-        'ajaxUrl' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('newsletter_nonce')
-    ]);
-}
-add_action('wp_enqueue_scripts', 'enqueue_newsletter_scripts');
+add_action('wp_ajax_handle_newsletter_signup', 'handle_newsletter_signup');
+add_action('wp_ajax_nopriv_handle_newsletter_signup', 'handle_newsletter_signup');
 
-// take care of the request
-add_action('wp_ajax_practice_newsletter', 'handle_newsletter_signup');
-add_action('wp_ajax_nopriv_practice_newsletter', 'handle_newsletter_signup');
+// Debug: Check if actions are registered
+add_action('init', function() {
+    error_log("Newsletter actions registered: " . (has_action('wp_ajax_handle_newsletter_signup') ? 'YES' : 'NO'));
+    error_log("Newsletter nopriv actions registered: " . (has_action('wp_ajax_nopriv_handle_newsletter_signup') ? 'YES' : 'NO'));
+});
 
 function handle_newsletter_signup()
 {
-    // security check
-    if (!wp_verify_nonce($_POST['nonce'], 'newsletter_nonce')) {
-        wp_send_json_error(['message' => 'Security check failed']);
+    // Add debugging
+    error_log("Newsletter function called!");
+    error_log("POST data: " . print_r($_POST, true));
+    error_log("Server info: " . print_r($_SERVER, true));
+    
+    if (!isset($_POST['newsletter_nonce']) || !wp_verify_nonce($_POST['newsletter_nonce'], 'newsletter_nonce')) {
+        error_log("Newsletter nonce check failed");
+        wp_send_json_error(['message' => 'Security check failed - nonce missing or invalid']);
     }
 
-    $email = sanitize_email($_POST['email']);
+    error_log("Newsletter nonce check passed");
 
-    if (!is_email($email)) {
-        wp_send_json_error(['message' => 'Invalid email address']);
+    $fields = ['email'];
+    $newsletter_data = [];
+    $errors = [];
+    $value = sanitize_email($_POST['email'] ?? '');
+    $newsletter_data['email'] = $value;
+
+    error_log("Newsletter email value: " . $value);
+
+    if (empty($value)) {
+        $errors[] = "Email is required";
+    }
+    if (!empty($errors)) {
+        error_log("Newsletter validation errors: " . implode(', ', $errors));
+        wp_send_json_error(['message' => implode(', ', $errors)]);
+    }
+    
+    $post_id = wp_insert_post([
+        'post_title'  => $newsletter_data['email'],
+        'post_status' => 'private',
+        'post_type'   => 'newsletter'
+    ]);
+    
+    error_log("Newsletter post created with ID: " . $post_id);
+    
+    if (!$post_id) {
+        error_log("Newsletter post creation failed");
+        wp_send_json_error(['message' => 'There was an error saving your submission.']);
+    }
+
+    foreach ($newsletter_data as $key => $value) {
+        add_post_meta($post_id, $key, $value);
+    }
+    
+    error_log("Newsletter calling email function with: " . $newsletter_data['email'] . " and ID: " . $post_id);
+    $email_result = send_newsletter_notification_email($newsletter_data['email'], $post_id);
+    
+    error_log("Newsletter email result: " . print_r($email_result, true));
+    
+    if ($email_result['success']) {
+        wp_send_json_success(['message' => 'Your submission has been sent and saved successfully.']);
+    } else {
+        // Email failed but post was created successfully - still show success
+        wp_send_json_success([
+            'message' => 'Your submission has been saved successfully. Email notification saved to backup file.'
+        ]);
+    }
+
     }
 
 
-    wp_send_json_success(['message' => 'Thank you for subscribing!']);
-}

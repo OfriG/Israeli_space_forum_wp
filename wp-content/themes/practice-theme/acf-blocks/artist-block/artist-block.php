@@ -17,7 +17,6 @@ if ($artists_query->have_posts()) {
     wp_reset_postdata();
 }
 ?>
-
 <div class="artist-navigation-block">
     <div class="artist-navigation-container">
         <?php if (!empty($artists_data)) : ?>
@@ -58,6 +57,7 @@ if ($artists_query->have_posts()) {
         <?php else: ?>
             <p>No artist posts found.</p>
         <?php endif; ?>
+    </div>
     </div>
 </div>
 
