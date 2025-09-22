@@ -1,4 +1,5 @@
 <?php
+// Query artists
 $artists_query = new WP_Query(array(
     'post_type'      => 'artist',
     'posts_per_page' => -1,
@@ -7,19 +8,19 @@ $artists_query = new WP_Query(array(
 ?>
 
 <div class="artist-block">
-    <?php if ($artists_query->have_posts()) : ?>
-        <?php while ($artists_query->have_posts()) : $artists_query->the_post(); ?>
-            <?php
-            $post_id = get_the_ID();
-            $headline_image_mobile  = get_field('headline_image_mobile', $post_id);
-            $headline_image_desktop = get_field('headline_image_desktop', $post_id);
-            $description            = get_field('description', $post_id);
-            $gallery                 = get_field('gallery', $post_id);
-            $gallery                 = (is_array($gallery) ? $gallery : array());
-            $gallery_count           = count($gallery);
-            ?>
+    <div class="artist-block-content">
 
-            <div class="artist-block-content">
+        <?php if ($artists_query->have_posts()) : ?>
+            <?php while ($artists_query->have_posts()) : $artists_query->the_post(); ?>
+                <?php
+                $post_id = get_the_ID();
+                $headline_image_mobile  = get_field('headline_image_mobile', $post_id);
+                $headline_image_desktop = get_field('headline_image_desktop', $post_id);
+                $description            = get_field('description', $post_id);
+                $gallery = get_field('gallery', $post_id); 
+                $gallery = (is_array($gallery) ? $gallery : array());
+                $gallery_count = count($gallery);
+                ?>
 
                 <div class="artist-block-text">
                     <div class="artist-block-content-headline">
@@ -52,14 +53,16 @@ $artists_query = new WP_Query(array(
 
                 <?php if (!empty($gallery)) : ?>
 
-                    <div class="artist-block-gallery mobile-gallery">
+                    <!-- MOBILE GALLERY (uses your existing classes) -->
+                    <div class="artist-block-gallery mobile-gallery" >
+                        
                         <?php foreach ($gallery as $item) :
                             $first  = $item['first_headline'] ?? '';
                             $second = $item['second_headline'] ?? '';
                             $desc   = $item['item_description'] ?? '';
                             $email  = $item['email'] ?? '';
                             $image  = $item['image'] ?? '';
-
+                            
                             $img_html = '';
                             if ($image) {
                                 if (is_array($image) && !empty($image['url'])) {
@@ -70,18 +73,22 @@ $artists_query = new WP_Query(array(
                                     $img_html = '<img src="' . esc_url($image) . '" alt="" loading="lazy">';
                                 }
                             }
-                        ?>
+                            ?>
                             <div class="artist-gallery-item">
                                 <?php if ($first) : ?><h3 class="artist-name"><?php echo esc_html($first); ?></h3><?php endif; ?>
                                 <?php if ($second) : ?><h4 class="artwork-title"><?php echo esc_html($second); ?></h4><?php endif; ?>
-                                <?php if ($img_html) : ?><div class="artist-gallery-image"><?php echo $img_html; ?></div><?php endif; ?>
+
+                                <?php if ($img_html) : ?>
+                                    <div class="artist-gallery-image"><?php echo $img_html; ?></div>
+                                <?php endif; ?>
+
                                 <?php if ($desc) : ?><p class="artwork-description"><?php echo nl2br(esc_html($desc)); ?></p><?php endif; ?>
                                 <?php if ($email) : ?><a href="mailto:<?php echo antispambot($email); ?>" class="artist-email"><?php echo antispambot($email); ?></a><?php endif; ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
 
-                    <!-- DESKTOP GALLERY -->
+                    <!-- DESKTOP GALLERY (slider markup using slides + arrows) -->
                     <div class="artist-block-gallery-desktop" data-gallery-count="<?php echo intval($gallery_count); ?>">
                         <div class="gallery-navigation-container">
                             <div class="gallery-arrow gallery-arrow-left" id="gallery-prev">
@@ -96,6 +103,7 @@ $artists_query = new WP_Query(array(
                                     $email  = $item['email'] ?? '';
                                     $image  = $item['image'] ?? '';
 
+                                    // resolve image HTML again
                                     $img_html = '';
                                     if ($image) {
                                         if (is_array($image) && !empty($image['url'])) {
@@ -108,7 +116,7 @@ $artists_query = new WP_Query(array(
                                     }
 
                                     $style = ($index === 0) ? 'style="display:block;"' : 'style="display:none;"';
-                                ?>
+                                    ?>
                                     <div class="gallery-slide" data-slide="<?php echo intval($index); ?>" <?php echo $style; ?>>
                                         <div class="artist-details-upper">
                                             <?php if ($first) : ?><h3 class="artist-name-desktop"><?php echo esc_html($first); ?></h3><?php endif; ?>
@@ -133,26 +141,24 @@ $artists_query = new WP_Query(array(
                         </div>
                     </div>
 
+                <?php else: ?>
+                    <!-- אין פריטים בגלריה לפוסט זה -->
                 <?php endif; ?>
 
                 <div class="artist-block-dotes mobile-dots">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/dotes.svg" alt="dotes">
                 </div>
 
-            </div><!-- /.artist-block-content -->
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-    <?php else: ?>
-        <p>No artist posts found.</p>
-    <?php endif; ?>
-</div><!-- /.artist-block -->
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php else: ?>
+            <p>No artist posts found.</p>
+        <?php endif; ?>
+
+    </div>
+</div>
 
 <?php
-wp_enqueue_script(
-    'gallery-script',
-    get_template_directory_uri() . '/acf-blocks/artist-block/gallery-script.js',
-    array(),
-    '1.0.0',
-    true
-);
+// enqueue gallery script (כבר היה אצלך)
+wp_enqueue_script('gallery-script', get_template_directory_uri() . '/acf-blocks/artist-block/gallery-script.js', array(), '1.0.0', true);
 ?>
