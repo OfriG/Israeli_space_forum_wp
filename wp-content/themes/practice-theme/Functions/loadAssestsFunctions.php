@@ -13,6 +13,7 @@ function theme_enqueue_assets()
     wp_enqueue_style('footer-styles', get_template_directory_uri() . '/dist/css/_footer.css', array(), '1.0.0');
     wp_enqueue_style('newsletter-styles', get_template_directory_uri() . '/dist/css/footer/_newsletter.css', array(), '1.0.0');
     wp_enqueue_style('404-styles', get_template_directory_uri() . '/dist/css/404.css', array(), '1.0.0');
+    wp_enqueue_style('contactUs-styles', get_template_directory_uri() . '/dist/css/contactUs-block.css', array(), '1.0.0');
     wp_enqueue_style( 'sweetalert2-css', 'https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css' );
 
     // JavaScript
@@ -20,6 +21,7 @@ function theme_enqueue_assets()
     wp_enqueue_script('header-js', get_template_directory_uri() . '/dist/js/header.js', array(), '1.0.0', true);
     wp_enqueue_script('joinUs-js', get_template_directory_uri() . '/dist/js/joinUs.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('contactUs-js', get_template_directory_uri() . '/dist/js/contactUs.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('global-contact-popup-js', get_template_directory_uri() . '/dist/js/global-contact-popup.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('newsletter-js', get_template_directory_uri() . '/dist/js/newsLetter.js', array('jquery'), filemtime(get_template_directory() . '/dist/js/newsLetter.js'), true);
     wp_enqueue_script('stars-background-js', get_template_directory_uri() . '/resources/js/starsBackground.js', array(), '1.0.0', true);
     wp_enqueue_script( 'sweetalert2', 'https://cdn.jsdelivr.net/npm/sweetalert2@11', array(), null, true );

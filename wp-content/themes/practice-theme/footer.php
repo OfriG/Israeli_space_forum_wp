@@ -26,8 +26,12 @@
         <?php
         get_template_part('template-parts/footer/desktopFooterLower');
         ?>
+     
     </div>
+
 </footer>
+
+<?php get_template_part('template-parts/global-contact-popup'); ?>
 
 <?php wp_footer(); ?>
 </body>
