@@ -33,11 +33,8 @@ function theme_enqueue_assets()
     wp_localize_script('contactUs-js', 'ajax_object', array(
         'ajax_url' => admin_url('admin-ajax.php')
     ));
-    wp_localize_script('newsletter-js', 'ajax_object', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('newsletter_nonce'),
-        'site_url' => home_url(),
-        'admin_url' => admin_url()
+    wp_localize_script('artist-navigation-script', 'ajax_object', array(
+        'ajax_url' => admin_url('admin-ajax.php')
     ));
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_assets');

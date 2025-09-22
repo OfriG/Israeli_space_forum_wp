@@ -2,6 +2,44 @@
 @import '../../resources/scss/_variables';
 @import '../../Functions/scssFunctions.scss';
 
+// Artist Navigation Block Styles
+.artist-navigation-block {
+    position: relative;
+    width: 100%;
+    min-height: pxToRem(400); 
+        
+    .artist-navigation-container {
+        position: relative;
+        width: 100%;
+        min-height: pxToRem(400); 
+    }
+    
+    .artist-counter {
+      display: none;
+    }
+    
+    .artists-container {
+        position: relative;
+        width: 100%;
+        min-height: pxToRem(300); 
+        
+        .artist-slide {
+            width: 100%;
+            min-height: pxToRem(300); 
+            transition: opacity 0.5s ease-in-out;
+            display: none; // Default hidden
+            
+            &.fade-out {
+                opacity: 0;
+            }
+            
+            &.fade-in {
+                opacity: 1;
+            }
+        }
+    }
+}
+
 .artist-block{
 
     .responsive-container {
@@ -132,6 +170,7 @@ margin: pxToRem(16.12) pxToRem(23.34) pxToRem(18.42) pxToRem(9.69);
         display: flex;
         justify-content: center;
         padding: pxToRem(25.75) pxToRem(22) pxToRem(0) pxToRem(22);
+        justify-content: flex-start;
         
         @media (min-width: calc(#{$mobile} + 1px)) {
             position: absolute;
