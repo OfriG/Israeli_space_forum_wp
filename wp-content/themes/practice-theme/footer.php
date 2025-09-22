@@ -22,7 +22,7 @@
 
 </footer>
 
-<?php get_template_part('acf-blocks/contactUs-block/contactUs-block'); ?>
+<?php get_template_part('template-parts/global-contact-popup'); ?>
 
 <?php wp_footer(); ?>
 </body>
