@@ -129,8 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (typeof image === 'object' && image.url) {
             return `<img class="${className}" src="${image.url}" alt="${image.alt || ''}" loading="lazy">`;
-        } else if (typeof image === 'number') {
-            return `<img class="${className}" src="#" alt="" loading="lazy">`;
         } else if (typeof image === 'string' && image.startsWith('http')) {
             return `<img class="${className}" src="${image}" alt="" loading="lazy">`;
         }
