@@ -81,7 +81,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "all"
+                "value": "acf/iac-block"
             }
         ]
     ],
