@@ -17,9 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (artistsDataElement) {
         try {
             artistsData = JSON.parse(artistsDataElement.textContent.trim());
+            console.log('Artists data loaded successfully:', artistsData.length, 'artists');
         } catch (e) {
             console.error('Error parsing artists data:', e);
+            console.error('Raw data:', artistsDataElement.textContent);
         }
+    } else {
+        console.warn('Artists data element not found');
     }
     
     const totalArtists = artistsData.length || 1;
@@ -45,8 +49,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateArtistContent(artistIndex) {
         const artist = artistsData[artistIndex];
         if (!artist) {
+            console.warn('Artist data not found for index:', artistIndex);
             return;
         }
+        
+        console.log('Updating artist content for index:', artistIndex, 'Artist:', artist);
         
         if (artistDescription && artist.description) {
             artistDescription.innerHTML = nl2br(artist.description);
@@ -186,9 +193,12 @@ document.addEventListener('DOMContentLoaded', function() {
         startY = 0;
     });
     
-    // Initialize with first artist (only if we have more than one artist)
-    if (totalArtists > 1) {
-        updateArtistContent(0);
+    // Initialize with first artist content (always initialize for consistent rendering)
+    if (totalArtists > 0) {
+        // Use setTimeout to ensure DOM is fully ready
+        setTimeout(() => {
+            updateArtistContent(0);
+        }, 100);
     }
 });
 
