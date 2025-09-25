@@ -192,6 +192,11 @@ function practice_theme_register_acf_blocks()
     acf_register_block_type(array(
         'name' => 'companies-block',
         'title' => 'Companies Block',
+    ));
+    
+    acf_register_block_type(array(
+        'name' => 'campanis-block',
+        'title' => 'Campanis Block',
         'description' => ('A custom that present companies.'),
         'category' => 'theme',
         'icon' => 'dashicons-groups',

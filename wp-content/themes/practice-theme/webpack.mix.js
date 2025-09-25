@@ -41,6 +41,7 @@ mix.sass('resources/scss/_main-styles.scss', 'dist/css')
     .js('resources/js/newsLetter.js', 'dist/js')
     .js('resources/js/joinUs.js', 'dist/js')
     .js('acf-blocks/contactUs-block/contactUs.js', 'dist/js')
+    .js('resources/js/global-contact-popup.js', 'dist/js')
     .js('resources/js/header.js', 'dist/js')
 
 mix.copyDirectory('resources/fonts', 'dist/fonts');

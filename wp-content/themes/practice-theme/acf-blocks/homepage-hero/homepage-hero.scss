@@ -8,7 +8,7 @@
     flex: 1 1 100%;
     background: black;
     overflow: hidden;
-
+   
     .stars-container {
         position: absolute;
         top: 0;
@@ -30,8 +30,10 @@
         background-position: center;
         z-index: 1;
     }
-
-
+    .responsive-container {
+  
+        max-width: 1440px;
+        margin: 0 auto;
     .content-wrapper{
         // position: relative;
         z-index: 2;
@@ -89,6 +91,14 @@
             text-transform: uppercase;
             margin-right: pxToRem(200.18);
         }
+        &:hover {
+            .joinud-btn {
+                background-color: $gradient-green;
+                border-radius: pxToRem(1.471);
+                border: pxToRem(1.471) solid white;
+                transition: all 0.35s linear;   
+            }
+        }
     }
 
     // Desktop styles for hero
@@ -103,7 +113,7 @@
             display: flex;
             flex: 1 1 100%;
             flex-direction: column;
-            margin: pxToRem(73.23) pxToRem(515) pxToRem(123) pxToRem(201);
+            // margin: pxToRem(73.23) pxToRem(515) pxToRem(123) pxToRem(201);
 
             h1 {
                 font-size: pxToRem(120);
@@ -157,3 +167,4 @@
     }
 }
 
+}

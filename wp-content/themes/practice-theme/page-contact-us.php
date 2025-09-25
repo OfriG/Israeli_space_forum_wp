@@ -1,4 +1,3 @@
-
 <?php
 get_header();
 if (have_posts()) :
@@ -7,4 +6,5 @@ if (have_posts()) :
     endwhile;
 endif;
 get_footer();
+
 
