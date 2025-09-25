@@ -64,27 +64,26 @@
         flex-direction: column;
         padding: pxToRem(42) pxToRem(22.03) pxToRem(67.93) pxToRem(25.53);
         .artist-block-content-headline{
-        .headline-mobile {
-            max-width: 100%;
-            height: auto;
-            display: block;
+            .headline-mobile {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    display: none; 
+                }
+            }
             
-            @media (min-width: calc(#{$mobile} + 1px)) {
+            .headline-desktop {
+                max-width: 100%;
+                height: auto;
                 display: none; 
+                
+                @media (min-width: calc(#{$mobile} + 1px)) {
+                    display: block; 
+                }
             }
         }
-        
-        .headline-desktop {
-            max-width: 100%;
-            height: auto;
-            display: none; 
-            
-            @media (min-width: calc(#{$mobile} + 1px)) {
-                display: block; 
-            }
-        }
-    
-    }
     .artist-block-content-description{
         @media (min-width: calc(#{$mobile} + 1px)) {
           font-size: pxToRem(24);
