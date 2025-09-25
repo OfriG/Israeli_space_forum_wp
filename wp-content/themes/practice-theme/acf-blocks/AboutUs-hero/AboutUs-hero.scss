@@ -68,7 +68,6 @@ margin: pxToRem(0) pxToRem(27.59) pxToRem(24) pxToRem(0);
         margin-right: pxToRem(200.18);
 border: pxToRem(1.471) solid $iac-button-green;
 border: border-box;
-max-width: pxToRem(115.82);
 a{
     @media (min-width: calc(#{$mobile} + 1px)) {
         font-size: pxToRem(18);
