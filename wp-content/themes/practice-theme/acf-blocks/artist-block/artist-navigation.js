@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+// Multiple initialization attempts for better server compatibility
+function initializeArtistNavigation() {
     const prevButton = document.getElementById('artist-prev');
     const nextButton = document.getElementById('artist-next');
     const currentArtistSpan = document.getElementById('current-artist');
@@ -9,9 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileGallery = document.getElementById('mobile-gallery');
     const artistsDataElement = document.getElementById('artists-data');
 
+    // Check if all required elements exist
     if (!prevButton || !nextButton || !currentArtistSpan || !totalArtistsSpan) {
-        return;
+        console.warn('Required artist navigation elements not found, retrying...');
+        return false;
     }
+    
+    console.log('Artist navigation elements found, initializing...');
 
     let artistsData = [];
     if (artistsDataElement) {
@@ -21,9 +26,29 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (e) {
             console.error('Error parsing artists data:', e);
             console.error('Raw data:', artistsDataElement.textContent);
+            // Try to find the element again in case it wasn't ready
+            const retryElement = document.getElementById('artists-data');
+            if (retryElement && retryElement !== artistsDataElement) {
+                try {
+                    artistsData = JSON.parse(retryElement.textContent.trim());
+                    console.log('Artists data loaded on retry:', artistsData.length, 'artists');
+                } catch (retryE) {
+                    console.error('Retry also failed:', retryE);
+                }
+            }
         }
     } else {
         console.warn('Artists data element not found');
+        // Try to find it again
+        const retryElement = document.getElementById('artists-data');
+        if (retryElement) {
+            try {
+                artistsData = JSON.parse(retryElement.textContent.trim());
+                console.log('Artists data found on retry:', artistsData.length, 'artists');
+            } catch (e) {
+                console.error('Retry parsing failed:', e);
+            }
+        }
     }
     
     const totalArtists = artistsData.length || 1;
@@ -199,6 +224,58 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             updateArtistContent(0);
         }, 100);
+    }
+    
+    // Mark elements as initialized
+    if (prevButton) prevButton.setAttribute('data-initialized', 'true');
+    if (nextButton) nextButton.setAttribute('data-initialized', 'true');
+    
+    return true; // Success
+}
+
+// Multiple initialization attempts with different timing strategies
+function attemptInitialization() {
+    let attempts = 0;
+    const maxAttempts = 10;
+    
+    function tryInit() {
+        attempts++;
+        console.log(`Initialization attempt ${attempts}/${maxAttempts}`);
+        
+        if (initializeArtistNavigation()) {
+            console.log('Artist navigation initialized successfully');
+            return;
+        }
+        
+        if (attempts < maxAttempts) {
+            // Try again with increasing delay
+            setTimeout(tryInit, 200 * attempts);
+        } else {
+            console.error('Failed to initialize artist navigation after', maxAttempts, 'attempts');
+        }
+    }
+    
+    tryInit();
+}
+
+// Try multiple initialization strategies
+document.addEventListener('DOMContentLoaded', attemptInitialization);
+
+// Fallback for cases where DOMContentLoaded already fired
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attemptInitialization);
+} else {
+    // DOM is already ready
+    attemptInitialization();
+}
+
+// Additional fallback after window load
+window.addEventListener('load', function() {
+    // Only try if not already initialized
+    const prevButton = document.getElementById('artist-prev');
+    if (prevButton && !prevButton.hasAttribute('data-initialized')) {
+        console.log('Attempting initialization after window load...');
+        attemptInitialization();
     }
 });
 
