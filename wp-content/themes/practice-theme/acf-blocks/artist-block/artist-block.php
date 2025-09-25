@@ -62,5 +62,7 @@ if ($artists_query->have_posts()) {
 </div>
 
 <?php 
-wp_enqueue_script('artist-navigation-script', get_template_directory_uri() . '/acf-blocks/artist-block/artist-navigation.js', array(), '1.0.0', true);
+// Use file modification time for cache busting
+$script_version = filemtime(get_template_directory() . '/acf-blocks/artist-block/artist-navigation.js');
+wp_enqueue_script('artist-navigation-script', get_template_directory_uri() . '/acf-blocks/artist-block/artist-navigation.js', array(), $script_version, true);
 ?>
