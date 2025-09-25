@@ -15,6 +15,9 @@ h1 {
   display: flex;
   justify-content:space-around;
   z-index: $navbar-z-index;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   .responsive-container {
     max-width: 1440px;
